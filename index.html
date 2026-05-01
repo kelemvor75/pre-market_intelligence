@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ghost Analyst — Mid-Day Intelligence — Apr 22, 2026</title>
+<title>Ghost Analyst — Pre-Market Intelligence — Friday, May 01, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0f172a;--c:#1e293b;--bd:#334155;--tx:#e2e8f0;--sb:#94a3b8;--ac:#06b6d4;--gn:#22c55e;--rd:#ef4444;--or:#f59e0b;--pp:#a78bfa}
@@ -20,8 +20,13 @@ h1{font-size:32px;font-weight:800;color:#f8fafc;margin-bottom:4px}
 .ob ul{list-style:none;padding:0}.ob li{padding:5px 0 5px 18px;position:relative;font-size:14px}
 .ob li::before{content:'\25B8';position:absolute;left:0;color:var(--ac)}
 .ob li.hot::before{content:'\25C6';color:var(--or)}.ob li.brk::before{content:'\2605';color:var(--rd)}
-.wx{background:var(--c);border-radius:8px;padding:12px 18px;margin-bottom:18px;display:flex;align-items:center;gap:10px;font-size:13px}
-.wx-t{font-size:20px;font-weight:700}.wx-d{color:var(--sb)}
+.wx{background:linear-gradient(90deg,#7c2d1244,var(--c));border:1px solid var(--or);border-radius:8px;padding:14px 18px;margin-bottom:18px;font-size:13px}
+.wx-h{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.wx-emoji{font-size:22px}
+.wx-title{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--or);font-weight:700}
+.wx ul{list-style:none;padding:0;margin-top:6px}
+.wx li{padding:3px 0 3px 14px;position:relative;font-size:12px;color:var(--sb)}
+.wx li::before{content:'\2022';position:absolute;left:0;color:var(--or)}
 .sh{display:flex;align-items:center;gap:10px;margin:20px 0 10px}
 .snum{background:var(--ac);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px}
 .sl{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--ac);text-transform:uppercase}
@@ -34,6 +39,12 @@ h1{font-size:32px;font-weight:800;color:#f8fafc;margin-bottom:4px}
 .ml{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--sb);letter-spacing:1px;text-transform:uppercase}
 .mv{font-size:22px;font-weight:800;color:#f8fafc;margin:3px 0;font-family:'JetBrains Mono',monospace}
 .mg{font-size:12px;font-weight:600}
+.macro-box{background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:14px;margin-top:10px}
+.macro-t{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ac);margin-bottom:8px}
+.macro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.macro-c{text-align:center}
+.macro-l{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--sb);letter-spacing:1px;text-transform:uppercase}
+.macro-v{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:#f8fafc;margin-top:2px}
 .sr{display:flex;align-items:center;gap:8px;padding:4px 0}.sd{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .sn{font-size:13px;color:var(--sb);width:170px;flex-shrink:0}
 .sb-bg{flex:1;height:18px;background:var(--c);border-radius:4px;overflow:hidden}.sb{height:100%;border-radius:4px}
@@ -44,868 +55,499 @@ h1{font-size:32px;font-weight:800;color:#f8fafc;margin-bottom:4px}
 .hl{color:var(--ac);font-weight:600}.bu{color:var(--gn);font-weight:600}.be{color:var(--rd);font-weight:600}.wa{color:var(--or);font-weight:600}
 .co{background:#0c4a6e22;border-left:3px solid var(--ac);padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0;font-size:14px}
 .co-r{background:#7f1d1d22;border-left-color:var(--rd)}
-.ec{background:var(--c);border:1px solid var(--or);border-radius:8px;padding:14px 18px;margin:12px 0}
-.ec-t{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--or);margin-bottom:8px}
 .pt{width:100%;border-collapse:collapse;font-size:12px;table-layout:auto}
-.pt th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--sb);text-transform:uppercase;padding:10px 8px;text-align:left;border-bottom:2px solid var(--bd);white-space:nowrap}
-.pt th.r{text-align:right}
-.pt td{padding:7px 8px;border-bottom:1px solid var(--bd);font-size:13px;vertical-align:middle;white-space:nowrap}
-.pt td.r{text-align:right;font-family:'JetBrains Mono',monospace}
-.pt td.tk{font-weight:700;font-family:'JetBrains Mono',monospace;font-size:13px;white-space:normal;vertical-align:top}
-.pt td.wrap{white-space:normal;overflow:visible;text-overflow:initial;line-height:1.35;font-size:11px;vertical-align:top;padding:8px 6px}
-.bd{background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:14px 18px;margin:10px 0}
-.bd-t{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sb);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
-.flag{display:inline-block;background:#7f1d1d44;color:var(--rd);font-size:10px;padding:2px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-weight:700;margin-left:4px}
-.flag-y{background:#78350f44;color:var(--or)}
-.flag-g{background:#14532d44;color:var(--gn)}
-.flag-p{background:#581c8744;color:var(--pp)}
-.bot{background:#0d948822;border:2px solid var(--gn);border-radius:8px;padding:18px 22px;margin-top:24px}
-.bot-t{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--gn);margin-bottom:10px}
-.bot p{font-size:14px;margin-bottom:8px;line-height:1.6}
-.fp{margin-top:30px;padding-top:20px;border-top:1px solid var(--bd);font-size:11px;color:var(--sb);text-align:center}
-
-.anon-badge{display:inline-block;background:#7c2d12;color:#fbbf24;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.05em;margin-left:8px}
-.redact{color:var(--sb);font-family:'JetBrains Mono',monospace;letter-spacing:0.1em}
+.pt th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--sb);text-transform:uppercase;padding:7px 6px;text-align:left;border-bottom:2px solid var(--bd);white-space:nowrap}
+.pt th.n{text-align:right}.pt td{padding:6px;border-bottom:1px solid #1e293b88;white-space:nowrap}
+.pt tr:hover{background:#1e293b66}.n{font-family:'JetBrains Mono',monospace;text-align:right}
+.tk{font-weight:700;font-size:13px}.tm{display:block;font-size:10px;color:var(--sb)}
+.bl{background:linear-gradient(135deg,#0c4a6e33,#0f172a);border:1px solid var(--ac);border-radius:8px;padding:18px;margin-top:18px}.bl p{font-size:14px;margin-bottom:6px}
+.ft{text-align:center;padding:16px;font-size:11px;color:#475569;margin-top:20px;line-height:1.7}
+.subsec{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ac);margin:14px 0 8px}
+@media(max-width:768px){.cg,.cd,.macro-grid{grid-template-columns:repeat(2,1fr)}.ct{padding:14px 10px}h1{font-size:24px}.pt{font-size:11px}}
+.redact{color:#64748b;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em}
+.anon-badge{display:inline-block;background:#7c2d12;color:#fbbf24;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:1px;margin-left:8px;font-family:'JetBrains Mono',monospace}
 </style>
 </head>
 <body>
 <div class="ct">
-
-<div class="hd">
-<div class="brand">GHOST ANALYST</div>
-<div class="dt">Wednesday, April 29, 2026<br>09:26 AM ET • Pre-Market Intelligence</div>
-</div>
+<div class="hd"><div class="brand">GHOST ANALYST &middot; PRE-MARKET INTELLIGENCE</div><div class="dt">Friday, May 01, 2026<br>02:14 PM ET &bull; Pre-Market Intelligence</div></div>
 <h1>Pre-Market Intelligence Briefing<span class="anon-badge">REDACTED</span></h1>
-<div class="sub" style="margin-bottom:8px"><span style="color:#fbbf24;font-size:11px">Position sizes and portfolio values redacted for external sharing. Analytical content fully preserved.</span><br>Pre-market snapshot • Portfolio: <span class="pv"><span class="redact">$***</span></span> (-4.69% intraday)</div>
+<div style="font-size:11px;color:#fbbf24;margin-bottom:6px;font-family:'JetBrains Mono',monospace">▸ Position sizes and portfolio values redacted for external sharing. Analytical content fully preserved.</div>
+<div class="sub">Pre-market snapshot &bull; Portfolio: <span class="pv"><span class="redact">$***</span></span> (+2.92% intraday)</div>
 
-<div class="ob" style="background:linear-gradient(135deg, #7c2d1233, var(--c)); border-left: 4px solid #f59e0b; padding: 18px 22px">
-<div class="ob-t" style="color:#f59e0b; font-size:14px; margin-bottom:10px">&#9733; ASSESSMENT &mdash; FOMC DAY + MAG7 EARNINGS</div>
-<p style="font-size:15px; line-height:1.6; margin-bottom:10px">
-<strong>This is the day. <span class="hl">2pm FOMC</span> (Powell's last; Warsh confirmation vote in Senate Banking same day), then AMC: <span class="hl">MSFT + GOOGL + META + AMZN + QCOM + TTMI</span> all report.</strong>
-Tuesday was a brutal session for the portfolio: <span class="be">SPX -0.49% to 7,138</span>, NDX -0.9%, <span class="be">CLS -14.33%</span> (vol 2.34&times; on earnings sympathy reaction), most chip names down 3-7%. WTI briefly broke <span class="be">$100</span> (settled $99.93), Brent hit $112.70 intraday &mdash; highest since March. Gas at $4.18/gal (highest since Aug 2022). Portfolio closed Tue at <strong><span class="redact">$***</span></strong> (-3.4% from Friday ATH).
-</p>
-<p style="font-size:14px; color:var(--sb); margin-top:8px">
-<strong style="color:#f59e0b">Watch:</strong> SOX up 18 straight sessions, RSI &gt;85 (extreme overbought) &mdash; setup is <span class="be">vulnerable</span>. MSFT options pricing <span class="hl">7% move</span>, META historically 6-9%. Capex commentary (not EPS) drives entire AI-infra portfolio. Smart Money signals shifting <span class="be">bearish on CLS, CIEN, WDC</span> ahead of prints. <span class="bu">FIX, MU, TTMI</span> still showing bullish institutional positioning. <span class="hl">TTMI reports tonight</span> &mdash; small position but binary. <span class="hl">WDC + SNDK tomorrow AM</span>. May 6 rebalance plan still locked, but execution timing depends on tonight + tomorrow's reactions.
-</p>
+<!-- ASSESSMENT -->
+<div style="background:linear-gradient(135deg,#0c4a6e33,#0f172a);border:1px solid #06b6d4;border-radius:8px;padding:16px 20px;margin-bottom:18px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:#06b6d4;margin-bottom:6px">&#9733; ASSESSMENT &mdash; END OF EARNINGS WEEK</div>
+<p style="font-size:15px;line-height:1.6;margin-bottom:6px"><strong style="color:#f8fafc">Best month for SPX since 2020 just closed. Thursday rallied to ATHs with all 11 sectors green. AAPL beat last night but -1.1% AH on iPhone slight miss.</strong> GOOGL +10% intraday Thursday on Cloud +63% YoY. SNDK + WDC reported and surged after Cantor PT raises ($1,400 SNDK from $1,000, $500 WDC from $420). Combined Mag 7 capex now ~$650B for 2026 &mdash; AI-infra thesis confirmed and accelerating. Portfolio at <span class="pv"><span class="redact">$***</span></span>. Memory names led the charge after AAPL's "significantly higher memory costs ahead" comment &mdash; bullish for SNDK/WDC/MU.</p>
+<p style="font-size:14px;color:#94a3b8"><strong style="color:#f59e0b">Watch:</strong> Today is light &mdash; only ISM Manufacturing 10am, no portfolio earnings, Friday before BRK.B Saturday. SOX still extreme overbought (RSI 85, 18-19 straight up sessions). Rate cut path is gone: June cut 3%, full-year 8%, hike odds 8% (from 0%). Smart money strongly bullish on memory: <span class="bu">MU +3, AMD +2, SNDK +2, TTMI +2 BULLISH</span>; only LITE/MRVL lean bearish. May 6 rebalance in 4 trading days &mdash; plan locked.</p>
 </div>
 
-<div class="ob">
-<div class="ob-t">▸ WHAT CHANGED &mdash; MARATHON DAY AHEAD</div>
+<div class="ob"><div class="ob-t">&#9889; WHAT CHANGED &mdash; END OF MARATHON WEEK</div>
 <ul>
-<li class="hot"><strong>2:00 PM FOMC: Powell's last meeting as chair.</strong> 100% odds of rate hold. Warsh confirmation vote in Senate Banking Committee SAME DAY. Powell criminal investigation dropped Friday but in Fed inspector general's hands now. Townsend (Schwab): "I'm in the camp that he stays" as a regular Fed governor through 2028 to block Trump nominee. Powell could remain hawkish counterweight to Warsh's dovish lean. Watch presser at 2:30 PM.</li>
-<li class="hot"><strong>4:00 PM AMC: <span class="hl">MSFT + GOOGL + META + AMZN + QCOM + TTMI</span> all report.</strong> MSFT options pricing 7% move ($4.06 EPS, $81.3B rev, $110B capex watched). META 6-9% historical move ($6.67 EPS, $55.4B rev, $60-65B capex), up 26.5% MoM into print. GOOGL $175-185B 2026 capex (already dropped 6% on the Feb announce). The capex commentary (not EPS) drives our entire portfolio.</li>
-<li class="brk">Tuesday's session was <span class="be">brutal</span>: <span class="be">SPX -0.49%</span>, <span class="be">NASDAQ -0.9%</span>, Russell 2000 <span class="be">-1.2%</span> (still +11% MoM). Triggered by WSJ report on OpenAI revenue/user growth missing internal targets, CFO told leadership concerned about ability to pay computing contracts. Oracle defended OpenAI's adoption pace but damage done. CLS got crushed -14.33% on volume 2.34&times; average.</li>
-<li class="hot">Oil <span class="be">briefly broke $100</span> Tuesday: WTI settled $99.93 (+3%), Brent $111.26 (+2.8%). Brent hit $112.70 intraday &mdash; highest since March. Gas $4.18/gal national avg &mdash; highest since Aug 2022. Iran offered new proposal Sun/Mon to reopen Hormuz but defer nuclear &mdash; Trump rejected.</li>
-<li class="hot"><span class="hl">SOX warning</span>: 18 straight positive sessions, +33% in 3 months, +50% from March lows. RSI &gt;85 (extreme overbought). Schwab: "this setup could make chips more vulnerable if there's bad news." Tuesday's pullback may be that bad news arriving. NVDA hit ATH $216.83 ($5.26T mkt cap) Monday before Tuesday's pullback.</li>
-<li>Today's data: 8:30am Building Permits + Durable Goods, 10:00am New Home Sales. <span class="hl">2pm FOMC, 2:30pm Powell presser</span>. Tomorrow: AAPL + WDC + SNDK earnings + Q1 GDP advance + Core PCE March (key inflation read). Friday: ISM Manufacturing.</li>
-</ul>
-</div>
+<li class="brk"><strong>April best month for SPX since 2020.</strong> Thursday: Dow +1.74%, SPX +1.08%, Nasdaq +0.95%, Russell 2000 +2%. All 11 S&P sectors green. Alphabet finished month +34%, INTC ~doubled (best month in 55-year history).</li>
+<li class="brk"><strong>AAPL beat but -1.1% AH:</strong> EPS $2.01 vs $1.95, rev $111.2B vs $109.7B (record March quarter, +17% YoY). Services $30.98B record. iPhone slight miss at $56B. Q3 guide +14-17%. $100B buyback. <span class="bu">Cook: "significantly higher memory costs ahead"</span> &mdash; direct tailwind for SNDK/WDC/MU.</li>
+<li class="hot"><strong>GOOGL +10% intraday Thursday</strong> (best day since April 2024) &mdash; Cloud +63% YoY to $20B, backlog $462B (nearly doubled), capex raised to $180-190B.</li>
+<li class="hot"><strong>Memory chips resumed surge Thursday</strong>: SNDK + WDC reported BMO and ripped. LITE +4% sympathy. Cantor analyst CJ Muse (top 11 of 12,000+) raised PTs Tuesday: SNDK $1,400 (from $1,000), WDC $500 (from $420).</li>
+<li><strong>Macro Thursday</strong>: March Core PCE +0.3% MoM, +3.2% YoY (in line). Q1 GDP advance +2.0% (vs +2.3% est, miss). Brent ~$115-118. Initial Claims in line.</li>
+<li><strong>FOMC redux</strong>: 8-4 dissent vote (first since Oct 1992). Powell staying as governor through 2028. Rate cut odds COLLAPSED: June 3%, full-year 8%, hike odds 8% (from 0%).</li>
+<li class="brk"><strong>Today:</strong> ISM Manufacturing PMI April 10am, Construction Spending. Earnings: XOM, CVX, CL, AON, ARES, D, LIN. Saturday: Berkshire Hathaway annual meeting. <strong>Next week:</strong> STRL Mon, AMD + LITE Tue, ISM Services Tue, May 6 rebalance Wed.</li>
+</ul></div>
 
 <div class="wx">
-<span class="wx-t">🚨</span>
-<span><span class="wx-t" style="color:#ef4444">FOMC Day + 6 AMC Earnings</span> <span class="wx-d">2pm FOMC (Powell last meeting) • 4pm: MSFT/GOOGL/META/AMZN/QCOM/TTMI • SPX -0.49% Tue (off ATH) • CLS -14% Tue on vol 2.34x • WTI broke $100 • SOX RSI 85 extreme overbought • TTMI tonight, WDC+SNDK tomorrow • IV ranks 80-96% across portfolio</span></span>
+<div class="wx-h"><span class="wx-emoji">&#128200;</span><span class="wx-title">END OF EARNINGS WEEK &mdash; ATH CLOSE</span></div>
+<ul>
+<li>SPX +1.08% Thursday to fresh ATH &middot; April best month since 2020 &middot; All 11 sectors green</li>
+<li>GOOGL +10% intraday on Cloud +63% YoY &middot; AAPL beat but -1.1% AH on iPhone slight miss</li>
+<li>Combined Mag 7 capex ~$650B 2026 &mdash; AI-infra thesis CONFIRMED</li>
+<li>SNDK + WDC reported Thursday and surged on Cantor PT raises</li>
+<li>Cook: "significantly higher memory costs ahead" &mdash; bullish for SNDK/WDC/MU</li>
+<li>Rate cut path gone: June 3%, full-year 8%, hike odds 8% (from 0%)</li>
+<li>SOX RSI 85 still extreme overbought (18-19 straight up sessions)</li>
+<li>Today light: ISM Manuf 10am only data &middot; No portfolio earnings &middot; May 6 rebal in 4 days</li>
+</ul>
 </div>
 
-<div class="sh"><span class="snum" style="background:#a78bfa">●</span><span class="sl" style="color:#a78bfa">Portfolio Conviction Dashboard</span></div>
+<div class="sh"><span class="snum" style="background:#a78bfa">&#9679;</span><span class="sl" style="color:#a78bfa">Portfolio Conviction Dashboard</span></div>
 <div class="cd">
-<div class="cc"><div class="cl">Theme-RS Tier</div><div class="cv bu">🟢 GREEN</div></div>
-<div class="cc"><div class="cl">AI Allocation</div><div class="cv">100%</div></div>
-<div class="cc"><div class="cl">Geo Overlay</div><div class="cv wa">MODERATE</div></div>
-<div class="cc"><div class="cl">Today P/L</div><div class="cv be">-4.69%</div></div>
+<div class="cc"><div class="cl">THEME-RS TIER</div><div class="cv" style="color:#22c55e">&#128994; GREEN</div></div>
+<div class="cc"><div class="cl">AI ALLOCATION</div><div class="cv">100%</div></div>
+<div class="cc"><div class="cl">GEO OVERLAY</div><div class="cv" style="color:#f59e0b">MODERATE</div></div>
+<div class="cc"><div class="cl">TODAY P/L</div><div class="cv" style="color:#22c55e">+2.92%</div></div>
 </div>
 <div class="cd">
-<div class="cc"><div class="cl">Green / Red</div><div class="cv">0 / 16</div></div>
-<div class="cc"><div class="cl">Vol Alerts</div><div class="cv wa">1</div></div>
-<div class="cc"><div class="cl">VIX</div><div class="cv">18.02</div></div>
-<div class="cc"><div class="cl">Days to Rebal</div><div class="cv hl">14</div></div>
+<div class="cc"><div class="cl">GREEN / RED</div><div class="cv"><span style="color:#22c55e">14</span> / <span style="color:#ef4444">2</span></div></div>
+<div class="cc"><div class="cl">VOL ALERTS</div><div class="cv" style="color:#f59e0b">1</div></div>
+<div class="cc"><div class="cl">VIX</div><div class="cv" style="color:#94a3b8">18.81</div></div>
+<div class="cc"><div class="cl">DAYS TO REBAL</div><div class="cv" style="color:#06b6d4">4</div></div>
 </div>
 
-<div class="sh"><span class="snum">1</span><span class="sl">Market Snapshot — Pre-Market & Yesterday Close</span></div>
+<div class="sh"><span class="snum">1</span><span class="sl">Market Snapshot &mdash; Pre-Market & Yesterday Close</span></div>
 <div class="cg">
-
-<div class="mc">
-<div class="ml">S&P 500 (SPY)</div>
-<div class="mv">$711.69</div>
-<div class="mg be">-0.49% • $-3.48</div>
+<div class="mc"><div class="ml">S&P 500 (SPY)</div><div class="mv">$718.66</div><div class="mg" style="color:#22c55e">+0.99% &bull; +$7.08</div></div>
+<div class="mc"><div class="ml">Nasdaq 100 (QQQ)</div><div class="mv">$667.74</div><div class="mg" style="color:#22c55e">+0.93% &bull; +$6.17</div></div>
+<div class="mc"><div class="ml">Dow (DIA)</div><div class="mv">$496.65</div><div class="mg" style="color:#22c55e">+1.63% &bull; +$7.98</div></div>
+<div class="mc"><div class="ml">Russell 2K (IWM)</div><div class="mv">$277.97</div><div class="mg" style="color:#22c55e">+2.16% &bull; +$5.89</div></div>
 </div>
 
-<div class="mc">
-<div class="ml">Nasdaq 100 (QQQ)</div>
-<div class="mv">$657.55</div>
-<div class="mg be">-1.01% • $-6.68</div>
-</div>
-
-<div class="mc">
-<div class="ml">Dow (DIA)</div>
-<div class="mv">$491.42</div>
-<div class="mg be">-0.08% • $-0.41</div>
-</div>
-
-<div class="mc">
-<div class="ml">Russell 2K (IWM)</div>
-<div class="mv">$273.91</div>
-<div class="mg be">-1.17% • $-3.23</div>
-</div>
-</div>
-<div class="bd">
-<div class="bd-t">▸ MACRO CONTEXT</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;font-size:13px">
-<div><div class="ml">VIX (yesterday close)</div><div style="font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace">18.02</div></div>
-<div><div class="ml">10Y Treasury</div><div style="font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace">~4.25%</div></div>
-<div><div class="ml">Crude (WTI)</div><div style="font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace">$91.58</div></div>
-<div><div class="ml">DXY</div><div style="font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace">~99.2</div></div>
+<div class="macro-box">
+<div class="macro-t">&#9656; MACRO CONTEXT</div>
+<div class="macro-grid">
+<div class="macro-c"><div class="macro-l">VIX (yesterday close)</div><div class="macro-v">18.81</div></div>
+<div class="macro-c"><div class="macro-l">10Y Treasury</div><div class="macro-v">~4.25%</div></div>
+<div class="macro-c"><div class="macro-l">Crude (WTI)</div><div class="macro-v">~$107</div></div>
+<div class="macro-c"><div class="macro-l">DXY</div><div class="macro-v">~99.5</div></div>
 </div>
 </div>
 
-<div class="sh"><span class="snum">2</span><span class="sl">Sector Rotation — Leaders & Laggards (5-Day)</span></div>
-<div class="bd">
-
+<div class="sh"><span class="snum">2</span><span class="sl">Sector Rotation &mdash; Leaders & Laggards (5-Day)</span></div>
 <div class="sr">
-<div class="sd" style="background:#22c55e"></div>
-<div class="sn">Semis (SMH)</div>
-<div class="sb-bg"><div class="sb" style="width:100.0%;background:var(--gn)"></div></div>
-<div class="sp" style="color:var(--gn)">+5.71%</div>
-<div class="s1d">-2.97%</div>
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Semis (SMH)</span>
+<div class="sb-bg"><div class="sb" style="width:100.0%;background:linear-gradient(90deg,#22c55e,#22c55e88)"></div></div>
+<span class="sp" style="color:#22c55e">+5.16%</span>
+<span class="s1d" style="color:#22c55e">+1.43% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Energy (XLE)</span>
+<div class="sb-bg"><div class="sb" style="width:90.8%;background:linear-gradient(90deg,#4ade80,#4ade8088)"></div></div>
+<span class="sp" style="color:#4ade80">+4.69%</span>
+<span class="s1d" style="color:#22c55e">+1.05% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Technology (XLK)</span>
+<div class="sb-bg"><div class="sb" style="width:45.5%;background:linear-gradient(90deg,#4ade80,#4ade8088)"></div></div>
+<span class="sp" style="color:#4ade80">+2.35%</span>
+<span class="s1d" style="color:#22c55e">+0.25% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Utilities (XLU)</span>
+<div class="sb-bg"><div class="sb" style="width:31.9%;background:linear-gradient(90deg,#4ade80,#4ade8088)"></div></div>
+<span class="sp" style="color:#4ade80">+1.65%</span>
+<span class="s1d" style="color:#22c55e">+2.56% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Real Estate (XLRE)</span>
+<div class="sb-bg"><div class="sb" style="width:19.4%;background:linear-gradient(90deg,#4ade80,#4ade8088)"></div></div>
+<span class="sp" style="color:#4ade80">+1.00%</span>
+<span class="s1d" style="color:#22c55e">+1.74% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Staples (XLP)</span>
+<div class="sb-bg"><div class="sb" style="width:19.3%;background:linear-gradient(90deg,#4ade80,#4ade8088)"></div></div>
+<span class="sp" style="color:#4ade80">+0.99%</span>
+<span class="s1d" style="color:#22c55e">+1.68% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Financials (XLF)</span>
+<div class="sb-bg"><div class="sb" style="width:12.3%;background:linear-gradient(90deg,#4ade80,#4ade8088)"></div></div>
+<span class="sp" style="color:#4ade80">+0.64%</span>
+<span class="s1d" style="color:#22c55e">+0.40% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Discretionary (XLY)</span>
+<div class="sb-bg"><div class="sb" style="width:10.0%;background:linear-gradient(90deg,#4ade80,#4ade8088)"></div></div>
+<span class="sp" style="color:#4ade80">+0.52%</span>
+<span class="s1d" style="color:#22c55e">+1.29% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Software (IGV)</span>
+<div class="sb-bg"><div class="sb" style="width:7.9%;background:linear-gradient(90deg,#4ade80,#4ade8088)"></div></div>
+<span class="sp" style="color:#4ade80">+0.41%</span>
+<span class="s1d" style="color:#ef4444">-0.70% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#22c55e"></span>
+<span class="sn">Industrials (XLI)</span>
+<div class="sb-bg"><div class="sb" style="width:5.7%;background:linear-gradient(90deg,#4ade80,#4ade8088)"></div></div>
+<span class="sp" style="color:#4ade80">+0.29%</span>
+<span class="s1d" style="color:#22c55e">+2.74% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#ef4444"></span>
+<span class="sn">Healthcare (XLV)</span>
+<div class="sb-bg"><div class="sb" style="width:3.3%;background:linear-gradient(90deg,#f59e0b,#f59e0b88)"></div></div>
+<span class="sp" style="color:#f59e0b">-0.17%</span>
+<span class="s1d" style="color:#22c55e">+2.21% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#ef4444"></span>
+<span class="sn">Materials (XLB)</span>
+<div class="sb-bg"><div class="sb" style="width:12.7%;background:linear-gradient(90deg,#f59e0b,#f59e0b88)"></div></div>
+<span class="sp" style="color:#f59e0b">-0.66%</span>
+<span class="s1d" style="color:#22c55e">+1.00% 1d</span>
+</div><div class="sr">
+<span class="sd" style="background:#ef4444"></span>
+<span class="sn">Comms (XLC)</span>
+<div class="sb-bg"><div class="sb" style="width:14.5%;background:linear-gradient(90deg,#f59e0b,#f59e0b88)"></div></div>
+<span class="sp" style="color:#f59e0b">-0.75%</span>
+<span class="s1d" style="color:#22c55e">+1.06% 1d</span>
 </div>
-
-<div class="sr">
-<div class="sd" style="background:#22c55e"></div>
-<div class="sn">Energy (XLE)</div>
-<div class="sb-bg"><div class="sb" style="width:57.63813426177343%;background:var(--gn)"></div></div>
-<div class="sp" style="color:var(--gn)">+3.29%</div>
-<div class="s1d">+1.66%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#22c55e"></div>
-<div class="sn">Utilities (XLU)</div>
-<div class="sb-bg"><div class="sb" style="width:50.615603443038715%;background:var(--gn)"></div></div>
-<div class="sp" style="color:var(--gn)">+2.89%</div>
-<div class="s1d">+0.13%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#22c55e"></div>
-<div class="sn">Technology (XLK)</div>
-<div class="sb-bg"><div class="sb" style="width:35.75161013966437%;background:var(--gn)"></div></div>
-<div class="sp" style="color:var(--gn)">+2.04%</div>
-<div class="s1d">-1.69%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#22c55e"></div>
-<div class="sn">Staples (XLP)</div>
-<div class="sb-bg"><div class="sb" style="width:26.517148890030224%;background:var(--gn)"></div></div>
-<div class="sp" style="color:var(--gn)">+1.52%</div>
-<div class="s1d">+0.90%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#22c55e"></div>
-<div class="sn">Real Estate (XLRE)</div>
-<div class="sb-bg"><div class="sb" style="width:5.196828174427911%;background:var(--gn)"></div></div>
-<div class="sp" style="color:var(--gn)">+0.30%</div>
-<div class="s1d">+0.97%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#f59e0b"></div>
-<div class="sn">Industrials (XLI)</div>
-<div class="sb-bg"><div class="sb" style="width:4.695874010157011%;background:var(--rd)"></div></div>
-<div class="sp" style="color:var(--rd)">-0.27%</div>
-<div class="s1d">-0.89%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#f59e0b"></div>
-<div class="sn">Materials (XLB)</div>
-<div class="sb-bg"><div class="sb" style="width:12.508185742602782%;background:var(--rd)"></div></div>
-<div class="sp" style="color:var(--rd)">-0.71%</div>
-<div class="s1d">-0.73%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#f59e0b"></div>
-<div class="sn">Financials (XLF)</div>
-<div class="sb-bg"><div class="sb" style="width:15.058495641183391%;background:var(--rd)"></div></div>
-<div class="sp" style="color:var(--rd)">-0.86%</div>
-<div class="s1d">+0.08%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#ef4444"></div>
-<div class="sn">Comms (XLC)</div>
-<div class="sb-bg"><div class="sb" style="width:21.062528812787725%;background:var(--rd)"></div></div>
-<div class="sp" style="color:var(--rd)">-1.20%</div>
-<div class="s1d">-0.05%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#ef4444"></div>
-<div class="sn">Healthcare (XLV)</div>
-<div class="sb-bg"><div class="sb" style="width:24.947054547857142%;background:var(--rd)"></div></div>
-<div class="sp" style="color:var(--rd)">-1.43%</div>
-<div class="s1d">+0.26%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#ef4444"></div>
-<div class="sn">Discretionary (XLY)</div>
-<div class="sb-bg"><div class="sb" style="width:28.832969491588585%;background:var(--rd)"></div></div>
-<div class="sp" style="color:var(--rd)">-1.65%</div>
-<div class="s1d">-0.70%</div>
-</div>
-
-<div class="sr">
-<div class="sd" style="background:#ef4444"></div>
-<div class="sn">IGV (IGV)</div>
-<div class="sb-bg"><div class="sb" style="width:33.92041380856684%;background:var(--rd)"></div></div>
-<div class="sp" style="color:var(--rd)">-1.94%</div>
-<div class="s1d">+0.00%</div>
-</div>
-
-</div>
-<div class="co">
-<strong>Read:</strong> Top 5-day leader is <span class="hl">Semis (SMH)</span> at +5.71%, 
-laggard is <span class="be">IGV (IGV)</span> at -1.94%.
-SMH (our AI theme proxy) ranked <strong>#1 of 12</strong> over 5 days. Theme-RS gate uses 6-month rank — SMH still GREEN (#1 over 6M).
-</div>
+<p style="margin-top:10px;font-size:13px;color:var(--sb)"><strong style="color:var(--tx)">Read:</strong> Top 5-day leader is Semis (SMH) at <span class="bu">+5.16%</span>, laggard is Comms (XLC) at <span class="be">-0.75%</span>. SMH (our AI theme proxy) ranked <strong>#1 of 13</strong> over 5 days. Theme-RS gate uses 6-month rank &mdash; SMH still GREEN.</p>
 
 <div class="sh"><span class="snum" style="background:#ef4444">3</span><span class="sl" style="color:#ef4444">Geopolitics & Macro</span></div>
-<div class="cs">
-<p><strong>Iran ceasefire status:</strong> Trump extended ceasefire at request of Pakistan PM Sharif and Field Marshal Munir as Iran's government described as "fractured." US blockade of Iranian ports continues. Strait of Hormuz officially "open" but vessel traffic restricted. Crude at $91.58 (+2.13%) reflects ongoing risk premium.</p>
-<p><strong>This week's economic data (verified BLS/Census schedules):</strong></p>
-<ul>
-<li><strong>Wed Apr 23:</strong> MBA Mortgage Apps (7am), New Home Sales for March (10am), Federal Reserve Beige Book (2pm)</li>
-<li><strong>Thu Apr 24:</strong> Initial Jobless Claims (8:30am, est ~215K vs 207K prior), Durable Goods Orders March (8:30am, est +0.8%)</li>
-<li><strong>Fri Apr 25:</strong> Michigan Consumer Sentiment Final, NY Fed Staff Nowcast</li>
+<div class="cs"><ul>
+<li><span class="be">Iran peace talks dead.</span> Trump canceled April 25. Iran proposal via Pakistani mediators (reopen Hormuz, defer nuclear) rejected. <span class="be">Brent ~$115-118 sustained</span>, WTI ~$107 post-FOMC explosion. Goldman Q4 Brent target raised to $90.</li>
+<li><span class="bu">Israel-Lebanon ceasefire</span> extended 3 weeks April 23. Holding for now.</li>
+<li><span class="hl">Powell staying as Fed governor through 2028.</span> Criminal probe transferred to Fed inspector general. Warsh confirmed by Senate Banking Committee, takes chair May 15.</li>
+<li><span class="be">FOMC 8-4 dissent</span> (first since Oct 1992). Rate cut path collapsed: June 3%, full-year 8%, hike odds rose to 8% (from 0%).</li>
+<li><span class="hl">Q1 GDP advance +2.0%</span> (vs +2.3% est, miss). March Core PCE +3.2% YoY (in line). Slight stagflation hint but markets shrugged.</li>
+<li><span class="be">Gas at $4.18/gal</span> national avg &mdash; highest since Aug 2022.</li>
 </ul>
-<div class="co">No FOMC this week. Next Fed event is the May 6-7 meeting which coincides with our rebalance window. Powell expected to hold rates with markets pricing two cuts by year-end.</div>
-</div>
+
+<p style="font-size:14px;margin:14px 0 6px"><strong style="color:#f8fafc">This week's economic data (verified BLS/Census schedules):</strong></p>
+<ul>
+<li><strong>Mon May 4:</strong> Factory Orders March (10am)</li>
+<li><strong>Tue May 5:</strong> ISM Services PMI April + JOLTS Job Openings (10am)</li>
+<li><strong>Wed May 6:</strong> ADP Employment (8:15am) &mdash; <strong style="color:#06b6d4">REBALANCE DAY</strong></li>
+<li><strong>Thu May 7:</strong> Initial Claims, Productivity Q1, Wholesale Inventories</li>
+<li><strong>Fri May 8:</strong> Consumer Credit (3pm)</li>
+</ul>
+
+<div class="co-r co"><strong>RISK MAP:</strong> Oil $107+ + collapsed rate cut path = stagflation tape risk. AI-infra thesis still intact (Mag 7 capex ~$650B confirmed) but rate-sensitive AI-adjacent names (data center REITs, utilities) now exposed.</div></div>
 
 <div class="sh"><span class="snum" style="background:#0d9488">4</span><span class="sl" style="color:#0d9488">AI & Technology</span></div>
 <div class="cs">
-<p><strong>AI capex narrative reaccelerating</strong> after Anthropic Mythos catalyst (April 7). 66% of S&P AI-related stocks have outperformed broader index since. JPMorgan raised SPX target yesterday to 7,600 (from 7,200) citing AI capex growth forecast of +58% YoY to $775B by year-end 2026.</p>
-<p><strong>Today in semis:</strong></p>
+<p style="font-size:14px;line-height:1.6;margin-bottom:8px"><strong style="color:#f8fafc">AI capex thesis confirmed and accelerating</strong> after the Mag 7 marathon. Combined 2026 capex now ~$650B: GOOGL $180-190B (raised), MSFT >$190B (capacity-constrained), META $125-145B, AMZN ~$200B. Bloomberg: AI capex on track for $650B in 2026 alone. The cloud growth numbers are now visible to justify the spend.</p>
+
+<p style="font-size:14px;margin:10px 0 6px"><strong style="color:#f8fafc">Yesterday's standouts:</strong></p>
 <ul>
-<li><span class="bu">MU +6.48%</span> — memory rally continues, possibly tied to Roundhill DRAM ETF launch and supply tightness chatter</li>
-<li><span class="bu">AVGO +3.76%</span>, <span class="bu">TSM +2.54%</span>, <span class="bu">MRVL +2.94%</span> — broad semi tape strength</li>
-<li><span class="be">CIEN -4.40%</span> — failed breakout from yesterday's all-time high $515; sympathy with VRT weakness</li>
-<li><span class="be">VRT -2.79%</span> — Q1 beat $1.17 vs $1.01, but EMEA -20.3% and Q2 guide light triggered "sell the news"</li>
+<li><span class="bu">GOOGL +10% intraday</span> (best day since April 2024) &mdash; Cloud +63% YoY to $20B (more than doubled growth rate). Backlog $462B (nearly doubled). Best read of the season.</li>
+<li><span class="bu">MSFT capex $40B+ in Q4</span>, full year $190B. 2/3 going to GPUs/CPUs for Azure + AI tools (M365 Copilot). Capacity-constrained through 2026.</li>
+<li><span class="bu">SNDK + WDC ripped on Cantor PT raises</span>. CJ Muse (top 11 of 12,000+ analysts): SNDK $1,400 (from $1,000), WDC $500 (from $420). LITE +4% sympathy.</li>
+<li><span class="bu">AAPL: "significantly higher memory costs ahead"</span> &mdash; Cook explicitly acknowledging memory pricing tailwind. Direct bullish read for SNDK/WDC/MU.</li>
+<li><span class="be">META capex raised to $125-145B</span> but missed user growth &mdash; got punished -7% AH Wednesday. AI ROI question made real, but Thursday session shrugged it off.</li>
+<li><span class="wa">SOX warning</span>: 18-19 straight up sessions, RSI 85 (highest in 20+ years per Schwab). MRVL +78%, AMD +72%, SNDK +86% on 1-month basis.</li>
 </ul>
-<div class="co"><strong>Capex theme intact:</strong> Nothing in today's tape suggests AI capex deceleration. The selling in CIEN/VRT looks like profit-taking after parabolic moves, not theme-break. Our Theme-RS gate stays GREEN.</div>
-</div>
+<div class="co"><strong>Capex theme intact and accelerating:</strong> AAPL's memory cost commentary is the single best near-term catalyst for memory positions. The four hyperscalers all confirmed massive 2026 spend. NVDA reports May 28 will be the next major confirmation point. Holding 100% deployment.</div></div>
 
-<div class="sh"><span class="snum">5</span><span class="sl">Options Positioning — GEX Levels & Positioning</span></div>
-
+<div class="sh"><span class="snum">5</span><span class="sl">Options Positioning &mdash; GEX Levels & Positioning</span></div>
+<div class="subsec">&#9656; SPY &mdash; GEX NUMBER LINE ($695 &mdash; $725)</div>
 <div style="background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:18px 20px;margin:8px 0 14px">
-<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ac);margin-bottom:12px">&#9656; SPY &mdash; GEX NUMBER LINE ($695 &mdash; $720)</div>
-<div style="position:relative;height:50px;margin:30px 10px 70px">
-<div style="position:absolute;top:22px;left:0;right:0;height:6px;background:#334155;border-radius:3px"></div>
-<div style="position:absolute;top:22px;left:20.0%;right:20.0%;height:6px;background:linear-gradient(90deg,#22c55e44,#22c55e22);border-radius:3px"></div>
-<div style="position:absolute;left:20.0%;top:12px;transform:translateX(-50%);z-index:2"><div style="width:2px;height:26px;background:#ef4444;margin:0 auto"></div><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#ef4444;text-align:center;margin-top:4px;white-space:nowrap">Put Wall $700</div></div><div style="position:absolute;left:66.8%;top:4px;transform:translateX(-50%);z-index:3"><div style="width:14px;height:14px;background:#22c55e;border-radius:50%;border:2px solid #f8fafc;margin:0 auto"></div><div style="width:2px;height:18px;background:#22c55e;margin:0 auto"></div><div style="font-family:JetBrains Mono,monospace;font-size:11px;color:#22c55e;text-align:center;margin-top:2px;font-weight:700;white-space:nowrap">SPY $711.69</div></div><div style="position:absolute;left:80.0%;top:12px;transform:translateX(-50%);z-index:2"><div style="width:2px;height:26px;background:#f59e0b;margin:0 auto"></div><div style="font-family:JetBrains Mono,monospace;font-size:10px;color:#f59e0b;text-align:center;margin-top:4px;white-space:nowrap">Call Wall $715</div></div>
+<div style="position:relative;height:80px;margin:30px 10px 50px">
+<div style="position:absolute;top:32px;left:0;right:0;height:6px;background:#334155;border-radius:3px"></div>
+<div style="position:absolute;top:32px;left:16.7%;right:16.7%;height:6px;background:linear-gradient(90deg,#22c55e44,#22c55e22);border-radius:3px"></div>
+<div style="position:absolute;left:16.7%;top:6px;transform:translateX(-50%)"><div style="width:2px;height:30px;background:#ef4444;margin:0 auto"></div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#ef4444;text-align:center;margin-top:4px;white-space:nowrap">Put Wall $700</div></div>
+<div style="position:absolute;left:78.9%;top:0;transform:translateX(-50%)"><div style="width:14px;height:14px;background:#06b6d4;border-radius:50%;border:2px solid #f8fafc;margin:0 auto"></div><div style="width:2px;height:24px;background:#06b6d4;margin:0 auto"></div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#06b6d4;text-align:center;margin-top:2px;font-weight:700;white-space:nowrap">SPY $718.66</div></div>
+<div style="position:absolute;left:83.3%;top:6px;transform:translateX(-50%)"><div style="width:2px;height:30px;background:#22c55e;margin:0 auto"></div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#22c55e;text-align:center;margin-top:4px;white-space:nowrap">Call Wall $720</div></div>
 </div>
-<div style="display:flex;justify-content:space-between;font-size:12px;margin-top:8px"><span style="color:#ef4444">&#8595; Negative &Gamma;</span><span style="color:#22c55e">POSITIVE GAMMA — Dealers dampening</span><span style="color:#f59e0b">&#8593; Resistance</span></div>
-<div style="margin-top:10px;font-size:13px;color:var(--tx)">Between walls. Put wall $700 is 1.64% below, call wall $715 is 0.47% above.</div>
+<div style="display:flex;justify-content:space-between;font-size:12px;margin-top:8px">
+<span style="color:#ef4444">&darr; Negative &Gamma;</span>
+<span style="color:#22c55e">POSITIVE GAMMA &mdash; Dealers dampening</span>
+<span style="color:#22c55e">&uarr; Resistance</span>
+</div>
+<div style="margin-top:10px;font-size:13px;color:#e2e8f0">Between walls. Put wall $700 is 2.60% below, call wall $720 is 0.19% above.</div>
 </div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0">
-
 <div style="background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:14px 16px">
 <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:#f59e0b;margin-bottom:8px">MAX PAIN &mdash; NEAREST EXPIRY</div>
-<table class="pt">
-<thead><tr><th>Ticker</th><th class="r">Max Pain</th><th class="r">Spot</th><th>Dir</th></tr></thead>
-<tbody>
-<tr><td class="tk">AMD</td><td class="r">$310</td><td class="r">$323.21</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">AVGO</td><td class="r">$410</td><td class="r">$399.83</td><td><span class="be">&#8595; BELOW MP</span></td></tr><tr><td class="tk">CLS</td><td class="r">$400</td><td class="r">$361.71</td><td><span class="be">&#8595; BELOW MP</span></td></tr><tr><td class="tk">CIEN</td><td class="r">$490</td><td class="r">$473.69</td><td><span class="be">&#8595; BELOW MP</span></td></tr><tr><td class="tk">COHR</td><td class="r">$330</td><td class="r">$303.97</td><td><span class="be">&#8595; BELOW MP</span></td></tr><tr><td class="tk">DELL</td><td class="r">$202</td><td class="r">$205.93</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">FIX</td><td class="r">$1520</td><td class="r">$1719.58</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">LITE</td><td class="r">$850</td><td class="r">$791.37</td><td><span class="be">&#8595; BELOW MP</span></td></tr><tr><td class="tk">MRVL</td><td class="r">$145</td><td class="r">$153.23</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">MU</td><td class="r">$475</td><td class="r">$504.29</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">NVDA</td><td class="r">$210</td><td class="r">$213.17</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">SNDK</td><td class="r">$935</td><td class="r">$1002.35</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">STRL</td><td class="r">$460</td><td class="r">$471.85</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">TTMI</td><td class="r">$120</td><td class="r">$137.59</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">VRT</td><td class="r">$302</td><td class="r">$305.03</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr><tr><td class="tk">WDC</td><td class="r">$375</td><td class="r">$390.99</td><td><span class="bu">&#8593; ABOVE MP</span></td></tr></tbody></table>
-<div style="margin-top:8px;font-size:11px;color:var(--sb)"><strong>11/16 above MP</strong> (MP pull is DOWN). Bullish names running ahead of options positioning.</div>
+<table class="pt"><thead><tr><th>TICK</th><th class="n">MP</th><th class="n">SPOT</th><th>DIR</th></tr></thead><tbody>
+<tr><td class="tk">AMD</td><td class="n">$310</td><td class="n">$354</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">AVGO</td><td class="n">$390</td><td class="n">$417</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">CLS</td><td class="n">$400</td><td class="n">$410</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">CIEN</td><td class="n">$485</td><td class="n">$528</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">COHR</td><td class="n">$320</td><td class="n">$320</td><td><span class="be">&darr; BELOW MP</span></td></tr><tr><td class="tk">DELL</td><td class="n">$202</td><td class="n">$209</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">FIX</td><td class="n">$1520</td><td class="n">$1843</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">LITE</td><td class="n">$850</td><td class="n">$902</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">MRVL</td><td class="n">$145</td><td class="n">$165</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">MU</td><td class="n">$480</td><td class="n">$517</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">NVDA</td><td class="n">$200</td><td class="n">$200</td><td><span class="be">&darr; BELOW MP</span></td></tr><tr><td class="tk">SNDK</td><td class="n">$975</td><td class="n">$1097</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">STRL</td><td class="n">$460</td><td class="n">$516</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">TTMI</td><td class="n">$130</td><td class="n">$158</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">VRT</td><td class="n">$302</td><td class="n">$328</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr><tr><td class="tk">WDC</td><td class="n">$382</td><td class="n">$435</td><td><span class="bu">&uarr; ABOVE MP</span></td></tr></tbody></table>
+<p style="margin-top:8px;font-size:12px;color:var(--sb)"><strong>14/16 above MP</strong> (MP pull is DOWN). Most names running ahead of options positioning.</p>
 </div>
 
 <div style="background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:14px 16px">
 <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:#a78bfa;margin-bottom:8px">IV RANK &mdash; 1Y PERCENTILE</div>
+<table class="pt"><thead><tr><th>TICK</th><th class="n">RANK</th><th class="n">IV</th><th>READ</th></tr></thead><tbody>
+<tr><td class="tk">COHR</td><td class="n" style="color:#ef4444">99%</td><td class="n">—</td><td><span style="color:#ef4444;font-size:11px">EXPENSIVE</span></td></tr><tr><td class="tk">TTMI</td><td class="n" style="color:#ef4444">98%</td><td class="n">—</td><td><span style="color:#ef4444;font-size:11px">EXPENSIVE</span></td></tr><tr><td class="tk">SNDK</td><td class="n" style="color:#ef4444">96%</td><td class="n">—</td><td><span style="color:#ef4444;font-size:11px">EXPENSIVE</span></td></tr><tr><td class="tk">WDC</td><td class="n" style="color:#ef4444">94%</td><td class="n">—</td><td><span style="color:#ef4444;font-size:11px">EXPENSIVE</span></td></tr><tr><td class="tk">LITE</td><td class="n" style="color:#ef4444">92%</td><td class="n">—</td><td><span style="color:#ef4444;font-size:11px">EXPENSIVE</span></td></tr><tr><td class="tk">AMD</td><td class="n" style="color:#ef4444">91%</td><td class="n">—</td><td><span style="color:#ef4444;font-size:11px">EXPENSIVE</span></td></tr><tr><td class="tk">CIEN</td><td class="n" style="color:#ef4444">78%</td><td class="n">—</td><td><span style="color:#ef4444;font-size:11px">EXPENSIVE</span></td></tr><tr><td class="tk">MU</td><td class="n" style="color:#ef4444">78%</td><td class="n">—</td><td><span style="color:#ef4444;font-size:11px">EXPENSIVE</span></td></tr><tr><td class="tk">CLS</td><td class="n" style="color:#ef4444">78%</td><td class="n">—</td><td><span style="color:#ef4444;font-size:11px">EXPENSIVE</span></td></tr><tr><td class="tk">STRL</td><td class="n" style="color:#f59e0b">74%</td><td class="n">—</td><td><span style="color:#f59e0b;font-size:11px">ELEVATED</span></td></tr></tbody></table>
+<p style="margin-top:8px;font-size:12px;color:var(--sb)">High = options expensive. Low = cheap.</p>
+</div></div>
+
+<div class="sh"><span class="snum" style="background:#06b6d4">6</span><span class="sl" style="color:#06b6d4">Unusual Whales &mdash; Institutional Flow</span></div>
+<div class="subsec">&#9656; Top flow alerts ranked by premium (directional read derived from bid/ask split, NBBO location, and fill direction)</div>
 <table class="pt">
-<thead><tr><th>Ticker</th><th class="r">IV Rank</th><th class="r">IV</th><th>Read</th></tr></thead>
+<thead><tr><th>TICK</th><th>TYPE</th><th>STRIKE</th><th>EXPIRY</th><th class="n">PREMIUM</th><th class="n">VOL/OI</th><th>FLOW INTERPRETATION</th></tr></thead>
 <tbody>
-<tr><td class="tk">TTMI</td><td class="r">97%</td><td class="r">95%</td><td><span class="be">EXPENSIVE</span></td></tr><tr><td class="tk">COHR</td><td class="r">96%</td><td class="r">100%</td><td><span class="be">EXPENSIVE</span></td></tr><tr><td class="tk">FIX</td><td class="r">93%</td><td class="r">74%</td><td><span class="be">EXPENSIVE</span></td></tr><tr><td class="tk">WDC</td><td class="r">92%</td><td class="r">88%</td><td><span class="be">EXPENSIVE</span></td></tr><tr><td class="tk">SNDK</td><td class="r">92%</td><td class="r">115%</td><td><span class="be">EXPENSIVE</span></td></tr><tr><td class="tk">LITE</td><td class="r">86%</td><td class="r">105%</td><td><span class="be">EXPENSIVE</span></td></tr><tr><td class="tk">STRL</td><td class="r">79%</td><td class="r">81%</td><td><span class="be">EXPENSIVE</span></td></tr><tr><td class="tk">AMD</td><td class="r">79%</td><td class="r">66%</td><td><span class="be">EXPENSIVE</span></td></tr><tr><td class="tk">MU</td><td class="r">78%</td><td class="r">76%</td><td><span class="be">EXPENSIVE</span></td></tr><tr><td class="tk">CLS</td><td class="r">76%</td><td class="r">84%</td><td><span class="be">EXPENSIVE</span></td></tr></tbody></table>
-<div style="margin-top:8px;font-size:11px;color:var(--sb)">High IV rank = options expensive. Low = cheap. Sell premium on EXPENSIVE, buy optionality on CHEAP.</div>
-</div>
-</div>
-<div class="sh"><span class="snum" style="background:#06b6d4">6</span><span class="sl" style="color:#06b6d4">Unusual Whales — Institutional Flow</span></div>
-<div class="bd">
-<div class="bd-t">▸ Top flow alerts (filtered to portfolio names where applicable)</div>
-<table class="pt"><thead><tr><th>Ticker</th><th>Type</th><th class="r">Strike</th><th>Expiry</th><th class="r">Premium</th><th>Flow Interpretation</th></tr></thead><tbody>
-<tr>
-<td class="tk">QQQ</td>
-<td>CALL</td>
-<td class="r">$665</td>
-<td>2026-04-29</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="wrap"><span class="be">↓ Bearish — CALL selling/unwinding</span></td>
-</tr>
-
-<tr>
-<td class="tk">SPY</td>
-<td>PUT</td>
-<td class="r">$712</td>
-<td>2026-04-29</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="wrap"><span class="hl">◆ Repeated PUT sweeps — watch</span></td>
-</tr>
-
-<tr>
-<td class="tk">SPY</td>
-<td>PUT</td>
-<td class="r">$710</td>
-<td>2026-04-29</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="wrap"><span class="be">↓ Bearish — aggressive PUT buying</span></td>
-</tr>
-
-<tr>
-<td class="tk">QQQ</td>
-<td>CALL</td>
-<td class="r">$658</td>
-<td>2026-05-05</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="wrap"><span class="hl">◆ Repeated CALL sweeps — watch</span></td>
-</tr>
-
-<tr>
-<td class="tk">SPY</td>
-<td>PUT</td>
-<td class="r">$676</td>
-<td>2026-06-18</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="wrap"><span class="hl">◆ Repeated PUT sweeps — watch</span></td>
-</tr>
-
-<tr>
-<td class="tk">SPY</td>
-<td>PUT</td>
-<td class="r">$676</td>
-<td>2026-05-15</td>
-<td class="r">$1408K</td>
-<td class="wrap"><span class="hl">◆ Repeated PUT sweeps — watch</span></td>
-</tr>
-
-<tr>
-<td class="tk">SPY</td>
-<td>PUT</td>
-<td class="r">$676</td>
-<td>2026-06-18</td>
-<td class="r">$2572K</td>
-<td class="wrap"><span class="be">↓ Bearish — aggressive PUT buying</span></td>
-</tr>
-
-<tr>
-<td class="tk">SPY</td>
-<td>PUT</td>
-<td class="r">$700</td>
-<td>2026-06-18</td>
-<td class="r">$1160K</td>
-<td class="wrap"><span class="be">↓ Bearish — aggressive PUT buying</span></td>
-</tr>
-</tbody></table></div>
-<div class="sh"><span class="snum" style="background:#a78bfa">7</span><span class="sl" style="color:#a78bfa">Portfolio — 16 Positions (Yesterday Close with RS vs SPY)</span></div>
+<tr><td class="tk">SPX</td><td>CALL</td><td>$7450</td><td>2026-12-18</td><td class="n">$8.17M</td><td class="n">—</td><td><span class="be">↓ Call premium sold (OTM harvest)</span></td></tr><tr><td class="tk">SPXW</td><td>CALL</td><td>$7300</td><td>2026-05-29</td><td class="n">$5.68M</td><td class="n">1.1×</td><td><span class="bu">↑ BULLISH — ATM call buying</span></td></tr><tr><td class="tk">SPX</td><td>PUT</td><td>$7245</td><td>2026-06-18</td><td class="n">$4.59M</td><td class="n">51.1×</td><td><span class="be">↓ BEARISH — ATM put buying</span></td></tr><tr><td class="tk">SPX</td><td>CALL</td><td>$7245</td><td>2026-06-18</td><td class="n">$4.51M</td><td class="n">5.8×</td><td><span class="be">↓ Call premium sold (OTM harvest)</span></td></tr><tr><td class="tk">SPXW</td><td>PUT</td><td>$6000</td><td>2026-07-31</td><td class="n">$2.06M</td><td class="n">0.2×</td><td><span class="bu">↑ BULLISH — OTM puts sold (premium harvest)</span></td></tr><tr><td class="tk">SPY</td><td>PUT</td><td>$704</td><td>2026-05-05</td><td class="n">$1.16M</td><td class="n">48.8×</td><td><span class="be">↓ BEARISH — ATM put buying</span></td></tr><tr><td class="tk">SPX</td><td>PUT</td><td>$7245</td><td>2026-06-18</td><td class="n">$1.14M</td><td class="n">61.3×</td><td><span class="be">↓ BEARISH — ATM put buying</span></td></tr><tr><td class="tk">SPX</td><td>CALL</td><td>$7245</td><td>2026-06-18</td><td class="n">$1.13M</td><td class="n">6.9×</td><td><span class="be">↓ Call premium sold (OTM harvest)</span></td></tr><tr><td class="tk">SPY</td><td>PUT</td><td>$704</td><td>2026-05-05</td><td class="n">$0.65M</td><td class="n">18.9×</td><td><span class="be">↓ BEARISH — ATM put buying</span></td></tr><tr><td class="tk">IWM</td><td>PUT</td><td>$264</td><td>2026-06-18</td><td class="n">$0.41M</td><td class="n">7.9×</td><td><span class="bu">↑ BULLISH — OTM puts sold (premium harvest)</span></td></tr><tr><td class="tk">SPY</td><td>CALL</td><td>$719</td><td>2026-05-08</td><td class="n">$0.38M</td><td class="n">11.4×</td><td><span class="be">↓ Call premium sold (OTM harvest)</span></td></tr><tr><td class="tk">SPXW</td><td>PUT</td><td>$7200</td><td>2026-05-08</td><td class="n">$0.36M</td><td class="n">5.3×</td><td><span class="be">↓ BEARISH — ATM put buying</span></td></tr></tbody></table><p style="margin-top:8px;font-size:12px;color:var(--sb)"><strong>How to read:</strong> ↑ = bullish for underlying, ↓ = bearish, ◆ = unclear/two-way. <strong>Vol/OI &gt; 1×</strong> = new positioning being built, not just churn on existing OI. Side detection uses bid/ask premium split first, then price vs NBBO, then fill direction (Ascending=buying, Descending=selling).</p>
+<div class="sh"><span class="snum" style="background:#a78bfa">7</span><span class="sl" style="color:#a78bfa">Portfolio &mdash; 16 Positions (Yesterday Close with RS vs SPY)</span></div>
 <table class="pt">
-<thead><tr><th>Ticker</th><th class="r">Shares</th><th class="r">Last</th><th class="r">Day %</th><th class="r">vs Sec</th><th class="r">Value</th><th class="r">5D %</th><th class="r">RS vs SPY 5D</th><th class="r">Vol</th><th>Smart $</th><th>Flags</th></tr></thead>
+<thead><tr><th>TICK</th><th class="n">SHARES</th><th class="n">LAST</th><th class="n">DAY %</th><th class="n">VS SEC</th><th class="n">VALUE</th><th class="n">5D %</th><th class="n">RS vs SPY 5D</th><th class="n">VOL</th><th>SMART $</th><th>FLAGS</th></tr></thead>
 <tbody>
-
 <tr>
-<td class="tk">AMD<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">AI Compute</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$323.21</td>
-<td class="r be">-3.41%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-0.44%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r bu">+13.61%</td>
-<td class="r bu">+12.53%</td>
-<td class="r">1.08×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span style="color:var(--sb)">0</span></td>
-<td><span class="flag-y flag">⚠ EPS 6d</span></td>
-</tr>
-
-<tr>
-<td class="tk">AVGO<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Custom ASIC</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$399.83</td>
-<td class="r be">-4.39%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-1.42%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r be">-0.58%</td>
-<td class="r be">-1.66%</td>
-<td class="r">1.14×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="be">−</span></td>
-<td></td>
-</tr>
-
-<tr>
-<td class="tk">CIEN<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Networking</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$473.69</td>
-<td class="r be">-6.45%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-3.48%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r be">-6.37%</td>
-<td class="r be">-7.45%</td>
-<td class="r">1.20×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="be" style="font-weight:700">−−</span></td>
-<td></td>
-</tr>
-
-<tr>
-<td class="tk">CLS<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Contract Mfg</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$361.71</td>
-<td class="r be">-14.33%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-11.36%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r be">-10.29%</td>
-<td class="r be">-11.38%</td>
-<td class="r">2.34×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="be" style="font-weight:700">−−</span></td>
-<td><span class="flag">2.3× VOL</span></td>
-</tr>
-
-<tr>
-<td class="tk">COHR<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Optical</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$303.97</td>
-<td class="r be">-5.46%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-2.49%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r be">-11.58%</td>
-<td class="r be">-12.66%</td>
-<td class="r">1.14×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="be">−</span></td>
-<td><span class="flag-y flag">⚠ EPS 7d</span></td>
-</tr>
-
-<tr>
-<td class="tk">DELL<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">AI Servers</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$205.93</td>
-<td class="r be">-4.65%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">XLK</span><br>-2.95%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r be">-3.03%</td>
-<td class="r be">-4.11%</td>
-<td class="r">0.66×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="be">−</span></td>
-<td></td>
-</tr>
-
-<tr>
-<td class="tk">FIX<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">DC HVAC</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$1719.58</td>
-<td class="r be">-4.15%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">XLI</span><br>-3.26%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r bu">+2.69%</td>
-<td class="r bu">+1.61%</td>
-<td class="r">0.99×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="bu" style="font-weight:700">++</span></td>
-<td></td>
-</tr>
-
-<tr>
-<td class="tk">LITE<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Optical</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$791.37</td>
-<td class="r be">-7.95%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-4.97%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r be">-5.44%</td>
-<td class="r be">-6.52%</td>
-<td class="r">0.97×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="be">−</span></td>
-<td><span class="flag-y flag">⚠ EPS 6d</span></td>
-</tr>
-
-<tr>
-<td class="tk">MRVL<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Custom Silicon</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$153.23</td>
-<td class="r be">-3.15%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-0.17%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r bu">+1.27%</td>
-<td class="r bu">+0.19%</td>
-<td class="r">0.86×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span style="color:var(--sb)">0</span></td>
-<td></td>
-</tr>
-
-<tr>
-<td class="tk">MU<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Memory/HBM</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$504.29</td>
-<td class="r be">-3.86%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-0.89%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r bu">+12.22%</td>
-<td class="r bu">+11.14%</td>
-<td class="r">1.03×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="bu" style="font-weight:700">++</span></td>
-<td></td>
-</tr>
-
-<tr>
-<td class="tk">NVDA<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Semis</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$213.17</td>
-<td class="r be">-1.59%</td>
-<td class="r bu" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>+1.38%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r bu">+6.65%</td>
-<td class="r bu">+5.57%</td>
-<td class="r">1.20×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="bu">+</span></td>
-<td></td>
-</tr>
-
-<tr>
-<td class="tk">SNDK<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Storage</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$1002.35</td>
-<td class="r be">-6.34%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-3.37%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r bu">+10.94%</td>
-<td class="r bu">+9.86%</td>
-<td class="r">0.89×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span style="color:var(--sb)">0</span></td>
-<td><span class="flag-y flag">⚠ EPS 1d</span></td>
-</tr>
-
-<tr>
-<td class="tk">STRL<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">DC Construction</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$471.85</td>
-<td class="r be">-6.65%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">XLI</span><br>-5.76%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r be">-0.21%</td>
-<td class="r be">-1.29%</td>
-<td class="r">0.94×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="be">−</span></td>
-<td><span class="flag-y flag">⚠ EPS 5d</span></td>
-</tr>
-
-<tr>
-<td class="tk">TTMI<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">PCB</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$137.59</td>
-<td class="r be">-4.56%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>-1.59%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r bu">+9.85%</td>
-<td class="r bu">+8.77%</td>
-<td class="r">1.66×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="bu" style="font-weight:700">++</span></td>
-<td><span class="flag-y flag">⚠ EPS 0d</span></td>
-</tr>
-
-<tr>
-<td class="tk">VRT<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">DC Cooling</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$305.03</td>
-<td class="r be">-5.40%</td>
-<td class="r be" style="font-size:11px"><span style="color:var(--sb);font-size:9px">XLI</span><br>-4.51%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r be">-2.37%</td>
-<td class="r be">-3.45%</td>
-<td class="r">1.48×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="bu">+</span></td>
-<td></td>
-</tr>
-
-<tr>
-<td class="tk">WDC<div style="font-size:10px;color:var(--sb);font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px">Storage</div></td>
-<td class="r"><span class="redact">***</span></td>
-<td class="r">$390.99</td>
-<td class="r be">-2.43%</td>
-<td class="r bu" style="font-size:11px"><span style="color:var(--sb);font-size:9px">SMH</span><br>+0.54%</td>
-<td class="r"><span class="redact">$***</span></td>
-<td class="r bu">+1.87%</td>
-<td class="r bu">+0.79%</td>
-<td class="r">1.04×</td>
-<td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:14px"><span class="be" style="font-weight:700">−−</span></td>
-<td><span class="flag-y flag">⚠ EPS 1d</span></td>
-</tr>
-
-<tr style="background:#0c4a6e22"><td colspan="5" style="font-weight:700">TOTAL PORTFOLIO</td>
-<td class="r" style="font-weight:700"><span class="redact">$***</span></td>
-<td class="r" style="font-weight:700" class="be">-4.69% day</td>
-<td colspan="4"></td>
-</tr>
-</tbody></table>
+<td class="tk">AMD<span class="tm">AI Compute</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$354.49</td>
+<td class="n" style="color:#22c55e">+5.16%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+3.73%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+16.10%</td>
+<td class="n" style="color:#22c55e">+16.10%</td>
+<td class="n">1.06×</td>
+<td style="text-align:center;font-size:14px"><span class="bu" style="font-weight:800">++</span></td>
+<td style="font-size:10px"><span class="wa">⚠ EPS 4d</span></td>
+</tr><tr>
+<td class="tk">AVGO<span class="tm">Custom ASIC</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$417.43</td>
+<td class="n" style="color:#22c55e">+2.95%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+1.53%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#ef4444">-0.60%</td>
+<td class="n" style="color:#ef4444">-0.60%</td>
+<td class="n">1.00×</td>
+<td style="text-align:center;font-size:14px"><span class="bu">+</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">CIEN<span class="tm">Networking</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$527.58</td>
+<td class="n" style="color:#22c55e">+10.98%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+9.55%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+2.27%</td>
+<td class="n" style="color:#22c55e">+2.27%</td>
+<td class="n">1.05×</td>
+<td style="text-align:center;font-size:14px"><span class="bu">+</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">CLS<span class="tm">Contract Mfg</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$409.59</td>
+<td class="n" style="color:#22c55e">+8.78%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+7.35%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+4.59%</td>
+<td class="n" style="color:#22c55e">+4.59%</td>
+<td class="n">1.35×</td>
+<td style="text-align:center;font-size:14px"><span style="color:#94a3b8">0</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">COHR<span class="tm">Optical</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$319.71</td>
+<td class="n" style="color:#22c55e">+4.85%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+3.42%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#ef4444">-5.32%</td>
+<td class="n" style="color:#ef4444">-5.32%</td>
+<td class="n">1.10×</td>
+<td style="text-align:center;font-size:14px"><span class="bu">+</span></td>
+<td style="font-size:10px"><span class="wa">⚠ EPS 5d</span></td>
+</tr><tr>
+<td class="tk">DELL<span class="tm">AI Servers</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$208.83</td>
+<td class="n" style="color:#22c55e">+1.54%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">XLK</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+1.30%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#ef4444">-1.50%</td>
+<td class="n" style="color:#ef4444">-1.50%</td>
+<td class="n">0.91×</td>
+<td style="text-align:center;font-size:14px"><span class="bu">+</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">FIX<span class="tm">DC HVAC</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$1843.07</td>
+<td class="n" style="color:#22c55e">+6.90%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">XLI</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+4.16%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+3.74%</td>
+<td class="n" style="color:#22c55e">+3.74%</td>
+<td class="n">1.45×</td>
+<td style="text-align:center;font-size:14px"><span class="bu">+</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">LITE<span class="tm">Optical</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$902.32</td>
+<td class="n" style="color:#22c55e">+5.13%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+3.70%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+6.55%</td>
+<td class="n" style="color:#22c55e">+6.55%</td>
+<td class="n">1.08×</td>
+<td style="text-align:center;font-size:14px"><span class="be">−</span></td>
+<td style="font-size:10px"><span class="wa">⚠ EPS 4d</span></td>
+</tr><tr>
+<td class="tk">MRVL<span class="tm">Custom Silicon</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$165.15</td>
+<td class="n" style="color:#22c55e">+5.48%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+4.05%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#ef4444">-0.25%</td>
+<td class="n" style="color:#ef4444">-0.25%</td>
+<td class="n">0.70×</td>
+<td style="text-align:center;font-size:14px"><span class="be">−</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">MU<span class="tm">Memory/HBM</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$517.16</td>
+<td class="n" style="color:#ef4444">-0.25%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#ef4444">-1.68%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+7.36%</td>
+<td class="n" style="color:#22c55e">+7.36%</td>
+<td class="n">0.92×</td>
+<td style="text-align:center;font-size:14px"><span class="bu" style="font-weight:800">++</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">NVDA<span class="tm">Semis</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$199.57</td>
+<td class="n" style="color:#ef4444">-4.63%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#ef4444">-6.06%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#ef4444">-0.04%</td>
+<td class="n" style="color:#ef4444">-0.04%</td>
+<td class="n">1.53×</td>
+<td style="text-align:center;font-size:14px"><span class="bu">+</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">SNDK<span class="tm">Storage</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$1096.51</td>
+<td class="n" style="color:#22c55e">+3.04%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+1.61%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+17.60%</td>
+<td class="n" style="color:#22c55e">+17.60%</td>
+<td class="n">1.00×</td>
+<td style="text-align:center;font-size:14px"><span class="bu" style="font-weight:800">++</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">STRL<span class="tm">DC Construction</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$515.62</td>
+<td class="n" style="color:#22c55e">+9.76%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">XLI</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+7.03%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+4.02%</td>
+<td class="n" style="color:#22c55e">+4.02%</td>
+<td class="n">1.16×</td>
+<td style="text-align:center;font-size:14px"><span style="color:#94a3b8">0</span></td>
+<td style="font-size:10px"><span class="wa">⚠ EPS 3d</span></td>
+</tr><tr>
+<td class="tk">TTMI<span class="tm">PCB</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$158.22</td>
+<td class="n" style="color:#22c55e">+15.07%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+13.64%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+18.98%</td>
+<td class="n" style="color:#22c55e">+18.98%</td>
+<td class="n">2.78×</td>
+<td style="text-align:center;font-size:14px"><span class="bu" style="font-weight:800">++</span></td>
+<td style="font-size:10px"><span class="wa">2.8× VOL</span></td>
+</tr><tr>
+<td class="tk">VRT<span class="tm">DC Cooling</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$328.49</td>
+<td class="n" style="color:#22c55e">+7.29%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">XLI</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+4.55%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+2.09%</td>
+<td class="n" style="color:#22c55e">+2.09%</td>
+<td class="n">1.14×</td>
+<td style="text-align:center;font-size:14px"><span style="color:#94a3b8">0</span></td>
+<td style="font-size:10px"></td>
+</tr><tr>
+<td class="tk">WDC<span class="tm">Storage</span></td>
+<td class="n"><span class="redact">***</span></td>
+<td class="n">$434.52</td>
+<td class="n" style="color:#22c55e">+5.27%</td>
+<td class="n"><span style="font-size:11px;color:#94a3b8">SMH</span><br><span style="font-family:'JetBrains Mono',monospace;color:#22c55e">+3.84%</span></td>
+<td class="n"><span class="redact">$***</span></td>
+<td class="n" style="color:#22c55e">+7.79%</td>
+<td class="n" style="color:#22c55e">+7.79%</td>
+<td class="n">1.66×</td>
+<td style="text-align:center;font-size:14px"><span class="bu">+</span></td>
+<td style="font-size:10px"></td>
+</tr><tr style="background:#0c4a6e22"><td colspan="5" style="font-weight:800">TOTAL PORTFOLIO</td>
+<td class="n" style="font-weight:800"><span class="redact">$***</span></td>
+<td colspan="2" style="text-align:right;font-weight:800;color:#22c55e">+2.92% day</td>
+<td colspan="3"></td>
+</tr></tbody></table>
 
 <div class="sh"><span class="snum" style="background:#38bdf8">8</span><span class="sl" style="color:#38bdf8">Dark Pool &mdash; Institutional Footprints</span></div>
 <table class="pt">
-<thead><tr><th>Ticker</th><th>Sector</th><th class="r">DP Premium</th><th class="r">DP Volume</th><th class="r">Prints</th><th class="r">Biggest</th><th>Direction</th></tr></thead>
+<thead><tr><th>TICK</th><th>SECTOR</th><th class="n">DP PREMIUM</th><th class="n">DP VOLUME</th><th class="n">PRINTS</th><th class="n">BIGGEST</th><th>DIRECTION</th></tr></thead>
 <tbody>
-<tr><td class="tk">NVDA</td><td style="font-size:11px;color:var(--sb)">Semis</td><td class="r"><strong>$1097.8M</strong></td><td class="r">5,150,459</td><td class="r">500</td><td class="r">$174.9M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">AVGO</td><td style="font-size:11px;color:var(--sb)">Custom ASIC</td><td class="r"><strong>$637.5M</strong></td><td class="r">1,594,251</td><td class="r">500</td><td class="r">$199.9M</td><td><span class="bu">ABOVE MID ↑</span></td></tr><tr><td class="tk">MRVL</td><td style="font-size:11px;color:var(--sb)">Custom Silicon</td><td class="r"><strong>$330.4M</strong></td><td class="r">2,127,133</td><td class="r">500</td><td class="r">$50.0M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">AMD</td><td style="font-size:11px;color:var(--sb)">AI Compute</td><td class="r"><strong>$327.5M</strong></td><td class="r">1,012,679</td><td class="r">500</td><td class="r">$37.2M</td><td><span class="be">AT BID ↓</span></td></tr><tr><td class="tk">WDC</td><td style="font-size:11px;color:var(--sb)">Storage</td><td class="r"><strong>$292.3M</strong></td><td class="r">737,601</td><td class="r">500</td><td class="r">$62.5M</td><td><span class="be">BELOW MID ↓</span></td></tr><tr><td class="tk">VRT</td><td style="font-size:11px;color:var(--sb)">DC Cooling</td><td class="r"><strong>$227.0M</strong></td><td class="r">737,689</td><td class="r">500</td><td class="r">$49.2M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">LITE</td><td style="font-size:11px;color:var(--sb)">Optical</td><td class="r"><strong>$174.1M</strong></td><td class="r">219,672</td><td class="r">500</td><td class="r">$22.7M</td><td><span class="be">AT BID ↓</span></td></tr><tr><td class="tk">CLS</td><td style="font-size:11px;color:var(--sb)">Contract Mfg</td><td class="r"><strong>$139.5M</strong></td><td class="r">389,338</td><td class="r">500</td><td class="r">$4.4M</td><td><span class="hl">MID</span></td></tr><tr><td class="tk">CIEN</td><td style="font-size:11px;color:var(--sb)">Networking</td><td class="r"><strong>$135.8M</strong></td><td class="r">287,856</td><td class="r">500</td><td class="r">$11.4M</td><td><span class="be">BELOW MID ↓</span></td></tr><tr><td class="tk">FIX</td><td style="font-size:11px;color:var(--sb)">DC HVAC</td><td class="r"><strong>$133.4M</strong></td><td class="r">77,739</td><td class="r">460</td><td class="r">$23.6M</td><td><span class="bu">ABOVE MID ↑</span></td></tr><tr><td class="tk">SNDK</td><td style="font-size:11px;color:var(--sb)">Storage</td><td class="r"><strong>$123.6M</strong></td><td class="r">118,866</td><td class="r">500</td><td class="r"><span class="redact">$***M</span></td><td><span class="be">AT BID ↓</span></td></tr><tr><td class="tk">COHR</td><td style="font-size:11px;color:var(--sb)">Optical</td><td class="r"><strong>$118.8M</strong></td><td class="r">396,759</td><td class="r">500</td><td class="r"><span class="redact">$***M</span></td><td><span class="bu">ABOVE MID ↑</span></td></tr><tr><td class="tk">MU</td><td style="font-size:11px;color:var(--sb)">Memory/HBM</td><td class="r"><strong>$114.2M</strong></td><td class="r">219,693</td><td class="r">500</td><td class="r">$2.0M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">DELL</td><td style="font-size:11px;color:var(--sb)">AI Servers</td><td class="r"><strong>$106.7M</strong></td><td class="r">518,229</td><td class="r">421</td><td class="r">$6.7M</td><td><span class="be">BELOW MID ↓</span></td></tr><tr><td class="tk">TTMI</td><td style="font-size:11px;color:var(--sb)">PCB</td><td class="r"><strong>$62.9M</strong></td><td class="r">462,211</td><td class="r">181</td><td class="r">$9.1M</td><td><span class="bu">ABOVE MID ↑</span></td></tr><tr><td class="tk">STRL</td><td style="font-size:11px;color:var(--sb)">DC Construction</td><td class="r"><strong>$19.2M</strong></td><td class="r">40,355</td><td class="r">75</td><td class="r">$1.4M</td><td><span class="be">BELOW MID ↓</span></td></tr></tbody></table><div class="bd"><div class="bd-t">&#9656; NOTABLE BLOCK PRINTS (top by premium)</div>
+<tr><td class="tk">AVGO</td><td style="font-size:11px;color:#94a3b8">Custom ASIC</td><td class="n"><strong>$677.2M</strong></td><td class="n">1,623,049</td><td class="n">500</td><td class="n">$62.3M</td><td><span class="bu">ABOVE MID ↑</span></td></tr><tr><td class="tk">NVDA</td><td style="font-size:11px;color:#94a3b8">Semis</td><td class="n"><strong>$601.9M</strong></td><td class="n">3,014,548</td><td class="n">500</td><td class="n">$184.0M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">AMD</td><td style="font-size:11px;color:#94a3b8">AI Compute</td><td class="n"><strong>$402.4M</strong></td><td class="n">1,135,822</td><td class="n">500</td><td class="n">$33.3M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">LITE</td><td style="font-size:11px;color:#94a3b8">Optical</td><td class="n"><strong>$362.6M</strong></td><td class="n">400,296</td><td class="n">500</td><td class="n">$56.3M</td><td><span class="be">BELOW MID ↓</span></td></tr><tr><td class="tk">MRVL</td><td style="font-size:11px;color:#94a3b8">Custom Silicon</td><td class="n"><strong>$284.0M</strong></td><td class="n">1,723,818</td><td class="n">500</td><td class="n">$32.0M</td><td><span class="">MID</span></td></tr><tr><td class="tk">WDC</td><td style="font-size:11px;color:#94a3b8">Storage</td><td class="n"><strong>$207.7M</strong></td><td class="n">493,244</td><td class="n">500</td><td class="n">$10.6M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">VRT</td><td style="font-size:11px;color:#94a3b8">DC Cooling</td><td class="n"><strong>$206.9M</strong></td><td class="n">631,230</td><td class="n">500</td><td class="n">$26.6M</td><td><span class="be">BELOW MID ↓</span></td></tr><tr><td class="tk">COHR</td><td style="font-size:11px;color:#94a3b8">Optical</td><td class="n"><strong>$197.0M</strong></td><td class="n">625,970</td><td class="n">500</td><td class="n">$14.0M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">CIEN</td><td style="font-size:11px;color:#94a3b8">Networking</td><td class="n"><strong>$190.1M</strong></td><td class="n">361,958</td><td class="n">500</td><td class="n">$18.5M</td><td><span class="bu">ABOVE MID ↑</span></td></tr><tr><td class="tk">DELL</td><td style="font-size:11px;color:#94a3b8">AI Servers</td><td class="n"><strong>$163.5M</strong></td><td class="n">792,422</td><td class="n">426</td><td class="n">$21.6M</td><td><span class="bu">ABOVE MID ↑</span></td></tr><tr><td class="tk">FIX</td><td style="font-size:11px;color:#94a3b8">DC HVAC</td><td class="n"><strong>$149.0M</strong></td><td class="n">81,153</td><td class="n">500</td><td class="n">$15.6M</td><td><span class="be">AT BID ↓</span></td></tr><tr><td class="tk">CLS</td><td style="font-size:11px;color:#94a3b8">Contract Mfg</td><td class="n"><strong>$145.4M</strong></td><td class="n">362,822</td><td class="n">500</td><td class="n">$24.4M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">MU</td><td style="font-size:11px;color:#94a3b8">Memory/HBM</td><td class="n"><strong>$134.9M</strong></td><td class="n">266,859</td><td class="n">500</td><td class="n">$3.4M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">SNDK</td><td style="font-size:11px;color:#94a3b8">Storage</td><td class="n"><strong>$117.5M</strong></td><td class="n">114,820</td><td class="n">500</td><td class="n">$4.0M</td><td><span class="bu">ABOVE MID ↑</span></td></tr><tr><td class="tk">TTMI</td><td style="font-size:11px;color:#94a3b8">PCB</td><td class="n"><strong>$103.5M</strong></td><td class="n">657,965</td><td class="n">292</td><td class="n">$21.1M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">STRL</td><td style="font-size:11px;color:#94a3b8">DC Construction</td><td class="n"><strong>$31.2M</strong></td><td class="n">61,109</td><td class="n">107</td><td class="n">$4.3M</td><td><span class="bu">AT ASK ↑</span></td></tr></tbody></table>
+<div class="subsec">&#9656; NOTABLE BLOCK PRINTS (top by premium)</div>
 <table class="pt">
-<thead><tr><th>Ticker</th><th class="r">Size</th><th class="r">Price</th><th class="r">Premium</th><th>Direction</th></tr></thead>
+<thead><tr><th>TICK</th><th class="n">SIZE</th><th class="n">PRICE</th><th class="n">PREMIUM</th><th>DIRECTION</th></tr></thead>
 <tbody>
-<tr><td class="tk">AVGO</td><td class="r">500,000</td><td class="r">$399.83</td><td class="r"><strong>$199.9M</strong></td><td><span class="bu">ABOVE MID &#8593;</span></td></tr><tr><td class="tk">NVDA</td><td class="r">820,677</td><td class="r">$213.17</td><td class="r"><strong>$174.9M</strong></td><td><span class="bu">AT ASK &#8593;</span></td></tr><tr><td class="tk">NVDA</td><td class="r">564,292</td><td class="r">$213.17</td><td class="r"><strong>$120.3M</strong></td><td><span class="be">AT BID &#8595;</span></td></tr><tr><td class="tk">NVDA</td><td class="r">498,000</td><td class="r">$213.17</td><td class="r"><strong>$106.2M</strong></td><td><span class="be">BELOW MID &#8595;</span></td></tr><tr><td class="tk">NVDA</td><td class="r">488,711</td><td class="r">$213.17</td><td class="r"><strong>$104.2M</strong></td><td><span class="be">AT BID &#8595;</span></td></tr><tr><td class="tk">AVGO</td><td class="r">174,073</td><td class="r">$399.83</td><td class="r"><strong>$69.6M</strong></td><td><span class="be">AT BID &#8595;</span></td></tr><tr><td class="tk">AVGO</td><td class="r">165,000</td><td class="r">$399.83</td><td class="r"><strong>$66.0M</strong></td><td><span class="bu">ABOVE MID &#8593;</span></td></tr><tr><td class="tk">WDC</td><td class="r">159,767</td><td class="r">$390.99</td><td class="r"><strong>$62.5M</strong></td><td><span class="be">BELOW MID &#8595;</span></td></tr><tr><td class="tk">NVDA</td><td class="r">292,546</td><td class="r">$213.17</td><td class="r"><strong>$62.4M</strong></td><td><span class="bu">AT ASK &#8593;</span></td></tr><tr><td class="tk">WDC</td><td class="r">134,000</td><td class="r">$390.99</td><td class="r"><strong>$52.4M</strong></td><td><span class="be">AT BID &#8595;</span></td></tr></tbody></table>
-<div style="margin-top:8px;font-size:11px;color:var(--sb)">AT ASK = aggressive buying. AT BID = aggressive selling. Direction labels inferred from trade price vs NBBO at print time.</div>
-</div>
-
-<div class="sh"><span class="snum" style="background:#a78bfa">●</span><span class="sl" style="color:#a78bfa">Congressional Trading — Recent Portfolio Activity</span></div>
+<tr><td class="tk">NVDA</td><td class="n">921,905</td><td class="n">$199.57</td><td class="n">$184.0M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">NVDA</td><td class="n">536,888</td><td class="n">$199.57</td><td class="n">$107.1M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">AVGO</td><td class="n">149,240</td><td class="n">$417.43</td><td class="n">$62.3M</td><td><span class="bu">ABOVE MID ↑</span></td></tr><tr><td class="tk">LITE</td><td class="n">62,395</td><td class="n">$902.32</td><td class="n">$56.3M</td><td><span class="be">BELOW MID ↓</span></td></tr><tr><td class="tk">AVGO</td><td class="n">130,513</td><td class="n">$417.43</td><td class="n">$54.5M</td><td><span class="be">AT BID ↓</span></td></tr><tr><td class="tk">AVGO</td><td class="n">109,155</td><td class="n">$417.43</td><td class="n">$45.6M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">NVDA</td><td class="n">170,776</td><td class="n">$199.57</td><td class="n">$34.1M</td><td><span class="be">AT BID ↓</span></td></tr><tr><td class="tk">AMD</td><td class="n">93,968</td><td class="n">$354.50</td><td class="n">$33.3M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">NVDA</td><td class="n">165,066</td><td class="n">$199.57</td><td class="n">$32.9M</td><td><span class="bu">AT ASK ↑</span></td></tr><tr><td class="tk">LITE</td><td class="n">36,483</td><td class="n">$902.32</td><td class="n">$32.9M</td><td><span class="bu">AT ASK ↑</span></td></tr></tbody></table><p style="margin-top:8px;font-size:12px;color:var(--sb)">AT ASK = aggressive buying. AT BID = aggressive selling.</p>
+<div class="sh"><span class="snum" style="background:#a78bfa">&#9679;</span><span class="sl" style="color:#a78bfa">Congressional Trading &mdash; Recent Portfolio Activity</span></div>
 <table class="pt">
-<thead><tr><th>Ticker</th><th>Reporter</th><th>Type</th><th>Amount</th><th>Trade Date</th><th>Reported</th></tr></thead>
+<thead><tr><th>TICK</th><th>REPORTER</th><th>TYPE</th><th>AMOUNT</th><th>TRADE DATE</th><th>REPORTED</th></tr></thead>
 <tbody>
-
-<tr>
-<td class="tk">MU</td>
-<td>Hon. Dwight Evans</td>
-<td class="be">Sell</td>
-<td>$15,001 - $50,000</td>
-<td>2026-03-24</td>
-<td>2026-04-21</td>
-</tr>
-
-<tr>
-<td class="tk">NVDA</td>
-<td>John Boozman</td>
-<td class="bu">Buy</td>
-<td>$1,001 - $15,000</td>
-<td>2026-03-19</td>
-<td>2026-04-14</td>
-</tr>
-
-<tr>
-<td class="tk">AVGO</td>
-<td>Arjun Mody</td>
-<td class="be">Sell</td>
-<td>$1,001 - $15,000</td>
-<td>2026-01-30</td>
-<td>2026-04-10</td>
-</tr>
-
-<tr>
-<td class="tk">NVDA</td>
-<td>Arjun Mody</td>
-<td class="be">Sell</td>
-<td>$15,001 - $50,000</td>
-<td>2026-01-30</td>
-<td>2026-04-10</td>
-</tr>
-
-<tr>
-<td class="tk">NVDA</td>
-<td>Arjun Mody</td>
-<td class="be">Sell</td>
-<td>$1,001 - $15,000</td>
-<td>2026-01-30</td>
-<td>2026-04-10</td>
-</tr>
-
-<tr>
-<td class="tk">AMD</td>
-<td>Hon. Gilbert Cisneros</td>
-<td class="be">Sell</td>
-<td>$1,001 - $15,000</td>
-<td>2026-03-13</td>
-<td>2026-04-08</td>
-</tr>
-
-<tr>
-<td class="tk">AVGO</td>
-<td>Hon. Gilbert Cisneros</td>
-<td class="be">Sell</td>
-<td>$1,001 - $15,000</td>
-<td>2026-03-25</td>
-<td>2026-04-08</td>
-</tr>
-
-<tr>
-<td class="tk">COHR</td>
-<td>Hon. Gilbert Cisneros</td>
-<td class="bu">Buy</td>
-<td>$1,001 - $15,000</td>
-<td>2026-03-25</td>
-<td>2026-04-08</td>
-</tr>
-
-<tr>
-<td class="tk">MU</td>
-<td>Hon. Gilbert Cisneros</td>
-<td class="bu">Buy</td>
-<td>$1,001 - $15,000</td>
-<td>2026-03-25</td>
-<td>2026-04-08</td>
-</tr>
-
-<tr>
-<td class="tk">NVDA</td>
-<td>Hon. Gilbert Cisneros</td>
-<td class="be">Sell</td>
-<td>$1,001 - $15,000</td>
-<td>2026-03-25</td>
-<td>2026-04-08</td>
-</tr>
-</tbody></table>
+<tr><td class="tk">NVDA</td><td style="font-size:11px">Hon. Tim Moore</td><td><span class="be">Sell</span></td><td style="font-size:11px">$15,001 - $50,000</td><td style="font-size:11px">2026-03-24</td><td style="font-size:11px">2026-04-29</td></tr><tr><td class="tk">MU</td><td style="font-size:11px">Hon. Dwight Evans</td><td><span class="be">Sell</span></td><td style="font-size:11px">$15,001 - $50,000</td><td style="font-size:11px">2026-03-24</td><td style="font-size:11px">2026-04-21</td></tr><tr><td class="tk">NVDA</td><td style="font-size:11px">John Boozman</td><td><span class="bu">Buy</span></td><td style="font-size:11px">$1,001 - $15,000</td><td style="font-size:11px">2026-03-19</td><td style="font-size:11px">2026-04-14</td></tr><tr><td class="tk">AVGO</td><td style="font-size:11px">Arjun Mody</td><td><span class="be">Sell</span></td><td style="font-size:11px">$1,001 - $15,000</td><td style="font-size:11px">2026-01-30</td><td style="font-size:11px">2026-04-10</td></tr><tr><td class="tk">NVDA</td><td style="font-size:11px">Arjun Mody</td><td><span class="be">Sell</span></td><td style="font-size:11px">$15,001 - $50,000</td><td style="font-size:11px">2026-01-30</td><td style="font-size:11px">2026-04-10</td></tr><tr><td class="tk">AMD</td><td style="font-size:11px">Hon. Gilbert Cisneros</td><td><span class="be">Sell</span></td><td style="font-size:11px">$1,001 - $15,000</td><td style="font-size:11px">2026-03-13</td><td style="font-size:11px">2026-04-08</td></tr><tr><td class="tk">AVGO</td><td style="font-size:11px">Hon. Gilbert Cisneros</td><td><span class="be">Sell</span></td><td style="font-size:11px">$1,001 - $15,000</td><td style="font-size:11px">2026-03-25</td><td style="font-size:11px">2026-04-08</td></tr><tr><td class="tk">COHR</td><td style="font-size:11px">Hon. Gilbert Cisneros</td><td><span class="bu">Buy</span></td><td style="font-size:11px">$1,001 - $15,000</td><td style="font-size:11px">2026-03-25</td><td style="font-size:11px">2026-04-08</td></tr><tr><td class="tk">MU</td><td style="font-size:11px">Hon. Gilbert Cisneros</td><td><span class="bu">Buy</span></td><td style="font-size:11px">$1,001 - $15,000</td><td style="font-size:11px">2026-03-25</td><td style="font-size:11px">2026-04-08</td></tr><tr><td class="tk">NVDA</td><td style="font-size:11px">Hon. Gilbert Cisneros</td><td><span class="be">Sell</span></td><td style="font-size:11px">$1,001 - $15,000</td><td style="font-size:11px">2026-03-25</td><td style="font-size:11px">2026-04-08</td></tr></tbody></table>
 <div class="sh"><span class="snum" style="background:#22c55e">&#9679;</span><span class="sl" style="color:#22c55e">Open Interest &mdash; Portfolio Positioning Shifts</span></div>
 <table class="pt">
-<thead><tr><th>Ticker</th><th>Contract</th><th class="r">OI Change</th><th class="r">Prev &rarr; Curr</th><th>Read</th></tr></thead>
+<thead><tr><th>TICK</th><th>CONTRACT</th><th class="n">OI CHANGE</th><th class="n">PREV &rarr; CURR</th><th>READ</th></tr></thead>
 <tbody>
-<tr><td class="tk">NVDA</td><td>CALL $210 2026-05-15</td><td class="r"><span class="bu">+40,161</span></td><td class="r" style="font-size:11px;color:var(--sb)">73,454 &rarr; 113,615</td><td><span class="bu">BULLISH</span></td></tr><tr><td class="tk">NVDA</td><td>CALL $220 2026-06-18</td><td class="r"><span class="bu">+7,956</span></td><td class="r" style="font-size:11px;color:var(--sb)">66,578 &rarr; 74,534</td><td><span class="bu">BULLISH</span></td></tr><tr><td class="tk">NVDA</td><td>CALL $212.5 2026-05-01</td><td class="r"><span class="bu">+5,671</span></td><td class="r" style="font-size:11px;color:var(--sb)">70,588 &rarr; 76,259</td><td><span class="bu">BULLISH</span></td></tr><tr><td class="tk">MU</td><td>PUT $450 2026-05-01</td><td class="r"><span class="bu">+3,280</span></td><td class="r" style="font-size:11px;color:var(--sb)">8,598 &rarr; 11,878</td><td><span class="wa">TAIL HEDGE</span></td></tr><tr><td class="tk">AMD</td><td>CALL $530 2026-05-15</td><td class="r"><span class="bu">+2,906</span></td><td class="r" style="font-size:11px;color:var(--sb)">11,889 &rarr; 14,795</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">CIEN</td><td>CALL $610 2026-05-01</td><td class="r"><span class="bu">+2,579</span></td><td class="r" style="font-size:11px;color:var(--sb)">10 &rarr; 2,589</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">MU</td><td>CALL $600 2026-05-01</td><td class="r"><span class="bu">+2,506</span></td><td class="r" style="font-size:11px;color:var(--sb)">7,591 &rarr; 10,097</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">AMD</td><td>PUT $180 2026-06-18</td><td class="r"><span class="bu">+2,395</span></td><td class="r" style="font-size:11px;color:var(--sb)">16,846 &rarr; 19,241</td><td><span class="wa">TAIL HEDGE</span></td></tr><tr><td class="tk">SNDK</td><td>PUT $800 2026-05-01</td><td class="r"><span class="bu">+1,955</span></td><td class="r" style="font-size:11px;color:var(--sb)">7,533 &rarr; 9,488</td><td><span class="wa">TAIL HEDGE</span></td></tr><tr><td class="tk">CLS</td><td>PUT $400 2026-05-01</td><td class="r"><span class="bu">+1,313</span></td><td class="r" style="font-size:11px;color:var(--sb)">409 &rarr; 1,722</td><td><span class="be">SPEC SHORT</span></td></tr><tr><td class="tk">MU</td><td>CALL $550 2026-05-15</td><td class="r"><span class="bu">+1,198</span></td><td class="r" style="font-size:11px;color:var(--sb)">8,980 &rarr; 10,178</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">LITE</td><td>PUT $800 2026-05-01</td><td class="r"><span class="bu">+1,186</span></td><td class="r" style="font-size:11px;color:var(--sb)">573 &rarr; 1,759</td><td><span class="wa">HEDGE</span></td></tr></tbody></table>
-<div style="margin-top:8px;font-size:11px;color:var(--sb)">Reads derived from strike position vs spot and option type. OTM calls = bullish speculation. ATM puts = hedging. ITM puts = directional bearish bet. Contract volume != OI; OI change shows positioning build-up or unwind.</div>
-
-<div class="sh"><span class="snum" style="background:#f59e0b">9</span><span class="sl" style="color:#f59e0b">Earnings Calendar — Portfolio + Read-Throughs</span></div>
+<tr><td class="tk">NVDA</td><td style="font-size:11px">CALL $220 2026-05-01</td><td class="n" style="color:#22c55e">+21,295</td><td class="n" style="font-size:10px;color:#64748b">84,704→105,999</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">NVDA</td><td style="font-size:11px">CALL $217.5 2026-05-01</td><td class="n" style="color:#22c55e">+10,644</td><td class="n" style="font-size:10px;color:#64748b">57,809→68,453</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">NVDA</td><td style="font-size:11px">CALL $212.5 2026-05-01</td><td class="n" style="color:#22c55e">+7,586</td><td class="n" style="font-size:10px;color:#64748b">76,922→84,508</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">MU</td><td style="font-size:11px">PUT $400 2026-06-18</td><td class="n" style="color:#22c55e">+5,322</td><td class="n" style="font-size:10px;color:#64748b">8,760→14,082</td><td><span class="wa">TAIL HEDGE</span></td></tr><tr><td class="tk">AVGO</td><td style="font-size:11px">CALL $450 2026-05-01</td><td class="n" style="color:#22c55e">+4,022</td><td class="n" style="font-size:10px;color:#64748b">5,028→9,050</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">MRVL</td><td style="font-size:11px">CALL $180 2026-06-18</td><td class="n" style="color:#22c55e">+3,171</td><td class="n" style="font-size:10px;color:#64748b">24,998→28,169</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">SNDK</td><td style="font-size:11px">PUT $500 2026-05-01</td><td class="n" style="color:#22c55e">+2,707</td><td class="n" style="font-size:10px;color:#64748b">2,591→5,298</td><td><span class="wa">TAIL HEDGE</span></td></tr><tr><td class="tk">MU</td><td style="font-size:11px">CALL $700 2027-01-15</td><td class="n" style="color:#22c55e">+2,555</td><td class="n" style="font-size:10px;color:#64748b">6,259→8,814</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">DELL</td><td style="font-size:11px">PUT $185 2026-05-15</td><td class="n" style="color:#22c55e">+2,102</td><td class="n" style="font-size:10px;color:#64748b">4,136→6,238</td><td><span class="wa">TAIL HEDGE</span></td></tr><tr><td class="tk">MRVL</td><td style="font-size:11px">PUT $100 2026-06-18</td><td class="n" style="color:#22c55e">+1,978</td><td class="n" style="font-size:10px;color:#64748b">9,636→11,614</td><td><span class="wa">TAIL HEDGE</span></td></tr><tr><td class="tk">AVGO</td><td style="font-size:11px">CALL $500 2026-05-15</td><td class="n" style="color:#22c55e">+1,791</td><td class="n" style="font-size:10px;color:#64748b">12,674→14,465</td><td><span class="bu">SPEC LONG</span></td></tr><tr><td class="tk">AMD</td><td style="font-size:11px">PUT $200 2026-05-15</td><td class="n" style="color:#22c55e">+1,590</td><td class="n" style="font-size:10px;color:#64748b">20,164→21,754</td><td><span class="wa">TAIL HEDGE</span></td></tr></tbody></table><p style="margin-top:8px;font-size:12px;color:var(--sb)">Reads derived from strike position vs spot and option type. OTM calls = bullish speculation. ATM puts = hedging.</p>
+<div class="sh"><span class="snum" style="background:#f59e0b">9</span><span class="sl" style="color:#f59e0b">Earnings Calendar &mdash; Portfolio + Read-Throughs</span></div>
 <table class="pt">
-<thead><tr><th>Ticker</th><th>Date</th><th class="r">Days</th><th class="r">EPS Est</th><th>Status</th><th>Read-Through</th></tr></thead>
+<thead><tr><th>TICK</th><th>DATE</th><th class="n">DAYS</th><th class="n">EPS EST</th><th>STATUS</th><th>READ-THROUGH</th></tr></thead>
 <tbody>
+<tr><td class="tk">STRL</td><td>2026-05-04</td><td class="n">3</td><td class="n">$2.29</td><td><span class="hl">THIS WEEK</span></td><td style="font-size:11px;max-width:380px;white-space:normal">May 4. Construction print may swing FIX nearby. Exiting May 6 regardless.</td></tr><tr><td class="tk">AMD</td><td>2026-05-05</td><td class="n">4</td><td class="n">$1.30</td><td><span class="hl">THIS WEEK</span></td><td style="font-size:11px;max-width:380px;white-space:normal">May 5. Holding through. Datacenter GPU traction vs NVDA narrative critical.</td></tr><tr><td class="tk">LITE</td><td>2026-05-05</td><td class="n">4</td><td class="n">$2.24</td><td><span class="hl">THIS WEEK</span></td><td style="font-size:11px;max-width:380px;white-space:normal">May 5. Holding through. Optical group together with COHR/CIEN — read-through to entire group.</td></tr><tr><td class="tk">COHR</td><td>2026-05-06</td><td class="n">5</td><td class="n">$1.41</td><td><span class="hl">THIS WEEK</span></td><td style="font-size:11px;max-width:380px;white-space:normal">May 7 — DAY AFTER our rebalance. Defer COHR adjustment to May 8 to avoid blackout.</td></tr></tbody></table>
+<div class="sh" style="margin-top:24px"><span class="snum" style="background:#0d9488">&#9733;</span><span class="sl" style="color:#0d9488">Bottom Line &mdash; Pre-Market Read</span></div>
+<div class="bl">
+<p><strong style="color:#22c55e">Portfolio status: <span class="redact">$***</span> (Thursday close, <span class="redact">+$***</span> from Wednesday).</strong> Theme-RS GREEN, 100% AI infrastructure deployment. Geopolitical overlay MODERATE (oil $107+ sustained, peace talks dead). Smart money strongly bullish on memory: <span class="bu">MU +3, AMD +2, SNDK +2, TTMI +2 BULLISH</span>; only LITE and MRVL lean bearish. Constructive setup into May 6 rebalance (4 trading days).</p>
 
-<tr>
-<td class="tk">TTMI</td>
-<td>2026-04-29</td>
-<td class="r">0</td>
-<td class="r">$0.66</td>
-<td><span class="flag flag-y">TODAY</span></td>
-<td class="wrap">Apr 29. Exiting May 6 regardless. Print itself less critical to position decision.</td>
-</tr>
+<p>The catalyst week verdict: <strong style="color:#06b6d4">AI capex thesis is intact and accelerating</strong>. Combined Mag 7 capex now ~$650B for 2026. GOOGL Cloud +63% YoY validation, MSFT capacity-constrained through 2026, AAPL flagging higher memory costs ahead — all direct positives for the portfolio. April closed as best month for SPX since 2020. Memory names led Thursday's rally after SNDK/WDC reports. AAPL after-hours weakness (-1.1%) is slight headline risk for the open but the substance was bullish for memory positions.</p>
 
-<tr>
-<td class="tk">MSFT</td>
-<td>2026-04-29</td>
-<td class="r">0</td>
-<td class="r">$4.07</td>
-<td><span class="flag flag-y">TODAY</span></td>
-<td class="wrap">Apr 29. Azure growth + AI capex run rate. Most important single print of next 2 weeks for our portfolio.</td>
-</tr>
-
-<tr>
-<td class="tk">GOOGL</td>
-<td>2026-04-29</td>
-<td class="r">0</td>
-<td class="r">$2.64</td>
-<td><span class="flag flag-y">TODAY</span></td>
-<td class="wrap">Apr 29. CRITICAL READ-THROUGH for AI infra. Capex guidance commentary moves entire group (NVDA, AVGO, MRVL, CIEN).</td>
-</tr>
-
-<tr>
-<td class="tk">META</td>
-<td>2026-04-29</td>
-<td class="r">0</td>
-<td class="r">$6.71</td>
-<td><span class="flag flag-y">TODAY</span></td>
-<td class="wrap">Apr 29. Same as GOOGL — capex commentary is the catalyst, not the EPS print.</td>
-</tr>
-
-<tr>
-<td class="tk">AMZN</td>
-<td>2026-04-29</td>
-<td class="r">0</td>
-<td class="r">$1.60</td>
-<td><span class="flag flag-y">TODAY</span></td>
-<td class="wrap">—</td>
-</tr>
-
-<tr>
-<td class="tk">QCOM</td>
-<td>2026-04-29</td>
-<td class="r">0</td>
-<td class="r">$2.57</td>
-<td><span class="flag flag-y">TODAY</span></td>
-<td class="wrap">—</td>
-</tr>
-
-<tr>
-<td class="tk">SNDK</td>
-<td>2026-04-30</td>
-<td class="r">1</td>
-<td class="r">$14.54</td>
-<td><span class="flag" style="background:#7f1d1d44;color:var(--rd)">TOMORROW</span></td>
-<td class="wrap">Apr 30. Memory cycle confirmation. Beat = bullish MU + WDC.</td>
-</tr>
-
-<tr>
-<td class="tk">WDC</td>
-<td>2026-04-30</td>
-<td class="r">1</td>
-<td class="r">$2.41</td>
-<td><span class="flag" style="background:#7f1d1d44;color:var(--rd)">TOMORROW</span></td>
-<td class="wrap">Apr 30. Holding through. Storage demand commentary affects entire data center thesis.</td>
-</tr>
-
-<tr>
-<td class="tk">AAPL</td>
-<td>2026-04-30</td>
-<td class="r">1</td>
-<td class="r">$1.92</td>
-<td><span class="flag" style="background:#7f1d1d44;color:var(--rd)">TOMORROW</span></td>
-<td class="wrap">—</td>
-</tr>
-
-<tr>
-<td class="tk">STRL</td>
-<td>2026-05-04</td>
-<td class="r">5</td>
-<td class="r">$2.29</td>
-<td><span class="flag flag-y">THIS WEEK</span></td>
-<td class="wrap">May 4. Exiting May 6 regardless. Construction print may swing FIX nearby.</td>
-</tr>
-
-<tr>
-<td class="tk">AMD</td>
-<td>2026-05-05</td>
-<td class="r">6</td>
-<td class="r">$1.30</td>
-<td><span class="flag flag-y">THIS WEEK</span></td>
-<td class="wrap">May 5. Holding through. Datacenter GPU traction vs NVDA narrative critical.</td>
-</tr>
-
-<tr>
-<td class="tk">LITE</td>
-<td>2026-05-05</td>
-<td class="r">6</td>
-<td class="r">$2.24</td>
-<td><span class="flag flag-y">THIS WEEK</span></td>
-<td class="wrap">May 5. Holding through. Optical group together with COHR/CIEN — read-through to entire group.</td>
-</tr>
-
-<tr>
-<td class="tk">COHR</td>
-<td>2026-05-06</td>
-<td class="r">7</td>
-<td class="r">$1.41</td>
-<td><span class="flag flag-y">THIS WEEK</span></td>
-<td class="wrap">May 7 — DAY AFTER our rebalance. Defer COHR adjustment to May 8 to avoid blackout.</td>
-</tr>
-</tbody></table>
-<div class="bot">
-<div class="bot-t">&#9733; BOTTOM LINE &mdash; PRE-MARKET READ</div>
-
-<p><strong style="color:var(--gn)">Portfolio status: <span class="redact">$***</span> (Tuesday close, down ~3.4% from Friday ATH).</strong> Theme-RS GREEN, 100% AI infrastructure deployment. Geopolitical overlay <span class="be">ELEVATED</span> (oil broke $100, Brent $111). Tuesday's session erased ~<span class="redact">$***</span> on profit-taking ahead of FOMC + earnings. CLS -14.3% on 2.34&times; volume was the standout decline. Smart Money signals have shifted bearish on CLS/CIEN/WDC; only FIX, MU, TTMI showing bullish institutional positioning.</p>
-
-<p>Today is THE day this entire week was about. The market is positioning for a marathon: FOMC at 2pm (100% hold expected, Powell&#39;s last as chair, Warsh confirmation vote same day), Powell presser 2:30pm, then 4pm earnings cluster from MSFT/GOOGL/META/AMZN/QCOM plus your TTMI. Options markets are pricing massive moves: MSFT 7%, META historical 6-9%. The setup is fragile because (a) chip names are extreme overbought (SOX RSI &gt;85, 18 straight up sessions), (b) Mag 7 names like META are up 26.5% MoM going in, (c) the WSJ&#39;s OpenAI weakness story already shook AI sentiment Tuesday, and (d) capex commentary (not EPS beats) is what drives the AI-infra thesis. A meaningful capex disappointment from MSFT or GOOGL would re-rate NVDA/AVGO/MRVL/CIEN/COHR/LITE all lower. A capex confirmation extends the runway 2-4 quarters.</p>
-
-<p><strong style="color:#f59e0b">Risks for today (and tonight):</strong></p>
-<ul style="list-style:none;padding:0;margin:8px 0 12px">
-<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">&#9656; <strong>Hyperscaler capex commentary is the binary.</strong> MSFT $110B, GOOGL $175-185B, META $60-65B watched. A guidance INCREASE without revenue offset triggers selling (saw this with GOOGL Feb -6%). A guidance HOLD or modest increase with strong cloud growth = bullish for our chips. A guidance CUT (very unlikely) = thesis-breaking. The OpenAI weakness story Tuesday primed the market to fear softness.</li>
-<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">&#9656; <strong>TTMI reports tonight</strong> ($0.66 EPS est, IV rank 96%). Small position so impact is limited, but a strong print + good guide validates the small-cap chip rally. A miss on flat guide = early signal that chips are topping.</li>
-<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">&#9656; <strong>WDC + SNDK tomorrow morning</strong> (BMO). Both on May 6 trim list. SNDK $14.54 EPS est, IV rank 92%. WDC $2.41 EPS, IV rank 92%. Memory cycle thesis being tested. Big disappointment here would change the May 6 execution priority order.</li>
-<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">&#9656; <strong>Oil $99-105 zone is now critical.</strong> WTI broke $100 intraday Tuesday for first time, Brent already $111. A close above $102 sustained = stagflation fears return, knocks rate-sensitive names. Gas at $4.18/gal already affecting consumer.</li>
-<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">&#9656; <strong>Powell presser 2:30pm.</strong> With oil $100+ and chips melting up, Fed has cover to be hawkish. Any mention of rate hikes (currently 8% odds 2026) re-rates everything lower. Any dovish surprise re-ignites risk-on into Mag 7 prints.</li>
-<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">&#9656; <strong>Smart money has shifted bearish on 5 portfolio names</strong> ahead of prints: CLS, CIEN, WDC convergent BEARISH (-2). AVGO, COHR, DELL, LITE, STRL lean bearish. This is a real signal &mdash; institutions positioning for downside, not chasing the rally.</li>
+<p style="color:#f59e0b;font-weight:600;margin-top:12px">Risks heading into next week:</p>
+<ul style="list-style:none;padding:0;margin:6px 0">
+<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">▸ <strong>SOX historically extreme overbought.</strong> 18-19 straight up sessions, RSI 85 (highest in 20+ years). Even 5% chip pullback = <span class="redact">~$***</span> off portfolio.</li>
+<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">▸ <strong>Rate cut path is gone.</strong> June cut odds 3%, full-year cut 8%, hike odds 8% (from 0%). Bad for rate-sensitive AI-infra names.</li>
+<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">▸ <strong>AMD reports Tuesday May 5.</strong> Big position, 1M return +72%, IV elevated. Beat = May 6 rebalance feels great. Miss = sentiment hit day before rebalance.</li>
+<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">▸ <strong>LITE reports Tuesday May 5.</strong> Smart money is the only LEAN BEARISH read in the portfolio.</li>
+<li style="padding:4px 0 4px 18px;position:relative;font-size:14px">▸ <strong>Oil $107+ sustained.</strong> If Iran re-escalates, oil $130+ realistic. That would break the rally.</li>
 </ul>
 
-<p><strong style="color:var(--ac)">Setup for today:</strong> Hold all 16 positions. No pre-FOMC trades. Watch for: (1) intraday volatility ahead of 2pm Fed, (2) Powell tone &mdash; hawkish kills risk-on into earnings, dovish ignites it, (3) earnings prints from MSFT/GOOGL/META/AMZN at 4pm, with calls starting 5pm. Pre-drafted reaction framework: <span class="bu">Scenario A (bullish capex):</span> Hold through May 6, execute rebalance as written. <span class="be">Scenario B (cautious capex/miss):</span> Re-evaluate sizing on chip names; consider accelerating exits from CLS, CIEN, WDC, LITE per the v5 list before May 6 if liquidity permits. May 6 rebalance plan: INTC at <span class="redact">**% cap</span> stays.</p>
+<p style="margin-top:12px"><strong style="color:#06b6d4">Setup for today and next week:</strong> Hold all 16 positions. Today is light — only ISM Manufacturing 10am, no portfolio earnings. Use today to finalize May 6 rebalance execution mechanics. <strong>Next week:</strong> Mon = STRL earnings + Factory Orders; Tue = AMD + LITE earnings + ISM Services + JOLTS; Wed = May 6 REBALANCE DAY (execute INTC at <span class="redact">**% cap</span>, 7 exits per v5 engine).</p>
 
-<p><strong>Action items today:</strong> (1) <span class="hl">Live-watch FOMC 2pm + Powell presser 2:30pm.</span> Listen for: rate-hike risk language, inflation tone, dot-plot commentary. (2) <span class="hl">Live-watch 4pm earnings cluster.</span> MSFT capex first read &mdash; that's the AI-infra signal. GOOGL capex pace second. META capex third. (3) Listen to TTMI call for small-cap chip read-through. (4) Tomorrow morning: WDC + SNDK reactions plus Q1 GDP + Core PCE 8:30am will determine if you accelerate any May 6 exits. (5) No execution today &mdash; observation and reaction framework only.</p>
+<p><strong>Action items today:</strong> (1) Watch any AAPL follow-through on memory cost commentary in pre-market chips. (2) ISM Manufacturing 10am — hot input prices = stagflation signal. (3) Review May 6 execution checklist this weekend. (4) No execution today — observation only.</p>
 </div>
 
-<div class="fp">
-Ghost Analyst Pre-Market Intelligence &middot; Generated 09:26 AM ET &middot; Data: Polygon, FMP, Tiingo, FRED, Unusual Whales<br>
+<div class="ft">
+Ghost Analyst Pre-Market Intelligence &middot; Generated 02:14 PM ET &middot; Data: Polygon, FMP, Tiingo, FRED, Unusual Whales<br>
 Live data verified for: indices, sectors, all 16 portfolio positions, earnings calendar, dark pool, congressional trading, OI changes, max pain, IV rank<br>
 Geopolitical &amp; macro context verified via web search; BLS/Census economic release dates confirmed via official .gov schedules<br>
 This briefing is for personal use only. Not investment advice.
 </div>
 
-</div>
-</body>
-</html>
+</div></body></html>
