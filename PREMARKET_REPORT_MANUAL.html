@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ghost Analyst — Pre-Market Report: Operating Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--c:#1e293b;--c2:#172033;--bd:#334155;--tx:#e2e8f0;--sb:#94a3b8;--ac:#06b6d4;--gn:#22c55e;--rd:#ef4444;--or:#f59e0b;--pp:#a78bfa;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;line-height:1.6;padding:40px 20px;
+  background-image:radial-gradient(circle at 12% 0%,#06b6d40f,transparent 42%),radial-gradient(circle at 88% 12%,#a78bfa0d,transparent 40%);}
+.wrap{max-width:980px;margin:0 auto}
+.mono{font-family:'JetBrains Mono',monospace}
+/* ---- header ---- */
+header{border-bottom:2px solid var(--ac);padding-bottom:26px;margin-bottom:36px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:4px;color:var(--ac);text-transform:uppercase}
+h1{font-size:42px;font-weight:800;letter-spacing:-1.5px;margin:10px 0 6px;line-height:1.05}
+.lede{color:var(--sb);font-size:16px;max-width:680px}
+/* ---- TOC ---- */
+.toc{background:var(--c);border:1px solid var(--bd);border-radius:14px;padding:24px 28px;margin-bottom:40px}
+.toc h2{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ac);text-transform:uppercase;margin-bottom:16px}
+.toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:1fr 1fr;gap:8px 28px}
+.toc li{counter-increment:toc;font-size:14.5px;padding:5px 0;border-bottom:1px solid var(--c2)}
+.toc li::before{content:counter(toc,decimal-leading-zero);font-family:'JetBrains Mono',monospace;color:var(--ac);font-size:12px;margin-right:10px}
+.toc a{color:var(--tx);text-decoration:none}.toc a:hover{color:var(--ac)}
+/* ---- section structure ---- */
+.part{margin:54px 0 28px}
+.part-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;color:var(--ac);text-transform:uppercase}
+.part h2{font-size:30px;font-weight:800;letter-spacing:-0.5px;margin:4px 0 0;border-bottom:1px solid var(--bd);padding-bottom:14px}
+h3{font-size:20px;font-weight:700;margin:34px 0 12px;color:#f8fafc}
+h4{font-size:15px;font-weight:700;margin:20px 0 8px;color:var(--ac);font-family:'JetBrains Mono',monospace;letter-spacing:.5px}
+p{margin-bottom:14px;font-size:15px}
+.lead-num{font-family:'JetBrains Mono',monospace;color:var(--ac);font-weight:700}
+strong{color:#f8fafc}
+em{color:var(--ac);font-style:normal;font-weight:600}
+a{color:var(--ac)}
+ul,ol{margin:0 0 16px 22px}li{margin-bottom:7px;font-size:14.5px}
+/* ---- cards & callouts ---- */
+.card{background:var(--c);border:1px solid var(--bd);border-radius:12px;padding:22px 24px;margin:18px 0}
+.callout{border-left:4px solid var(--ac);background:var(--c2);border-radius:8px;padding:14px 18px;margin:16px 0;font-size:14px}
+.callout.warn{border-left-color:var(--or)}
+.callout.danger{border-left-color:var(--rd)}
+.callout.ok{border-left-color:var(--gn)}
+.callout .ct{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;color:var(--ac)}
+.callout.warn .ct{color:var(--or)}.callout.danger .ct{color:var(--rd)}.callout.ok .ct{color:var(--gn)}
+/* ---- mock report fragment (visual aid) ---- */
+.mock{background:#0b1322;border:1px solid var(--bd);border-radius:10px;padding:18px;margin:14px 0;position:relative;font-size:13px}
+.mock-label{position:absolute;top:-9px;left:14px;background:var(--ac);color:#04222a;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:1px;padding:2px 8px;border-radius:4px;text-transform:uppercase}
+.m-sh{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.m-num{width:22px;height:22px;border-radius:5px;background:var(--ac);color:#04222a;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;font-family:'JetBrains Mono',monospace}
+.m-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ac);font-weight:700}
+table.m{width:100%;border-collapse:collapse;font-size:12px}
+table.m th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--sb);padding:0 8px 7px 0;border-bottom:1px solid var(--bd)}
+table.m th.r,table.m td.r{text-align:right}
+table.m td{padding:7px 8px 7px 0;border-bottom:1px solid var(--c2);font-family:'JetBrains Mono',monospace}
+table.m td.lbl{font-weight:700}
+.g{color:var(--gn)}.r-{color:var(--rd)}.o{color:var(--or)}.d{color:var(--sb)}.p{color:var(--pp)}.a{color:var(--ac)}
+/* annotation arrows */
+.annot{display:grid;grid-template-columns:auto 1fr;gap:12px;margin-top:14px;align-items:start}
+.annot .pin{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:#04222a;background:var(--or);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.annot .txt{font-size:13.5px;color:var(--tx)}
+.annot .txt b{color:var(--or)}
+/* legend chips */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:5px 11px;border-radius:7px;border:1px solid var(--bd);display:flex;align-items:center;gap:7px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+/* flow / decision tree */
+.flow{display:flex;flex-direction:column;gap:0;margin:18px 0}
+.fstep{display:flex;gap:14px;align-items:flex-start;position:relative;padding-bottom:18px}
+.fstep:not(:last-child)::before{content:'';position:absolute;left:15px;top:32px;bottom:-2px;width:2px;background:var(--bd)}
+.fbadge{width:32px;height:32px;border-radius:8px;background:var(--c);border:1px solid var(--ac);color:var(--ac);font-family:'JetBrains Mono',monospace;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;font-size:13px}
+.fbody{padding-top:4px}.fbody b{color:#f8fafc}
+.fbody .ft{font-size:15px;font-weight:700;color:#f8fafc;margin-bottom:2px}
+.fbody .fd{font-size:13.5px;color:var(--sb)}
+/* decision branches */
+.branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.branch .b{border:1px solid var(--bd);border-radius:10px;padding:14px 16px;background:var(--c)}
+.branch .b.yes{border-color:var(--gn)}.branch .b.no{border-color:var(--rd)}
+.branch .bh{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:7px}
+.branch .b.yes .bh{color:var(--gn)}.branch .b.no .bh{color:var(--rd)}
+.branch .b p{font-size:13px;margin:0}
+/* glossary */
+.gloss{border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin:16px 0}
+.gloss .row{display:grid;grid-template-columns:160px 1fr;gap:0;border-bottom:1px solid var(--bd)}
+.gloss .row:last-child{border-bottom:0}
+.gloss .term{background:var(--c2);padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;color:var(--ac);border-right:1px solid var(--bd)}
+.gloss .def{padding:14px 16px;font-size:13.5px}
+.gloss .def b{color:#f8fafc}
+/* number-line diagram */
+.gexline{background:#0b1322;border:1px solid var(--bd);border-radius:10px;padding:30px 28px 44px;margin:16px 0;position:relative}
+.gl-track{position:relative;height:6px;background:var(--bd);border-radius:3px;margin:26px 30px}
+.gl-band{position:absolute;top:0;height:6px;background:linear-gradient(90deg,#22c55e44,#22c55e22);border-radius:3px}
+.gl-mark{position:absolute;top:-9px;width:2px;height:24px}
+.gl-lab{position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;white-space:nowrap;transform:translateX(-50%);background:#0b1322;padding:0 4px}
+.gl-dot{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--ac);border:2px solid #f8fafc;top:-4px;transform:translateX(-50%)}
+.tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;letter-spacing:.5px}
+.tag.gn{background:#22c55e22;color:var(--gn);border:1px solid #22c55e55}
+.tag.rd{background:#ef444422;color:var(--rd);border:1px solid #ef444455}
+.tag.or{background:#f59e0b22;color:var(--or);border:1px solid #f59e0b55}
+.tag.ac{background:#06b6d422;color:var(--ac);border:1px solid #06b6d455}
+.tag.pp{background:#a78bfa22;color:var(--pp);border:1px solid #a78bfa55}
+.divider{height:1px;background:var(--bd);margin:40px 0}
+footer{margin-top:60px;padding-top:24px;border-top:2px solid var(--ac);color:var(--sb);font-size:12.5px;line-height:1.8}
+.kbd{font-family:'JetBrains Mono',monospace;background:var(--c);border:1px solid var(--bd);border-radius:5px;padding:2px 7px;font-size:12px;color:var(--ac)}
+@media(max-width:720px){.toc ol,.branch{grid-template-columns:1fr}h1{font-size:32px}.gloss .row{grid-template-columns:1fr}.gloss .term{border-right:0;border-bottom:1px solid var(--bd)}}
+</style></head>
+<body><div class="wrap">
+
+<header>
+  <div class="eyebrow">Ghost Analyst · Operating Manual</div>
+  <h1>Reading the Pre-Market Report</h1>
+  <p class="lede">How to use and interpret your daily AI-infrastructure briefing — section by section, signal by signal, with a morning workflow and the rules for when a signal means <em>act</em> versus <em>watch</em>.</p>
+</header>
+
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#what">What this report is</a></li>
+    <li><a href="#workflow">The 5-minute morning workflow</a></li>
+    <li><a href="#dashboard">Conviction Dashboard (top strip)</a></li>
+    <li><a href="#context">Market, Sectors, Geopolitics</a></li>
+    <li><a href="#options">Options Positioning &amp; GEX</a></li>
+    <li><a href="#greeks">DEX / Vanna / Charm</a></li>
+    <li><a href="#flow">Institutional Flow &amp; Dark Pool</a></li>
+    <li><a href="#positions">Positions &amp; Relative Strength</a></li>
+    <li><a href="#shortint">Short Interest &amp; Squeeze</a></li>
+    <li><a href="#smartmoney">Insiders, Congress, 8-Ks</a></li>
+    <li><a href="#earnings">Earnings &amp; Bottom Line</a></li>
+    <li><a href="#glossary">Signal glossary</a></li>
+    <li><a href="#playbooks">Decision playbooks</a></li>
+    <li><a href="#caveats">Data sources &amp; caveats</a></li>
+  </ol>
+</div>
+
+<!-- ============ PART 1 ============ -->
+<div class="part" id="what"><div class="part-tag">Part 1 · Orientation</div><h2>What this report is</h2></div>
+
+<p>The pre-market report is a <strong>decision-support briefing</strong>, generated before the open each trading day, covering your AI-infrastructure book. It does <em>not</em> tell you what to trade. It assembles, in one place, the overnight facts and the institutional-positioning signals you'd otherwise hunt across a dozen sources — so you can form a judgment fast.</p>
+
+<div class="card">
+<h4>The core philosophy — two systems, one report</h4>
+<p style="margin-bottom:10px">Everything in the report serves a deliberate split that runs through your whole process:</p>
+<div class="branch">
+  <div class="b yes"><div class="bh">▸ THE ENGINE (systematic)</div><p>A rules-based momentum + earnings-beat model picks and sizes the book monthly. It is excellent at the systematic baseline and <strong>structurally blind</strong> to forward competitive shifts and external shocks.</p></div>
+  <div class="b no" style="border-color:var(--ac)"><div class="bh" style="color:var(--ac)">▸ THE OPERATOR (you)</div><p>You apply forward judgment where the engine is blind — the INTC/NVDA override is the live example. The report's job is to <strong>feed your overlay</strong> with what the engine can't see.</p></div>
+</div>
+<p style="margin:10px 0 0;font-size:13.5px;color:var(--sb)">Read the report as the operator's instrument panel: the data sections are the gauges; <em>you</em> are the pilot.</p>
+</div>
+
+<div class="callout"><div class="ct">When it's generated</div>Pre-market (typically 6–8 AM ET). Prices reflect <strong>yesterday's close</strong>; futures and news describe <strong>this morning's setup</strong>. The header date and timestamp tell you exactly when it was built — always confirm it matches today before acting.</div>
+
+<!-- ============ PART 2 ============ -->
+<div class="part" id="workflow"><div class="part-tag">Part 2 · Workflow</div><h2>The 5-minute morning workflow</h2></div>
+<p>Read top-to-bottom, but with intent. This is the order that gets you to a decision fastest:</p>
+
+<div class="flow">
+  <div class="fstep"><div class="fbadge">1</div><div class="fbody"><div class="ft">Assessment + What Changed Overnight</div><div class="fd">The 30-second orientation. The amber assessment banner gives the posture (CAUTIOUS / HOLD etc.); the bullets are the overnight facts. If nothing here surprises you, the day is "manage, don't react."</div></div></div>
+  <div class="fstep"><div class="fbadge">2</div><div class="fbody"><div class="ft">Conviction Dashboard strip</div><div class="fd">One glance: is Theme-RS still GREEN? Any VOL ALERTS? Days to rebalance? This confirms the system's state before you look at any single name.</div></div></div>
+  <div class="fstep"><div class="fbadge">3</div><div class="fbody"><div class="ft">Overnight SEC filings (8-K) + Earnings calendar</div><div class="fd">Did any holding file a material event overnight? Is anything reporting today or tomorrow (→ E5 blackout)? These are the items that force action or restraint.</div></div></div>
+  <div class="fstep"><div class="fbadge">4</div><div class="fbody"><div class="ft">Positions table — relative strength</div><div class="fd">Scan the VS-SEC and RS-vs-SPY columns. Who's leading, who's breaking down relative to peers? This is where a deteriorating name shows up before the headline does.</div></div></div>
+  <div class="fstep"><div class="fbadge">5</div><div class="fbody"><div class="ft">Positioning signals (GEX, dark pool, flow, SI)</div><div class="fd">The "why" behind the moves. Use these to confirm or question what the price is doing — e.g., is INTC's slide backed by dealer negative-gamma and distribution, or is it noise?</div></div></div>
+  <div class="fstep"><div class="fbadge">6</div><div class="fbody"><div class="ft">Bottom Line</div><div class="fd">The synthesis + action items. If you only have 60 seconds, read the Assessment and the Bottom Line; everything between is the evidence for them.</div></div></div>
+</div>
+
+<div class="callout ok"><div class="ct">The one rule</div>The report is built to be read, not obeyed. Every "action item" is a <strong>prompt for your judgment</strong>, anchored to the engine + overlay split. Disagreeing with it is allowed and expected.</div>
+
+<!-- ============ PART 3 ============ -->
+<div class="part" id="dashboard"><div class="part-tag">Section Guide</div><h2>Conviction Dashboard (top strip)</h2></div>
+<p>The row of stat tiles directly under the header. Your system-state at a glance.</p>
+
+<div class="mock">
+  <span class="mock-label">As it appears</span>
+  <div class="m-sh"><span class="m-title" style="color:var(--pp)">★ Portfolio Conviction Dashboard</span></div>
+  <table class="m"><tr>
+    <td><span class="d" style="font-size:10px">THEME-RS TIER</span><br><span class="g" style="font-weight:700">🟢 GREEN</span></td>
+    <td><span class="d" style="font-size:10px">AI ALLOCATION</span><br><b>100%</b></td>
+    <td><span class="d" style="font-size:10px">GEO OVERLAY</span><br><span class="r-" style="font-weight:700">VOLATILE</span></td>
+    <td><span class="d" style="font-size:10px">TODAY P/L</span><br><span class="g">+1.24%</span></td>
+    <td><span class="d" style="font-size:10px">VOL ALERTS</span><br><b>0</b></td>
+    <td><span class="d" style="font-size:10px">DAYS TO REBAL</span><br><b>28</b></td>
+  </tr></table>
+</div>
+
+<div class="annot"><span class="pin">A</span><div class="txt"><b>Theme-RS Tier</b> — the engine's regime gate. <span class="tag gn">GREEN</span> = AI-infra leading, stay 100% deployed. <span class="tag or">YELLOW</span> = weakening, trim to ~85%. <span class="tag rd">RED</span> = defensive, ~65% with a cash sleeve. This is the single most important "are we risk-on?" indicator.</div></div>
+<div class="annot"><span class="pin">B</span><div class="txt"><b>Geo Overlay</b> — data-driven geopolitical risk flag. VOLATILE (red) when there's active escalation (e.g., Iran strikes + oil spike), regardless of a calm VIX. Advisory only — it colors your risk appetite, it doesn't move the book by itself.</div></div>
+<div class="annot"><span class="pin">C</span><div class="txt"><b>Vol Alerts</b> — count of names with unusual volatility/volume flags. <b>0 is normal;</b> a non-zero number tells you to look closer at which name tripped it.</div></div>
+<div class="annot"><span class="pin">D</span><div class="txt"><b>Days to Rebal</b> — countdown to the next monthly engine run. Inside ~3 days, expect the book to change; far out, the book is settled and any moves are discretionary.</div></div>
+
+<!-- ============ PART 4 — context ============ -->
+<div class="part" id="context"><div class="part-tag">Section Guide</div><h2>Market · Sector Rotation · Geopolitics</h2></div>
+
+<h3>§1 Market Snapshot &amp; §2 Sector Rotation</h3>
+<p>Indices, rates, VIX, oil — the macro backdrop. The <strong>Sector Rotation</strong> table ranks the 11 S&amp;P sectors plus SMH/IGV by 5-day and 1-day return. What you're looking for: <em>is your theme (SMH — semis) leading or lagging the rotation?</em> A theme rolling from leader to laggard is an early warning the Theme-RS gate may flip next rebalance.</p>
+
+<div class="legend">
+  <span class="chip"><span class="dot" style="background:var(--gn)"></span> Leader (top of 5-day)</span>
+  <span class="chip"><span class="dot" style="background:var(--sb)"></span> Middle of pack</span>
+  <span class="chip"><span class="dot" style="background:var(--rd)"></span> Laggard (bottom)</span>
+</div>
+
+<h3>§3 Geopolitics &amp; Macro · §4 AI &amp; Technology</h3>
+<p>These are the <strong>narrative sections</strong> — overnight geopolitical developments, the week's economic calendar (auto-pulled from the FRED release schedule), and AI/tech read-throughs to your names. The economic calendar folds in your earnings dates and flags blackouts.</p>
+<div class="callout warn"><div class="ct">Read with one caveat</div>The geopolitical and AI <em>narrative</em> is partly hand-assembled and verified against same-morning sources. The <strong>economic calendar dates</strong> and the <strong>8-K events</strong> are pulled programmatically and are authoritative. Treat the prose as well-sourced color; treat the dated/filed items as fact.</div>
+
+<!-- ============ PART 5 — options ============ -->
+<div class="part" id="options"><div class="part-tag">Section Guide</div><h2>§5 Options Positioning &amp; GEX</h2></div>
+<p>This is the densest and most valuable section — it shows where <strong>options dealers are positioned</strong>, which shapes how a stock (or SPY) tends to move. Four pieces:</p>
+
+<h4>Market Tide</h4>
+<p>Market-wide net call vs put premium. A read on whether the <em>whole tape's</em> options flow is leaning bullish or bearish. Context, not a trade trigger.</p>
+
+<h4>The SPY GEX number line</h4>
+<p>The single most useful positioning visual. It plots three levels around the current SPY price:</p>
+
+<div class="gexline">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--sb);letter-spacing:1px;margin-bottom:4px">SPY · GEX NUMBER LINE ($698 — $759)</div>
+  <div class="gl-track">
+    <div class="gl-band" style="left:6%;width:84%"></div>
+    <!-- put wall -->
+    <div class="gl-mark" style="left:6%;background:var(--rd)"></div>
+    <div class="gl-lab" style="left:6%;top:30px;color:var(--rd)">Put Wall $698</div>
+    <!-- call wall -->
+    <div class="gl-mark" style="left:90%;background:var(--gn)"></div>
+    <div class="gl-lab" style="left:90%;top:48px;color:var(--gn)">Call Wall $759</div>
+    <!-- spot -->
+    <div class="gl-dot" style="left:88%"></div>
+    <div class="gl-lab" style="left:88%;top:-22px;color:var(--ac);font-weight:700">SPY $758.54</div>
+  </div>
+</div>
+
+<div class="annot"><span class="pin">1</span><div class="txt"><b>Put Wall</b> (red) — the strike with the most negative gamma below spot. Tends to act as a <b>support shelf</b>; a decisive break below can accelerate selling.</div></div>
+<div class="annot"><span class="pin">2</span><div class="txt"><b>Call Wall</b> (green) — the heaviest positive-gamma strike above spot. Tends to act as a <b>resistance ceiling</b> / magnet into expiry.</div></div>
+<div class="annot"><span class="pin">3</span><div class="txt"><b>Spot</b> (cyan dot) — where SPY actually is. <b>When spot sits right at the call wall</b> (as drawn here), the index is "pinned" — dealers have little room to let it run higher without a fresh catalyst. This is exactly the "records, then a pause" setup.</div></div>
+<div class="callout"><div class="ct">Why the labels stagger</div>When spot and a wall are very close (under ~1% apart), the labels drop to different rows so they stay readable. Staggered labels = the levels are clustered, which is itself a signal (a pinned tape).</div>
+
+<h4>Per-position GEX &amp; the gamma flip</h4>
+<p>For your top holdings, the report shows each name's call wall, put wall, and <strong>gamma flip</strong> — the price below which dealers flip to <em>negative</em> gamma. The rule:</p>
+<div class="branch">
+  <div class="b yes"><div class="bh">▸ SPOT ABOVE FLIP</div><p>Dealers in positive gamma — they <b>dampen</b> moves (sell rallies, buy dips). Volatility suppressed. Calmer tape.</p></div>
+  <div class="b no"><div class="bh">▸ SPOT BELOW FLIP</div><p>Dealers in negative gamma — they <b>amplify</b> moves (sell weakness, buy strength). Downside accelerates. <b>This is INTC right now</b> ($107.93 vs $114.5 flip).</p></div>
+</div>
+<div class="callout danger"><div class="ct">Live example — why this matters</div>INTC trading <strong>below</strong> its gamma flip means its slide isn't just fundamental (the NVDA threat) — dealer hedging is mechanically <strong>amplifying</strong> the downside. A small technical confirmation layered on the forward thesis. It does not change the hold decision, but it explains the velocity.</div>
+
+<h4>Max Pain</h4>
+<p>The strike where the most options expire worthless — options theory says price is gently "pulled" toward it into Friday expiry. The table shows each name vs its max pain. <span class="tag gn">ABOVE MP</span> = running ahead of options positioning (mild downward pull). <span class="tag rd">BELOW MP</span> = upward pull into expiry. A weak, secondary signal — useful as a tiebreaker, not a thesis.</p>
+
+<h4>IV Rank</h4>
+<p>Where each name's implied volatility sits in its 1-year range. <span class="tag gn">CHEAP</span> (&lt;25) options are inexpensive to buy; <span class="tag rd">EXPENSIVE</span> (&gt;75) options are pricey — typical after an earnings move. Tells you whether <em>buying</em> options here is rich or cheap; doesn't predict direction.</p>
+
+<!-- ============ PART 6 — greeks ============ -->
+<div class="part" id="greeks"><div class="part-tag">Section Guide</div><h2>DEX / Vanna / Charm</h2></div>
+<p>The institutional-grade extension of GEX. Gamma is the headline Greek; these three add dimension to <em>how</em> dealer hedging will shift:</p>
+
+<div class="gloss">
+  <div class="row"><div class="term">NET DEX</div><div class="def"><b>Delta exposure.</b> The directional hedging pressure dealers carry right now. Large positive DEX → dealers are net long deltas and will sell into strength to stay hedged. The directional cousin of GEX.</div></div>
+  <div class="row"><div class="term">NET VANNA</div><div class="def"><b>Sensitivity to IV.</b> How dealer hedging shifts as <em>implied volatility</em> moves. High vanna means a change in fear/calm (VIX up or down) will force mechanical hedging flows — relevant around events and vol spikes.</div></div>
+  <div class="row"><div class="term">NET CHARM</div><div class="def"><b>Decay into expiry.</b> How hedging drifts simply as <em>time passes</em> toward expiration. Charm flows build into Friday/OPEX and can create predictable end-of-week drift.</div></div>
+</div>
+<div class="callout"><div class="ct">How to use them</div>Treat DEX/Vanna/Charm as <strong>second-order confirmation</strong>, not primary triggers. Big vanna into a jobs report or Fed day = expect vol-driven hedging flows. Big charm into OPEX = expect drift toward walls. They explain the <em>character</em> of moves, layered on top of the gamma picture.</div>
+
+<!-- ============ PART 7 — flow ============ -->
+<div class="part" id="flow"><div class="part-tag">Section Guide</div><h2>§6 Institutional Flow · §8 Dark Pool</h2></div>
+
+<h3>Unusual Whales Flow Alerts</h3>
+<p>Notable options trades — large, unusual, or sweep orders — ranked by premium. These are footprints of size positioning. Useful for spotting where big money is placing directional bets, especially on your names. High volume-to-OI ratio = fresh positioning, not closing.</p>
+
+<h3>Dark Pool — Institutional Footprints</h3>
+<p>Off-exchange block trades, which is where institutions move size quietly. Two tables: a per-name <strong>aggregate</strong> (total premium, volume, biggest print) and the <strong>notable block prints</strong> (individual large trades). The key column is <em>direction</em>:</p>
+
+<div class="legend">
+  <span class="chip"><span class="dot" style="background:var(--gn)"></span> AT ASK / ABOVE MID ↑ = aggressive buying (accumulation)</span>
+  <span class="chip"><span class="dot" style="background:var(--rd)"></span> AT BID / BELOW MID ↓ = aggressive selling (distribution)</span>
+</div>
+<div class="callout"><div class="ct">How direction is derived</div>Each block's print price is compared to the prevailing bid/ask (NBBO). A print at/above the ask means a buyer paid up → accumulation. At/below the bid → a seller hit the bid → distribution. Scan your memory complex (MU/SNDK/WDC) and INTC here: accumulation under a falling price is a divergence worth noting.</div>
+
+<!-- ============ PART 8 — positions ============ -->
+<div class="part" id="positions"><div class="part-tag">Section Guide</div><h2>§7 Positions &amp; Relative Strength</h2></div>
+<p>Your holdings table. Beyond price and weight, three columns do real work:</p>
+
+<div class="mock">
+  <span class="mock-label">As it appears</span>
+  <div class="m-sh"><span class="m-num">7</span><span class="m-title">Portfolio — 11 Positions</span></div>
+  <table class="m">
+    <tr><th>Tkr</th><th class="r">Last</th><th class="r">Day</th><th class="r">VS SEC</th><th class="r">RS vs SPY 5d</th><th class="r">Smart $</th></tr>
+    <tr><td class="lbl">MU</td><td class="r">$1,064</td><td class="r g">+2.8%</td><td class="r g">+1.3%</td><td class="r g">+36.2%</td><td class="r r-">−</td></tr>
+    <tr><td class="lbl">INTC</td><td class="r">$107.93</td><td class="r r-">−1.3%</td><td class="r r-">−2.8%</td><td class="r r-">−10.5%</td><td class="r r-">−</td></tr>
+    <tr><td class="lbl">SMCI</td><td class="r">$50.17</td><td class="r g">+7.0%</td><td class="r g">+5.8%</td><td class="r g">+28.4%</td><td class="r g">+</td></tr>
+  </table>
+</div>
+
+<div class="annot"><span class="pin">A</span><div class="txt"><b>VS SEC</b> — the name's move <em>relative to its sector benchmark</em> (SMH for semis, XLK for servers, XLI for construction). Strips out the market tide so you see real <b>relative</b> strength. INTC −2.8% vs SMH means it underperformed its own sector, not just "the market was down."</div></div>
+<div class="annot"><span class="pin">B</span><div class="txt"><b>RS vs SPY 5d</b> — 5-day return relative to SPY. Sustained negative RS on a core name is the early tell that a thesis is breaking before the price collapses outright.</div></div>
+<div class="annot"><span class="pin">C</span><div class="txt"><b>Smart $</b> — a composite of dark-pool direction + options flow per name. <span class="tag gn">+</span> accumulation, <span class="tag rd">−</span> distribution. <em>(See caveat: this is a derived proxy, not a standalone proprietary score.)</em></div></div>
+
+<!-- ============ PART 9 — short interest ============ -->
+<div class="part" id="shortint"><div class="part-tag">Section Guide</div><h2>Short Interest &amp; Squeeze Monitor</h2></div>
+<p>FINRA short-interest data (settled bi-monthly) plus daily short volume. The squeeze read is driven by <strong>Days-to-Cover (DTC)</strong> — how many days of average volume it would take shorts to cover.</p>
+
+<div class="legend">
+  <span class="chip"><span class="dot" style="background:var(--sb)"></span> DTC &lt;2 = MINIMAL</span>
+  <span class="chip"><span class="dot" style="background:var(--ac)"></span> DTC 2–3 = LOW</span>
+  <span class="chip"><span class="dot" style="background:var(--or)"></span> DTC 3–5 = MODERATE</span>
+  <span class="chip"><span class="dot" style="background:var(--rd)"></span> DTC &gt;5 = ELEVATED squeeze fuel</span>
+</div>
+<p>The <strong>Daily SV%</strong> column shows what fraction of today's volume was short selling — a real-time sentiment shift on top of the bi-monthly snapshot. <em>NET SHORT</em> = sellers pressing; <em>NET LONG</em> = buyers in control.</p>
+<div class="callout warn"><div class="ct">Coverage caveat — important</div>NYSE-listed names (CIEN, DELL) don't appear in Nasdaq's short-interest feed and rely on a Yahoo Finance fallback. If they ever show <strong>UNAVAILABLE</strong>, the fallback library isn't loaded — it's a data-plumbing gap, not zero short interest. (Nasdaq-listed names like INTC/MU/AMD always populate directly.)</div>
+
+<!-- ============ PART 10 — smart money ============ -->
+<div class="part" id="smartmoney"><div class="part-tag">Section Guide</div><h2>Insiders · Congress · Overnight 8-Ks</h2></div>
+
+<h3>Overnight SEC Filings (8-K)</h3>
+<p>The newest and arguably most valuable addition. It scans all holdings for 8-K material-event filings in the last ~72h, reads the SEC item code, and tells you what happened — automatically. This is <strong>fact, not commentary</strong>.</p>
+<div class="legend">
+  <span class="chip"><span class="dot" style="background:var(--rd)"></span> Items 1.05 / 4.02 / 5.01 = high materiality</span>
+  <span class="chip"><span class="dot" style="background:var(--or)"></span> 1.01 / 2.01 / 5.02 = notable</span>
+  <span class="chip"><span class="dot" style="background:var(--ac)"></span> 5.07 / 7.01 / 9.01 = routine</span>
+</div>
+<p style="font-size:13.5px;color:var(--sb)">Example from a recent report: <span class="mono">TXN · Item 5.02 Officer/Director Change</span> — flagged automatically the morning it filed. If this section says "no material filings," that's a verified all-clear, not a gap.</p>
+
+<h3>Congressional Trading &amp; Form 4 Insiders</h3>
+<p>Two "smart-money" layers. <strong>Congressional</strong> = Senate/House disclosures on your names (STOCK Act). <strong>Form 4</strong> = corporate insiders buying/selling. Watch the <span class="kbd">[10b5-1]</span> flag on insider sells — that marks a <em>pre-scheduled</em> sale (automatic, low signal) versus a discretionary one (more meaningful).</p>
+<div class="callout"><div class="ct">How much weight to give these</div>Supporting color, not primary signals. A cluster of insider <em>buys</em> is more meaningful than scattered scheduled sells. Congressional trades lag (disclosed weeks after the trade) — treat as sentiment, not timing.</div>
+
+<!-- ============ PART 11 — earnings + bottom ============ -->
+<div class="part" id="earnings"><div class="part-tag">Section Guide</div><h2>§9 Earnings · ★ Bottom Line</h2></div>
+<p>The <strong>Earnings Calendar</strong> flags any holding reporting soon and applies the <strong>E5 blackout</strong> rule — no trading a name inside its earnings window. The <strong>Bottom Line</strong> synthesizes the whole report into a posture + numbered action items.</p>
+<div class="callout danger"><div class="ct">E5 Blackout — a hard rule</div>When a name is flagged <span class="tag rd">E5 BLACKOUT</span> (earnings within ~14 days, currently CIEN before its 6/4 print), you do not trade it until after the report — even if it ran up into the print, even if a signal looks tempting. The blackout protects you from binary-event risk. It's the one place the report tells you <em>don't act</em>, and it means it.</div>
+
+<!-- ============ PART 12 — glossary ============ -->
+<div class="part" id="glossary"><div class="part-tag">Part 3 · Reference</div><h2>Signal glossary</h2></div>
+<div class="gloss">
+  <div class="row"><div class="term">Theme-RS</div><div class="def">Theme Relative Strength — the engine's regime gate ranking SMH (semis) vs the 11 sector ETFs. GREEN/YELLOW/RED sets your deployment level.</div></div>
+  <div class="row"><div class="term">GEX</div><div class="def">Gamma Exposure. Aggregate dealer gamma by strike. Positive-gamma zones suppress volatility; negative-gamma zones amplify it.</div></div>
+  <div class="row"><div class="term">Gamma Flip</div><div class="def">The price level where net dealer gamma crosses from positive to negative. Below it, moves get amplified.</div></div>
+  <div class="row"><div class="term">Call / Put Wall</div><div class="def">The strikes with the heaviest positive (call) / negative (put) gamma. Act as resistance / support magnets.</div></div>
+  <div class="row"><div class="term">DEX</div><div class="def">Delta Exposure — directional dealer hedging pressure.</div></div>
+  <div class="row"><div class="term">Vanna</div><div class="def">Hedging sensitivity to changes in implied volatility.</div></div>
+  <div class="row"><div class="term">Charm</div><div class="def">Hedging drift as time decays toward expiry.</div></div>
+  <div class="row"><div class="term">Max Pain</div><div class="def">Strike where most options expire worthless; a weak magnet into expiry.</div></div>
+  <div class="row"><div class="term">IV Rank</div><div class="def">Where implied vol sits in its 1-year range. High = options expensive.</div></div>
+  <div class="row"><div class="term">DTC</div><div class="def">Days-to-Cover. Short interest ÷ average daily volume. Higher = more squeeze fuel.</div></div>
+  <div class="row"><div class="term">Dark Pool</div><div class="def">Off-exchange venues where institutions trade size. Direction (vs NBBO) reveals accumulation vs distribution.</div></div>
+  <div class="row"><div class="term">Market Tide</div><div class="def">Market-wide net options premium — a broad bullish/bearish sentiment gauge.</div></div>
+  <div class="row"><div class="term">10b5-1</div><div class="def">A pre-scheduled insider trading plan. Sales under it are automatic → low signal.</div></div>
+  <div class="row"><div class="term">E5 Blackout</div><div class="def">No-trade window around a holding's earnings (~14 days prior). A hard rule.</div></div>
+  <div class="row"><div class="term">Relative Strength (RS)</div><div class="def">A name's return measured against SPY or its sector — strips out the market move to show true out/under-performance.</div></div>
+</div>
+
+<!-- ============ PART 13 — playbooks ============ -->
+<div class="part" id="playbooks"><div class="part-tag">Part 4 · Playbooks</div><h2>Decision playbooks</h2></div>
+
+<h3>The earnings playbook</h3>
+<div class="flow">
+  <div class="fstep"><div class="fbadge" style="border-color:var(--gn);color:var(--gn)">✓</div><div class="fbody"><div class="ft">Beat + raised guidance</div><div class="fd"><b>HOLD.</b> The thesis is working. Do not trim into strength.</div></div></div>
+  <div class="fstep"><div class="fbadge" style="border-color:var(--or);color:var(--or)">≈</div><div class="fbody"><div class="ft">Beat + flat / cautious guidance</div><div class="fd"><b>Trim 25–30% next open.</b> The quarter was fine but forward signal softened.</div></div></div>
+  <div class="fstep"><div class="fbadge" style="border-color:var(--rd);color:var(--rd)">✕</div><div class="fbody"><div class="ft">Miss</div><div class="fd"><b>Full review.</b> Re-underwrite the position before deciding.</div></div></div>
+</div>
+<div class="callout"><div class="ct">The discipline</div>Never panic-trim a <em>beat</em> on a sell-the-news dip. The report's positioning data (is the dip dealer-driven? is it being accumulated in dark pools?) helps you tell a real problem from noise.</div>
+
+<h3>When does a signal mean ACT vs WATCH?</h3>
+<div class="branch">
+  <div class="b yes"><div class="bh">▸ ACT</div><p>A <b>hard rule</b> triggers (E5 blackout, Theme-RS flips to RED), the engine rebalances, or your <b>forward thesis</b> changes (the INTC override). Action comes from rules and judgment.</p></div>
+  <div class="b no"><div class="bh">▸ WATCH</div><p>A single positioning signal looks interesting (negative gamma, a dark-pool block, high IV). These <b>inform</b>, they don't trigger. One signal is a data point, not a decision.</p></div>
+</div>
+
+<h3>The INTC override — the model case</h3>
+<p>INTC is the live example of operator-over-engine. The engine ranks it #2 (huge momentum + a near-zero-base earnings "beat") and wants to add. You <strong>hold and don't add</strong> because the forward NVDA PC-chip threat — invisible to any backward-looking signal — is the thing that matters. The report's job here is to <em>surface the evidence</em> (the 5-day RS breakdown, the below-flip negative gamma, the distribution in dark pools) so your forward judgment is well-armed. The engine self-corrects slowly; you act on the future now.</p>
+
+<!-- ============ PART 14 — caveats ============ -->
+<div class="part" id="caveats"><div class="part-tag">Part 5 · Honesty</div><h2>Data sources &amp; caveats</h2></div>
+<p>What's authoritative, what's derived, and what to trust accordingly:</p>
+<div class="gloss">
+  <div class="row"><div class="term">Authoritative</div><div class="def"><b>Prices</b> (Polygon), <b>short interest</b> (Nasdaq/FINRA), <b>8-K events &amp; Form 4</b> (SEC via Polygon), <b>economic calendar</b> (FRED), <b>options data</b> (Unusual Whales), <b>congressional</b> (FMP). These are pulled programmatically and are facts.</div></div>
+  <div class="row"><div class="term">Hand-assembled</div><div class="def">The <b>geopolitical / AI narrative prose</b> is written and verified against same-morning sources. Well-sourced color — but it's the section most prone to staleness if the report is read late. Always check the header timestamp.</div></div>
+  <div class="row"><div class="term">Derived proxy</div><div class="def">The <b>Smart $</b> column is computed from dark-pool direction + options flow — a reasonable proxy, not a standalone proprietary score. The <b>geo overlay</b> is a data-driven flag, advisory only.</div></div>
+  <div class="row"><div class="term">Known gaps</div><div class="def"><b>NYSE short interest</b> (CIEN, DELL) needs the yfinance fallback loaded. <b>Some options sub-sections</b> show only top-5 names by value. <b>SI settles bi-monthly</b> — it's not real-time.</div></div>
+</div>
+<div class="callout ok"><div class="ct">The honest summary</div>The report is strongest as a <strong>positioning and event aggregator</strong> — it tells you what institutions are doing and what filed overnight, accurately. It is weakest where it relies on hand-written market color. Lean on the data sections for evidence; treat the prose as a well-informed briefing, not gospel; and remember the whole thing exists to <strong>arm your judgment</strong>, never to replace it.</div>
+
+<footer>
+  <strong style="color:var(--ac)">Ghost Analyst · Pre-Market Report Operating Manual</strong><br>
+  Companion to the daily AI-infrastructure briefing. Sections, signals, and playbooks reflect the current report build.<br>
+  This manual is an interpretive guide, not investment advice. The report supports your decisions; it does not make them.
+</footer>
+
+</div></body></html>
