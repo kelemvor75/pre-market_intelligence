@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ghost Analyst — Post-Selloff Historical Backtest · Jun 8 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--bg2:#111c33;--card:#15233f;--card2:#1a2b4a;--line:#243a5e;--ink:#e8eef7;--mut:#93a4be;--dim:#64748b;
+--cyan:#22d3ee;--cyan2:#06b6d4;--green:#34d399;--greenbg:rgba(52,211,153,.10);--red:#f87171;--redbg:rgba(248,113,113,.10);
+--amber:#fbbf24;--bull:rgba(52,211,153,.07);--bear:rgba(248,113,113,.07);--base:rgba(148,164,190,.05);}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:linear-gradient(180deg,#0c1424,#0f172a 30%);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.62;
+font-size:15.5px;-webkit-font-smoothing:antialiased;padding:0 18px 90px}
+.wrap{max-width:1100px;margin:0 auto}
+.mono{font-family:'JetBrains Mono',monospace}
+header{padding:54px 0 30px;border-bottom:1px solid var(--line)}
+.kick{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--cyan);text-transform:uppercase;margin-bottom:16px}
+h1{font-size:40px;line-height:1.08;font-weight:700;letter-spacing:-.02em;margin-bottom:14px}
+h1 .sub{display:block;font-size:20px;font-weight:500;color:var(--mut);margin-top:10px;letter-spacing:-.01em}
+.meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--dim)}
+.meta b{color:var(--mut);font-weight:500}
+section{padding:40px 0;border-bottom:1px solid var(--line)}
+h2{font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);
+margin-bottom:8px;display:flex;align-items:baseline;gap:12px}
+h2 .n{color:var(--dim);font-size:12px}
+.lead{font-size:21px;font-weight:600;letter-spacing:-.015em;margin:6px 0 20px;line-height:1.4}
+p{color:#cdd8ea;margin-bottom:15px}
+p .hl{color:var(--ink);font-weight:600}
+.cyan{color:var(--cyan)} .green{color:var(--green)} .red{color:var(--red)} .amber{color:var(--amber)}
+.tldr{background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:16px;padding:30px 32px;margin-top:30px}
+.tldr .lead{margin-top:0}
+.tldr ul{list-style:none;margin-top:8px}
+.tldr li{padding-left:26px;position:relative;margin-bottom:13px;color:#dbe5f3}
+.tldr li:before{content:"→";position:absolute;left:0;color:var(--cyan);font-family:'JetBrains Mono',monospace}
+.statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 4px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px 18px 16px}
+.stat .lab{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:9px}
+.stat .val{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;letter-spacing:-.02em}
+.stat .val.dn{color:var(--red)}
+.stat .v2{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mut);margin-top:6px}
+.callout{border-left:3px solid var(--amber);background:rgba(251,191,36,.06);padding:18px 22px;border-radius:0 12px 12px 0;margin:22px 0}
+.callout.cy{border-left-color:var(--cyan);background:rgba(34,211,238,.06)}
+.callout .t{font-weight:700;margin-bottom:6px;color:var(--ink)}
+.ftab{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:16px 0}
+.ftab-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ftab-title{font-weight:700;font-size:16.5px}
+.nbadge{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan);background:rgba(34,211,238,.1);padding:4px 10px;border-radius:20px}
+.ftab-note{color:var(--mut);font-size:13.5px;margin:6px 0 16px}
+table.ret{width:100%;border-collapse:collapse}
+table.ret th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);
+text-align:center;padding:0 6px 10px;font-weight:500}
+table.ret th:first-child{text-align:left}
+table.ret td{text-align:center;padding:10px 6px;border-top:1px solid var(--line)}
+table.ret th.tk{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--ink);text-align:left;letter-spacing:0;text-transform:none}
+td .big{display:block;font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;letter-spacing:-.01em}
+td.pos .big{color:var(--green)} td.neg .big{color:var(--red)} td.flat .big{color:var(--mut)}
+td.pos{background:var(--greenbg)} td.neg{background:var(--redbg)}
+.pos-sub{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--dim);margin-top:2px}
+.dates{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);word-spacing:.1em}
+table.an{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
+table.an th{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);text-align:left;padding:0 10px 10px;font-weight:500}
+table.an td{padding:13px 10px;border-top:1px solid var(--line);vertical-align:top}
+.an .nm{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--ink);white-space:nowrap}
+.an .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;margin-top:5px;color:var(--cyan);background:rgba(34,211,238,.1)}
+.an .desc{color:var(--mut);font-size:12.5px;line-height:1.45}
+.an .r{font-family:'JetBrains Mono',monospace;text-align:right;white-space:nowrap}
+.an .r.p{color:var(--green)} .an .r.n{color:var(--red)}
+.an .r .lab{display:block;font-size:9.5px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
+table.scen{width:100%;border-collapse:collapse;margin:8px 0 26px}
+table.scen th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);text-align:left;padding:0 12px 10px;font-weight:500}
+table.scen th:nth-child(n+3){text-align:right}
+table.scen td{padding:14px 12px;border-top:1px solid var(--line);vertical-align:top}
+.sc-prob{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap}
+.sc-name{font-weight:700;font-size:15px}
+.sc-desc{font-weight:400;color:var(--mut);font-size:12.5px;margin-top:4px;line-height:1.45;max-width:430px}
+.sc-r{font-family:'JetBrains Mono',monospace;text-align:right;font-weight:600;white-space:nowrap;font-size:13.5px}
+tr.sc-bull{background:var(--bull)} tr.sc-bear{background:var(--bear)} tr.sc-base{background:var(--base)}
+tr.sc-bull .sc-r{color:var(--green)} tr.sc-bear .sc-r{color:var(--red)} tr.sc-base .sc-r{color:var(--mut)}
+.timeline{margin-top:18px}
+.tlrow{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:14px 0;border-top:1px solid var(--line);align-items:baseline}
+.tlrow .date{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--cyan);font-size:14px}
+.tlrow .ev{font-weight:600}
+.tlrow .ev span{display:block;font-weight:400;color:var(--mut);font-size:13px;margin-top:3px}
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.forkcard{border:1px solid var(--line);border-radius:13px;padding:20px 22px}
+.forkcard.up{border-color:rgba(52,211,153,.35);background:var(--greenbg)}
+.forkcard.dn{border-color:rgba(248,113,113,.35);background:var(--redbg)}
+.forkcard .h{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.forkcard.up .h{color:var(--green)} .forkcard.dn .h{color:var(--red)}
+.forkcard ul{list-style:none} .forkcard li{padding-left:20px;position:relative;margin-bottom:9px;font-size:13.5px;color:#d3ddec}
+.forkcard li:before{content:"·";position:absolute;left:6px;font-weight:700}
+.forkcard.up li:before{color:var(--green)} .forkcard.dn li:before{color:var(--red)}
+.disc{font-size:12px;color:var(--dim);line-height:1.6;padding:26px 0 0}
+footer{padding:30px 0 0;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--dim);text-align:center}
+@media(max-width:720px){.statgrid{grid-template-columns:repeat(2,1fr)}h1{font-size:30px}.fork{grid-template-columns:1fr}.tlrow{grid-template-columns:1fr}table.an{font-size:12px}}
+</style></head><body><div class="wrap">
+
+<header>
+<div class="kick">Ghost Analyst · Historical Backtest · 25-Year Lookback</div>
+<h1>The June 5 Tech Rout — What Happens Next?<span class="sub">A regime-conditioned forward-return study for QQQ / SMH / SPY at 2 weeks, 1 month &amp; 3 months out</span></h1>
+<div class="meta"><span><b>Run date:</b> Mon Jun 8 2026</span><span><b>Sample:</b> 2001–2026 (Tiingo daily, adj.)</span><span><b>Macro:</b> FRED 10y/2y/FFR/VIX</span><span><b>Anchor event:</b> Fri Jun 5 2026</span></div>
+</header>
+
+<section>
+<div class="tldr">
+<div class="lead">Bottom line: this is <span class="cyan">not</span> the "buy-the-semi-dip" setup that paid off all through 2024–25. Those dips bottomed in <span class="hl">rate-cutting / capitulation</span> regimes. Friday is a shock from <span class="hl">record highs</span> into a <span class="hl">rate-<em>hike</em></span> regime — and history says that combination produces muted, coin-flip forward returns with a retest near the 2-week mark and the deepest air-pocket around 2 months.</div>
+<ul>
+<li><span class="hl">1 week:</span> mild oversold-bounce tendency (tightening-regime QQQ median <span class="green">+2.3%</span>), but fully gated by <span class="cyan">May CPI on Jun 10</span>.</li>
+<li><span class="hl">2 weeks:</span> the <span class="amber">retest window</span> — across every conditioning, day-10 is the weakest, sub-50% positive, and it contains the <span class="cyan">FOMC on Jun 16–17</span>.</li>
+<li><span class="hl">1 month:</span> roughly flat / range-bound, below-normal (≈55% positive vs ~64% unconditional).</li>
+<li><span class="hl">2–3 months:</span> the genuine fork. In an <em>active-hiking</em> regime (2018, 2022) QQQ bottomed ≈<span class="red">−4.7%</span> near 2 months with only 29% positive. A clean recovery by 3 months is the base case <span class="hl">only if</span> the rate / inflation / oil shock abates.</li>
+<li><span class="hl">The dominant variable is rates, not Broadcom.</span> The AI-thesis scare tends to mean-revert; the macro is what decides the medium-term path.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>01 · What actually happened <span class="n">the anchor event</span></h2>
+<p class="lead">A two-factor blow: an AI-capex bellwether that wouldn't raise guidance, stacked on a hot jobs print that flipped the rate narrative to hikes.</p>
+<div class="statgrid">
+<div class="stat"><div class="lab">SOXX · 1-day</div><div class="val dn">-10.4%</div><div class="v2">worst since Mar-2020 · 2-day -12.3%</div></div>
+<div class="stat"><div class="lab">SMH · 1-day</div><div class="val dn">-9.2%</div><div class="v2">2-day -10.7%</div></div>
+<div class="stat"><div class="lab">QQQ · 1-day</div><div class="val dn">-4.8%</div><div class="v2">2-day -5.3%</div></div>
+<div class="stat"><div class="lab">SPY · 1-day</div><div class="val dn">-2.6%</div><div class="v2">2-day only -2.2% — rotation cushioned it</div></div>
+</div>
+<p style="margin-top:20px"><span class="hl">Trigger 1 — AVGO.</span> Broadcom beat Q2 (rev $22.19B vs $22.13B, EPS $2.44 vs $2.39) but guided Q3 AI chip sales to ~$16B vs $17.2B expected and <span class="hl">declined to raise its FY26 AI forecast</span>. Classic sell-the-news: AVGO −14% Thu, −7.9% Fri. The tape read it as a tell on the AI-capex cycle and dumped the whole chain (NVDA −6.2%, MRVL −8%, TXN −6.7%, MU/AMD −6%+).</p>
+<p><span class="hl">Trigger 2 — the jobs report.</span> May payrolls printed <span class="hl">+172k vs +80–85k expected</span>, unemployment steady at 4.3%. Because inflation is already hot (Apr CPI +0.6% m/m, 3.8% y/y; core 2.8%) and there's an active <span class="hl">Iran-war oil shock</span> (Brent &gt;$84), a strong labor read pushed the market to <span class="hl">almost fully price a 2026 rate hike</span>. 10y → 4.54% (+6bp), 2y → 4.16% (+10bp), 30y &gt; 5%. Yields up = high-multiple tech down.</p>
+<div class="callout">
+<div class="t">The tell that matters most: VIX entered Friday near 15–16.</div>
+The selloff began from <span class="amber">complacency at record highs</span> (S&amp;P closed at an all-time high on Jun 2), not from an already-panicked tape. Every historical SOXX −10% day <em>bottomed</em> markets — but those came after extended declines with VIX at 45–82 (Oct-2002, Mar-2020, Apr-2025). A −10% semi day from a 15-VIX record high is structurally the <em>front</em> end of a vol expansion, not the back end. That single fact argues against treating Friday as a capitulation low.
+</div>
+</section>
+
+<section>
+<h2>02 · Why the regime rewrites the answer <span class="n">the core insight</span></h2>
+<p class="lead">Same-sized selloff, opposite outcomes — depending entirely on what the Fed was doing.</p>
+<p>The naïve backtest is a trap. Filter history to SOXX one-day drops of −10% and you get only three priors — Oct-2002, Mar-2020, Apr-2025 — and forward returns look spectacular (SMH median <span class="green">+43%</span> at 3 months, 100% positive). But all three were <span class="hl">capitulation bottoms inside Fed-easing or policy-rescue regimes</span>. The easing <em>caused</em> the V. Friday has the opposite macro. To get an honest read, you have to condition on the rate regime.</p>
+<p>Below, the same event definition (a sharp one-day tech drop) split by what the Fed was doing. The contrast is the whole story:</p>
+
+<div class="ftab">
+      <div class="ftab-head"><span class="ftab-title">Easing-regime selloffs — the 2024–25 playbook</span><span class="nbadge">n = 28 priors</span></div>
+      <div class="ftab-note">Fed funds <em>falling</em> over the prior 6 months. This is the muscle-memory most traders are running on. Note the eventual mean-reversion — but it was the cuts doing the work.</div>
+      <table class="ret"><thead><tr><th></th><th>1 wk</th><th>2 wk</th><th>1 mo</th><th>2 mo</th><th>3 mo</th></tr></thead>
+      <tbody><tr><th class="tk">SMH</th><td class="neg"><span class="big">-1.5%</span><span class="pos-sub">43% pos</span></td><td class="neg"><span class="big">-0.1%</span><span class="pos-sub">50% pos</span></td><td class="pos"><span class="big">+2.2%</span><span class="pos-sub">57% pos</span></td><td class="pos"><span class="big">+3.9%</span><span class="pos-sub">54% pos</span></td><td class="pos"><span class="big">+4.0%</span><span class="pos-sub">57% pos</span></td></tr><tr><th class="tk">QQQ</th><td class="pos"><span class="big">+0.3%</span><span class="pos-sub">57% pos</span></td><td class="pos"><span class="big">+0.9%</span><span class="pos-sub">57% pos</span></td><td class="pos"><span class="big">+0.9%</span><span class="pos-sub">57% pos</span></td><td class="neg"><span class="big">-2.9%</span><span class="pos-sub">43% pos</span></td><td class="neg"><span class="big">-0.1%</span><span class="pos-sub">50% pos</span></td></tr><tr><th class="tk">SPY</th><td class="pos"><span class="big">+0.4%</span><span class="pos-sub">54% pos</span></td><td class="pos"><span class="big">+0.7%</span><span class="pos-sub">61% pos</span></td><td class="pos"><span class="big">+1.0%</span><span class="pos-sub">57% pos</span></td><td class="neg"><span class="big">-1.9%</span><span class="pos-sub">39% pos</span></td><td class="neg"><span class="big">-1.3%</span><span class="pos-sub">46% pos</span></td></tr></tbody></table>
+      <div class="dates">2001-07-05, 2001-08-17, 2001-09-17, 2001-10-17, 2001-11-20, 2001-12-13, 2002-02-21, 2002-04-02, 2002-04-26, 2002-05-10, 2002-06-19, 2002-07-25, 2002-12-09, 2003-01-17, 2003-03-24, 2008-01-04, 2008-06-26, 2008-09-29, 2008-10-15, 2008-11-05, 2008-12-01, 2009-01-20, 2011-08-08, 2020-03-16, 2020-04-01, 2020-06-11, 2020-09-03, 2025-04-04</div>
+    </div>
+
+<div class="ftab">
+      <div class="ftab-head"><span class="ftab-title">Tightening-bias selloffs — Friday's actual regime</span><span class="nbadge">n = 11 priors</span></div>
+      <div class="ftab-note">Fed funds flat-to-rising (2007, 2015, 2016, 2018, 2022). Returns are <em>muted and barely better than a coin flip</em> — and day-10 is negative across the board (the retest).</div>
+      <table class="ret"><thead><tr><th></th><th>1 wk</th><th>2 wk</th><th>1 mo</th><th>2 mo</th><th>3 mo</th></tr></thead>
+      <tbody><tr><th class="tk">SMH</th><td class="pos"><span class="big">+2.6%</span><span class="pos-sub">64% pos</span></td><td class="neg"><span class="big">-0.6%</span><span class="pos-sub">36% pos</span></td><td class="pos"><span class="big">+1.0%</span><span class="pos-sub">55% pos</span></td><td class="pos"><span class="big">+4.6%</span><span class="pos-sub">55% pos</span></td><td class="pos"><span class="big">+6.0%</span><span class="pos-sub">64% pos</span></td></tr><tr><th class="tk">QQQ</th><td class="pos"><span class="big">+2.3%</span><span class="pos-sub">64% pos</span></td><td class="neg"><span class="big">-0.2%</span><span class="pos-sub">45% pos</span></td><td class="pos"><span class="big">+0.8%</span><span class="pos-sub">55% pos</span></td><td class="pos"><span class="big">+2.3%</span><span class="pos-sub">55% pos</span></td><td class="pos"><span class="big">+3.0%</span><span class="pos-sub">55% pos</span></td></tr><tr><th class="tk">SPY</th><td class="pos"><span class="big">+0.6%</span><span class="pos-sub">73% pos</span></td><td class="neg"><span class="big">-0.9%</span><span class="pos-sub">45% pos</span></td><td class="neg"><span class="big">-0.5%</span><span class="pos-sub">45% pos</span></td><td class="pos"><span class="big">+1.3%</span><span class="pos-sub">64% pos</span></td><td class="pos"><span class="big">+1.9%</span><span class="pos-sub">73% pos</span></td></tr></tbody></table>
+      <div class="dates">2007-02-27, 2015-08-21, 2016-06-24, 2018-02-08, 2018-10-10, 2018-10-24, 2022-02-03, 2022-05-05, 2022-06-13, 2022-08-26, 2022-09-13</div>
+    </div>
+
+<div class="ftab">
+      <div class="ftab-head"><span class="ftab-title">Active-hiking selloffs — the purest analog</span><span class="nbadge">n = 7 priors</span></div>
+      <div class="ftab-note">Fed funds clearly rising — i.e. <strong>2018 + 2022 only</strong>. The 2-month mark is the air-pocket: QQQ median −4.7%, just 29% positive. This is multiple compression in real time.</div>
+      <table class="ret"><thead><tr><th></th><th>1 wk</th><th>2 wk</th><th>1 mo</th><th>2 mo</th><th>3 mo</th></tr></thead>
+      <tbody><tr><th class="tk">SMH</th><td class="pos"><span class="big">+0.0%</span><span class="pos-sub">57% pos</span></td><td class="neg"><span class="big">-2.4%</span><span class="pos-sub">29% pos</span></td><td class="pos"><span class="big">+1.0%</span><span class="pos-sub">57% pos</span></td><td class="neg"><span class="big">-1.9%</span><span class="pos-sub">43% pos</span></td><td class="pos"><span class="big">+3.6%</span><span class="pos-sub">57% pos</span></td></tr><tr><th class="tk">QQQ</th><td class="pos"><span class="big">+2.3%</span><span class="pos-sub">57% pos</span></td><td class="pos"><span class="big">+1.1%</span><span class="pos-sub">57% pos</span></td><td class="neg"><span class="big">-1.8%</span><span class="pos-sub">43% pos</span></td><td class="neg"><span class="big">-4.7%</span><span class="pos-sub">29% pos</span></td><td class="neg"><span class="big">-1.1%</span><span class="pos-sub">43% pos</span></td></tr><tr><th class="tk">SPY</th><td class="pos"><span class="big">+0.4%</span><span class="pos-sub">57% pos</span></td><td class="pos"><span class="big">+1.4%</span><span class="pos-sub">57% pos</span></td><td class="neg"><span class="big">-0.5%</span><span class="pos-sub">43% pos</span></td><td class="neg"><span class="big">-5.1%</span><span class="pos-sub">43% pos</span></td><td class="pos"><span class="big">+0.3%</span><span class="pos-sub">71% pos</span></td></tr></tbody></table>
+      <div class="dates">2018-02-08, 2018-10-10, 2018-10-24, 2022-05-05, 2022-06-13, 2022-08-26, 2022-09-13</div>
+    </div>
+
+<p style="margin-top:6px">Read the three tables top-to-bottom and the lesson is unambiguous: <span class="hl">the dip-buy edge that worked for two years was a feature of the easing cycle.</span> Strip the easing out and the forward distribution collapses toward flat — with a clear negative skew at the 1–2 month horizon when the Fed is actively tightening.</p>
+</section>
+
+<section>
+<h2>03 · The shock-from-highs signature <span class="n">path shape</span></h2>
+<p>Independent of rates, there's a second conditioner that fits Friday: the selloff hit from <span class="hl">within 8% of a 1-year high</span> (Friday's QQQ drawdown was just -5.5%). These "shocks from strength" share a distinctive shape — a quick stabilization, then a <span class="amber">second leg / retest around day 10</span> (only ~25% positive), then recovery by 2–3 months.</p>
+<div class="ftab">
+      <div class="ftab-head"><span class="ftab-title">Selloffs from near 1-year highs (any rate regime)</span><span class="nbadge">n = 4 priors</span></div>
+      <div class="ftab-note">2007-02-27, 2018-10-10, 2020-06-11, 2020-09-03. The day-10 air-pocket is the signature; bounce-buyers who chase day +1–2 often get a worse entry ~2 weeks later.</div>
+      <table class="ret"><thead><tr><th></th><th>1 wk</th><th>2 wk</th><th>1 mo</th><th>2 mo</th><th>3 mo</th></tr></thead>
+      <tbody><tr><th class="tk">SMH</th><td class="pos"><span class="big">+0.6%</span><span class="pos-sub">50% pos</span></td><td class="neg"><span class="big">-1.7%</span><span class="pos-sub">25% pos</span></td><td class="pos"><span class="big">+2.0%</span><span class="pos-sub">75% pos</span></td><td class="pos"><span class="big">+5.6%</span><span class="pos-sub">75% pos</span></td><td class="pos"><span class="big">+10.8%</span><span class="pos-sub">75% pos</span></td></tr><tr><th class="tk">QQQ</th><td class="pos"><span class="big">+1.2%</span><span class="pos-sub">50% pos</span></td><td class="neg"><span class="big">-2.8%</span><span class="pos-sub">25% pos</span></td><td class="pos"><span class="big">+1.2%</span><span class="pos-sub">75% pos</span></td><td class="pos"><span class="big">+1.8%</span><span class="pos-sub">50% pos</span></td><td class="pos"><span class="big">+7.2%</span><span class="pos-sub">75% pos</span></td></tr><tr><th class="tk">SPY</th><td class="pos"><span class="big">+0.5%</span><span class="pos-sub">75% pos</span></td><td class="neg"><span class="big">-2.4%</span><span class="pos-sub">25% pos</span></td><td class="pos"><span class="big">+1.4%</span><span class="pos-sub">75% pos</span></td><td class="pos"><span class="big">+2.7%</span><span class="pos-sub">50% pos</span></td><td class="pos"><span class="big">+8.1%</span><span class="pos-sub">75% pos</span></td></tr></tbody></table>
+      <div class="dates">2007-02-27, 2018-10-10, 2020-06-11, 2020-09-03</div>
+    </div>
+<div class="callout cy">
+<div class="t">Practical read on timing.</div>
+Both the regime cut and the shock-from-highs cut point to the same tactical map: <span class="hl">a tradeable bounce in the first few sessions, a retest into the FOMC ~2 weeks out, and the maximum-pain zone around 2 months.</span> If you're adding, history favors patience over chasing the first green day.
+</div>
+</section>
+
+<section>
+<h2>04 · Named analogs, exact forward paths <span class="n">the specific tape</span></h2>
+<p>The closest individual episodes, with their realized forward returns from the event day. Sorted by how well they match Friday's drivers.</p>
+<table class="an"><thead><tr><th>Event</th><th>What it was</th><th>SMH 2wk</th><th>SMH 1mo</th><th>SMH 2mo</th><th>SMH 3mo</th><th>QQQ 3mo</th><th>SPY 3mo</th></tr></thead><tbody><tr><td class="nm">Oct 10 2018<span class="tag">macro+setup</span></td><td class="desc">Q4-2018 hawkish-Fed rout from highs (Powell 'long way from neutral'); semis + tech led; → −20% by late Dec</td>
+    <td class="r n">-7.8%</td><td class="r p">+1.0%</td><td class="r n">-5.5%</td><td class="r n">-3.1%</td>
+    <td class="r n">-6.2%</td><td class="r n">-6.4%</td></tr><tr><td class="nm">Sep 3 2024<span class="tag">easing contrast</span></td><td class="desc">NVDA/ISM semi air-pocket — but Fed about to CUT 50bp (Sep 18)</td>
+    <td class="r p">+3.8%</td><td class="r p">+7.6%</td><td class="r p">+7.3%</td><td class="r p">+10.1%</td>
+    <td class="r p">+11.7%</td><td class="r p">+9.7%</td></tr><tr><td class="nm">Jan 27 2025<span class="tag">AI-thesis</span></td><td class="desc">DeepSeek AI-capex efficiency shock — thesis questioned, NVDA −17%</td>
+    <td class="r p">+5.9%</td><td class="r p">+3.4%</td><td class="r n">-7.7%</td><td class="r n">-10.7%</td>
+    <td class="r n">-8.0%</td><td class="r n">-7.8%</td></tr><tr><td class="nm">Jul 17 2024<span class="tag">semi rotation</span></td><td class="desc">ASML/semi guidance + Taiwan-tariff rotation; SOX top into Aug-5 vol unwind</td>
+    <td class="r n">-2.8%</td><td class="r n">-3.1%</td><td class="r n">-8.0%</td><td class="r n">-2.8%</td>
+    <td class="r p">+2.0%</td><td class="r p">+4.4%</td></tr><tr><td class="nm">Apr 3 2025<span class="tag">capitulation</span></td><td class="desc">Liberation-Day tariff crash — policy-shock capitulation, VIX→45</td>
+    <td class="r n">-1.6%</td><td class="r p">+11.3%</td><td class="r p">+28.7%</td><td class="r p">+43.0%</td>
+    <td class="r p">+22.6%</td><td class="r p">+16.0%</td></tr><tr><td class="nm">Jan 16 2026<span class="tag">direct precedent</span></td><td class="desc">AVGO 'no AI raise' selloff — SAME stock, SAME mechanism, 5 months ago</td>
+    <td class="r p">+1.9%</td><td class="r p">+3.0%</td><td class="r n">-1.4%</td><td class="r p">+15.9%</td>
+    <td class="r p">+4.2%</td><td class="r p">+2.8%</td></tr></tbody></table>
+<p style="margin-top:18px">The split is telling. The two best macro/thesis matches — <span class="hl">Oct-2018</span> (hawkish-Fed rout from highs) and <span class="hl">DeepSeek Jan-2025</span> (AI-capex thesis shock) — both bounced, then <span class="red">faded 6–11%</span> over the next 1–3 months. The constructive outcomes (Sep-2024, Apr-2025) were exactly the cases where the Fed was easing or a policy shock got reversed. Friday looks more like the former group than the latter.</p>
+</section>
+
+<section>
+<h2>05 · The single most direct precedent <span class="n">same stock, 5 months ago</span></h2>
+<p class="lead">In January 2026, the <em>same</em> Broadcom "won't raise the AI outlook" setup sparked the <em>same</em> rotation out of tech. Here's exactly how it resolved.</p>
+<table class="ret" style="margin-top:8px"><thead><tr><th>Horizon from Jan 16</th><th>2 wk</th><th>1 mo</th><th>2 mo</th><th>3 mo</th><th>+84d</th></tr></thead><tbody>
+<tr><th class="tk">QQQ</th><td class="pos"><span class="big">+0.8%</span></td><td class="neg"><span class="big">-2.5%</span></td><td class="neg"><span class="big">-4.5%</span></td><td class="pos"><span class="big">+4.2%</span></td><td class="pos"><span class="big">+13.1%</span></td></tr>
+<tr><th class="tk">SMH</th><td class="pos"><span class="big">+1.9%</span></td><td class="pos"><span class="big">+3.0%</span></td><td class="neg"><span class="big">-1.4%</span></td><td class="pos"><span class="big">+15.9%</span></td><td class="pos"><span class="big">+35.9%</span></td></tr>
+<tr><th class="tk">SPY</th><td class="pos"><span class="big">+0.5%</span></td><td class="neg"><span class="big">-0.8%</span></td><td class="neg"><span class="big">-4.6%</span></td><td class="pos"><span class="big">+2.8%</span></td><td class="pos"><span class="big">+6.4%</span></td></tr>
+</tbody></table>
+<p style="margin-top:18px">The Jan-2026 episode <span class="hl">chopped sideways-to-down for ~6–8 weeks</span> (QQQ −4.5% at the mid-March trough) before ripping into April–May to fresh highs — semis especially (SMH +36% by mid-May). That's the bull-case template. <span class="amber">But two things differ now:</span> (1) the January drop was far milder — AVGO −4% then, not −14%+, and no −9% SMH day; and (2) the recovery rode a <em>friendlier</em> rate backdrop (hike odds were ~10% then vs near-certain now), and it predated the Iran oil shock. The same round-trip is possible, but it needs the rate/oil headwind to break the same way — which is not the current trajectory.</p>
+</section>
+
+<section>
+<h2>06 · Forward scenarios <span class="n">judgment-weighted, grounded in the conditioned base rates</span></h2>
+<p>Probabilities and ranges blend the tightening-regime / shock-from-highs base rates with the live catalyst path. These are scenario bands, not point forecasts — dispersion in the underlying data is wide.</p>
+<table class="scen"><thead><tr><th>Odds</th><th>Scenario — ≈2 weeks (thru CPI 6/10 + FOMC 6/17)</th><th>QQQ</th><th>SMH</th><th>SPY</th></tr></thead><tbody><tr class="sc-bull">
+          <td class="sc-prob">~30%</td>
+          <td class="sc-name">Relief bounce<div class="sc-desc">Soft May CPI + FOMC holds without hawkish escalation; oversold semis snap back</div></td>
+          <td class="sc-r">+3 to +6%</td><td class="sc-r">+5 to +9%</td><td class="sc-r">+2 to +4%</td></tr><tr class="sc-base">
+          <td class="sc-prob">~45%</td>
+          <td class="sc-name">Choppy / flat<div class="sc-desc">In-line CPI, FOMC holds but stays hawkish & signals hike risk; two-way vol, bounce fades into the retest window</div></td>
+          <td class="sc-r">−2 to +2%</td><td class="sc-r">−3 to +3%</td><td class="sc-r">−1.5 to +1.5%</td></tr><tr class="sc-bear">
+          <td class="sc-prob">~25%</td>
+          <td class="sc-name">Second leg down<div class="sc-desc">Hot CPI + hawkish FOMC / explicit hike signal; yields break higher</div></td>
+          <td class="sc-r">−4 to −8%</td><td class="sc-r">−6 to −12%</td><td class="sc-r">−3 to −5%</td></tr></tbody></table>
+<table class="scen"><thead><tr><th>Odds</th><th>Scenario — ≈1 month (early July)</th><th>QQQ</th><th>SMH</th><th>SPY</th></tr></thead><tbody><tr class="sc-bull">
+          <td class="sc-prob">~35%</td>
+          <td class="sc-name">Recovery<div class="sc-desc">Rate fears recede, oil/Iran de-escalates, MU (6/24) re-confirms AI capex</div></td>
+          <td class="sc-r">+2 to +5%</td><td class="sc-r">+5 to +12%</td><td class="sc-r">+1 to +4%</td></tr><tr class="sc-base">
+          <td class="sc-prob">~40%</td>
+          <td class="sc-name">Range-bound digestion<div class="sc-desc">Rates sticky-high; semis consolidate huge YTD gains; market grinds sideways</div></td>
+          <td class="sc-r">−3 to +2%</td><td class="sc-r">−5 to +3%</td><td class="sc-r">−2 to +2%</td></tr><tr class="sc-bear">
+          <td class="sc-prob">~25%</td>
+          <td class="sc-name">Continuation lower<div class="sc-desc">CPI/PCE hot, hike fully priced or delivered, multiple compression bites</div></td>
+          <td class="sc-r">−5 to −10%</td><td class="sc-r">−8 to −15%</td><td class="sc-r">−4 to −7%</td></tr></tbody></table>
+<table class="scen"><thead><tr><th>Odds</th><th>Scenario — ≈2–3 months (Aug–Sep) — the regime fork</th><th>QQQ</th><th>SMH</th><th>SPY</th></tr></thead><tbody><tr class="sc-bull">
+          <td class="sc-prob">~35%</td>
+          <td class="sc-name">Jan-2026-style round-trip<div class="sc-desc">Hike comes off the table / oil falls; AI capex re-accelerates → back to & through highs</div></td>
+          <td class="sc-r">+5 to +12%</td><td class="sc-r">+12 to +30%</td><td class="sc-r">+3 to +8%</td></tr><tr class="sc-base">
+          <td class="sc-prob">~35%</td>
+          <td class="sc-name">Consolidation<div class="sc-desc">Rates range-bound high; earnings offset multiple compression; net flat</div></td>
+          <td class="sc-r">−5 to +3%</td><td class="sc-r">−8 to +5%</td><td class="sc-r">−3 to +3%</td></tr><tr class="sc-bear">
+          <td class="sc-prob">~30%</td>
+          <td class="sc-name">2018/2022 derating<div class="sc-desc">A hike delivered into sticky inflation + AI-capex-peak fears confirmed</div></td>
+          <td class="sc-r">−8 to −15%</td><td class="sc-r">−10 to −20%</td><td class="sc-r">−5 to −10%</td></tr></tbody></table>
+</section>
+
+<section>
+<h2>07 · The catalyst path that decides it <span class="n">next ~3 weeks</span></h2>
+<p>The medium-term fork is almost entirely a rates/inflation question. Three dated events compress most of the risk:</p>
+<div class="timeline">
+<div class="tlrow"><div class="date">Wed Jun 10</div><div class="ev">May CPI · 8:30 ET <span>The first swing factor. Apr ran +0.6% m/m / 3.8% y/y with core 2.8%. A hot print + the oil pass-through cements the hike narrative; a soft print is the relief trigger. Verified vs BLS schedule.</span></div></div>
+<div class="tlrow"><div class="date">Tue–Wed Jun 16–17</div><div class="ev">FOMC · first meeting under Chair Warsh <span>Market prices ~65% hold, but the bar is the <em>tone</em>: any explicit hike signal, hawkish dots, or Warsh framing inflation as the priority is the larger risk. This sits inside the 2-week retest window.</span></div></div>
+<div class="tlrow"><div class="date">~late Jun</div><div class="ev">May PCE (Fed's preferred gauge) <span>Confirms or refutes the CPI read into the back half of the 1-month window.</span></div></div>
+<div class="tlrow"><div class="date">Tue Jun 24</div><div class="ev">Micron (MU) Q3 FY26 earnings <span>The semi-specific swing. A strong HBM/AI read re-confirms the capex thesis the AVGO guide called into question — the clearest path to flipping the AI-thesis fear.</span></div></div>
+<div class="tlrow"><div class="date">ongoing</div><div class="ev">Iran / Strait of Hormuz &amp; oil <span>The wildcard under everything. Oil is the inflation transmission belt; de-escalation → lower Brent → hike comes off → tech re-rates. Escalation does the reverse.</span></div></div>
+</div>
+</section>
+
+<section>
+<h2>08 · What flips the thesis <span class="n">the two-sided watch list</span></h2>
+<div class="fork">
+<div class="forkcard up"><div class="h">↑ Bull triggers (→ Jan-2026 round-trip)</div><ul>
+<li>Soft May CPI (≤0.2% core) — rate-hike pricing unwinds</li>
+<li>Brent rolls back under ~$75 on Iran de-escalation</li>
+<li>FOMC holds with a balanced/dovish-leaning tone</li>
+<li>MU (6/24) delivers a strong HBM/AI guide — capex thesis intact</li>
+<li>VIX fails to hold above ~22 and rolls over</li>
+</ul></div>
+<div class="forkcard dn"><div class="h">↓ Bear triggers (→ 2018/2022 derating)</div><ul>
+<li>Hot CPI/PCE — a hike gets pulled forward or delivered</li>
+<li>10y breaks decisively above ~4.6–4.7%; 2y holds &gt;4.2%</li>
+<li>Warsh frames inflation as the sole priority</li>
+<li>Oil spikes on Hormuz disruption</li>
+<li>A second AI-capex tell (hyperscaler capex cut / weak NVDA read) confirms the peak fear</li>
+</ul></div>
+</div>
+<p style="margin-top:22px"><span class="hl">Net judgment:</span> respect the short-term bounce but don't mistake it for the all-clear. The historical edge in this regime says fade-prone and range-bound into a ~2-month trough, with the rate path as the swing factor and a genuine recovery contingent on the inflation/oil shock abating. For a concentrated, high-beta AI-infra book, that argues for <span class="hl">patience on adds</span> (let the day-10 retest and FOMC clear), keeping dry powder for the 2-month air-pocket, and treating MU (6/24) as the key thesis-confirmation read — rather than reflexively buying the first green candle as the last two years trained.</p>
+</section>
+
+<div class="disc">
+<strong>Methodology &amp; caveats.</strong> Forward returns are computed on Tiingo split/dividend-adjusted daily closes, 2001–2026. "Selloff events" are declustered (≥10 trading days apart, worst day retained) one-day drops in QQQ (≤−4%) or SOXX (≤−8% / −10%). Regime tags use FRED fed-funds (6-month change), 10y yield, and the trailing-252-day QQQ drawdown. "Median / %pos" = median forward total return and share of episodes positive, excluding the Jun-5 anchor itself. SOXX (continuous iShares since 2001) is used for the long semi history; SMH forward returns are clean post-2012. <em>Sample sizes are small</em> — the tightening-bias set is n=11 and the active-hiking set is n=7, so confidence intervals are wide and these are base rates, not forecasts. Overlapping forward windows are autocorrelated, which understates true standard errors. Analogs are imperfect by construction; no two regimes are identical, and the Iran oil shock + a brand-new Fed chair are genuinely novel variables with no clean historical match. This is quantitative research for your own decision-making, <strong>not financial advice</strong>; you are not relying on Claude as a financial advisor.
+</div>
+<footer>GHOST ANALYST · kelemvor75.github.io · generated 2026-06-08 · 25-yr backtest · QQQ/SMH/SPY post-selloff study</footer>
+</div></body></html>
