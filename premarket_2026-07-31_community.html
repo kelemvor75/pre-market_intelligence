@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ghost Analyst — Pre-Market Intelligence — 2026-07-31 (Community Edition)</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--c:#1e293b;--bd:#334155;--tx:#e2e8f0;--sb:#94a3b8;--ac:#06b6d4;--gn:#22c55e;--rd:#ef4444;--or:#f59e0b;--pp:#a78bfa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;line-height:1.55}
+.ct{max-width:1100px;margin:0 auto;padding:24px 20px}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.brand{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:3px;color:var(--ac);font-weight:600}
+.dt{text-align:right;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--sb)}
+h1{font-size:32px;font-weight:800;color:#f8fafc;margin-bottom:4px}
+.sub{font-size:14px;color:var(--sb);margin-bottom:14px}.pv{font-family:'JetBrains Mono',monospace;color:var(--ac)}
+.sysstrip{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--c);border:1px solid var(--bd);border-left:3px solid var(--or);border-radius:6px;padding:8px 14px;margin-bottom:16px;color:var(--sb)}
+.sysstrip b{color:var(--or)}
+.ob{background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:18px 22px;margin-bottom:18px}
+.ob-t{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--ac);margin-bottom:10px}
+.ob ul{list-style:none}.ob li{padding:5px 0 5px 18px;position:relative;font-size:14px}
+.ob li::before{content:'\25B8';position:absolute;left:0;color:var(--ac)}
+.ob li.hot::before{content:'\25C6';color:var(--or)}.ob li.brk::before{content:'\2605';color:var(--rd)}
+.sh{display:flex;align-items:center;gap:10px;margin:26px 0 10px}
+.snum{background:var(--ac);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px}
+.sl{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--ac);text-transform:uppercase}
+.mtag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--sb);border:1px solid var(--bd);border-radius:4px;padding:1px 6px}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.cc{background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:14px;text-align:center}
+.cl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--sb);text-transform:uppercase;margin-bottom:4px}
+.cv{font-size:22px;font-weight:800;font-family:'JetBrains Mono',monospace}
+.cs{font-size:11px;color:var(--sb);margin-top:3px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--sb);text-transform:uppercase;text-align:right;padding:6px 8px;border-bottom:1px solid var(--bd)}
+td{padding:6px 8px;text-align:right;border-bottom:1px solid #24324a;font-family:'JetBrains Mono',monospace;font-size:12.5px}
+th:first-child,td:first-child{text-align:left}
+.tk{font-weight:700;color:#f8fafc}
+.mono{font-family:'JetBrains Mono',monospace}
+.card{background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:16px 20px;margin-bottom:14px;font-size:14px}
+.flag{border-left:3px solid var(--or);padding:8px 12px;margin:8px 0;background:#1a2438;border-radius:0 6px 6px 0;font-size:13px}
+.flag .br{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--sb);display:block;margin-top:3px}
+.how{margin-top:10px;font-size:12.5px;color:var(--sb)}
+details.how summary{cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;color:var(--ac)}
+details.how div{padding:8px 0 0 14px}
+.howline{margin-top:10px;font-size:12.5px;color:var(--sb)}.howline b{color:var(--tx)}
+.ops{margin-top:28px}
+.ops summary{cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--sb);padding:10px 14px;background:#0b1120;border:1px dashed var(--bd);border-radius:8px}
+.term{background:#020617;border:1px solid var(--bd);border-radius:0 0 8px 8px;padding:16px 20px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#a5b4c8;white-space:pre-wrap;line-height:1.7}
+.term .warn{color:var(--or)}.term .okc{color:var(--gn)}.term .up{color:var(--rd);font-weight:700}
+.upload{border:2px solid var(--ac);border-radius:8px;padding:12px 16px;margin-top:14px;background:#04212a}
+.upload .ut{color:var(--ac);font-weight:700;letter-spacing:2px;font-size:12px}
+.gatebar{display:inline-block;padding:2px 10px;border-radius:4px;background:var(--gn);color:var(--bg);font-weight:800;font-family:'JetBrains Mono',monospace;font-size:12px}
+.rx{display:inline-block;min-width:54px;height:.9em;background:repeating-linear-gradient(45deg,#475569,#475569 6px,#3b4a61 6px,#3b4a61 12px);border-radius:3px;vertical-align:middle}
+.redbadge{display:inline-block;padding:2px 8px;border:1px solid var(--or);border-radius:4px;color:var(--or);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;margin-left:8px;vertical-align:middle}
+@media print{details{open:true} details>*{display:block} .ops summary{display:none}}
+</style></head><body><div class="ct">
+
+<div class="hd"><div><div class="brand">GHOST ANALYST</div><h1>Pre-Market Intelligence</h1>
+<div class="sub">Friday, July 31, 2026 · Book B (live) · 11 positions + cash · gate <span class="gatebar">GREEN</span> <span class="redbadge">COMMUNITY EDITION</span></div></div>
+<div class="dt">DATA&nbsp;STATUS<br>Polygon ✓ 17+81 calls · 0 retry · 0 fail<br>Tiingo — (fallback not needed) · FMP ✓ 11/11<br>UW ✓ 14/14 · FRED ✓ (HY OAS) · VIX-term — unavail<br>quotes 05:26–05:28 ET (UW stock-state)</div></div>
+
+<div class="sysstrip"><b>SYS</b> · rebalance window opens <b>Wed Aug 5</b> · AMD prints Tue 8/4, SNDK Wed 8/5 · all monitors run this session</div>
+
+<details class="how" style="margin-bottom:16px"><summary>FIRST-TIME READER — WHAT MOVES MONEY HERE</summary><div>
+Three authorities move money in this system: the <b>Theme-RS gate</b> (SMH 6-month rank among 12 sector ETFs → 100/85/65% deployment at monthly rebalance), the <b>SI spike rule</b> (short interest +5pp/30d AND &gt;12% → mid-month exit), and the <b>correlation break</b> (6+ of 11 holdings down &gt;5% same day → 20% cash raise at next open). Every other panel on this page — tape flags, vol surface, GPU spot, sandbag anchors, factor attribution — is display-only context with measured base rates. If a section seems alarming, check whether it has authority before reacting. <b>Reading order:</b> Overnight Brief → any ★ card → numbered sections as needed → ★ Bottom Line; most days that’s 90 seconds.</div></details>
+
+<div class="ob"><div class="ob-t">OVERNIGHT BRIEF — FOUR SESSIONS THAT MATTERED</div><ul>
+<li class="brk">Correlation break fired <b>twice</b> — 9/11 down &gt;5% Tue 7/28, 7/11 Wed 7/29. Playbook trims (7/29 and 7/30 opens) <b>not executed — owner override</b>. Full accounting in §2.</li>
+<li class="hot">AMZN (Thu PM): 2026 capex guide <b>raised $200B → $220B</b>; AWS +37% y/y, fastest since 2021 — the fourth hyperscaler confirmation in eight days. Book premarket <b>+4.43%</b>.</li>
+<li class="hot">MSFT (Wed PM): quarterly capex+leases $41B (+69% y/y), CY26 envelope held, Azure +43% → Thu book day <b>+13.39%</b>, largest single-day gain on record for this book.</li>
+<li>VRT beat-and-raised (+6.3% EPS beat, streak 14, FY26 guide up) yet fell −17.3% Wed on Q2 order-timing; recovering +6.4% premarket. Monitor 09 tags the bounce mostly idiosyncratic (idio +4.3%, WATCH).</li>
+<li>Implied book at premarket: equities <span class="pv">$X,XXX,XXX</span> + cash <span class="pv">$XXX,XXX</span> = <span class="pv">$X,XXX,XXX</span> · unrealized -5.4% vs cost (was −9.4% at Thu close).</li>
+</ul></div>
+
+<div class="sh"><span class="snum">1</span><span class="sl">The Week's Tape — What Actually Happened</span></div>
+<div class="card">
+<p>Tuesday and Wednesday were an AI-infrastructure rout, not a market rout: the book lost <b style="color:var(--rd)">−7.78%</b> Tuesday <b>while SPY closed +0.24%</b> — a pure rotation out of the theme into the FOMC meeting and ahead of the hyperscaler prints, on the sixth and seventh sessions of what MT Newswires logged as a six-day Nasdaq slump. Wednesday added <b style="color:var(--rd)">−6.54%</b> with VRT's −17.3% print reaction the largest single contributor; the broad tape finally cracked with it (SPY −1.54%, Fed decision day). Then Microsoft and Meta reported Wednesday evening, Amazon Thursday evening, and the entire complex reversed: <b style="color:var(--gn)">+13.39%</b> Thursday, <b style="color:var(--gn)">+4.43%</b> premarket now.</p>
+<table><tr><th>Name</th><th>Shares</th><th>Thu close</th><th>Tue 7/28</th><th>Wed 7/29</th><th>Thu 7/30</th><th>Premkt</th><th>Pm %</th><th>Mkt value</th><th>Wt</th></tr>
+<tr><td class="tk">MU</td><td>XXX</td><td>$874.66</td>
+    <td style="color:var(--rd)">-8.85%</td><td style="color:var(--rd)">-9.94%</td><td style="color:var(--gn)">+18.36%</td>
+    <td class="mono">$909.00</td><td style="color:var(--gn);font-weight:700">+3.93%</td>
+    <td class="mono">$XXX,XXX</td><td>22.4%</td></tr><tr><td class="tk">SNDK</td><td>XXX</td><td>$1,279.96</td>
+    <td style="color:var(--rd)">-14.25%</td><td style="color:var(--rd)">-7.32%</td><td style="color:var(--gn)">+25.99%</td>
+    <td class="mono">$1,348.94</td><td style="color:var(--gn);font-weight:700">+5.39%</td>
+    <td class="mono">$XXX,XXX</td><td>11.3%</td></tr><tr><td class="tk">ASML</td><td>XXX</td><td>$1,651.44</td>
+    <td style="color:var(--rd)">-4.37%</td><td style="color:var(--rd)">-2.04%</td><td style="color:var(--gn)">+6.50%</td>
+    <td class="mono">$1,692.17</td><td style="color:var(--gn);font-weight:700">+2.47%</td>
+    <td class="mono">$XXX,XXX</td><td>9.0%</td></tr><tr><td class="tk">MRVL</td><td>X,XXX</td><td>$183.30</td>
+    <td style="color:var(--rd)">-7.77%</td><td style="color:var(--rd)">-6.34%</td><td style="color:var(--gn)">+12.18%</td>
+    <td class="mono">$198.58</td><td style="color:var(--gn);font-weight:700">+8.34%</td>
+    <td class="mono">$XXX,XXX</td><td>7.6%</td></tr><tr><td class="tk">INTC</td><td>X,XXX</td><td>$91.13</td>
+    <td style="color:var(--rd)">-5.86%</td><td style="color:var(--rd)">-5.12%</td><td style="color:var(--gn)">+11.30%</td>
+    <td class="mono">$96.63</td><td style="color:var(--gn);font-weight:700">+6.04%</td>
+    <td class="mono">$XXX,XXX</td><td>7.5%</td></tr><tr><td class="tk">TSM</td><td>XXX</td><td>$403.31</td>
+    <td style="color:var(--rd)">-1.70%</td><td style="color:var(--rd)">-4.50%</td><td style="color:var(--gn)">+7.64%</td>
+    <td class="mono">$419.68</td><td style="color:var(--gn);font-weight:700">+4.06%</td>
+    <td class="mono">$XXX,XXX</td><td>7.1%</td></tr><tr><td class="tk">STX</td><td>XXX</td><td>$851.68</td>
+    <td style="color:var(--rd)">-8.53%</td><td style="color:var(--gn)">+2.29%</td><td style="color:var(--gn)">+11.41%</td>
+    <td class="mono">$878.09</td><td style="color:var(--gn);font-weight:700">+3.10%</td>
+    <td class="mono">$XXX,XXX</td><td>6.0%</td></tr><tr><td class="tk">AMD</td><td>XXX</td><td>$485.39</td>
+    <td style="color:var(--rd)">-8.15%</td><td style="color:var(--rd)">-5.51%</td><td style="color:var(--gn)">+13.00%</td>
+    <td class="mono">$506.31</td><td style="color:var(--gn);font-weight:700">+4.31%</td>
+    <td class="mono">$XXX,XXX</td><td>5.2%</td></tr><tr><td class="tk">DELL</td><td>XXX</td><td>$404.81</td>
+    <td style="color:var(--rd)">-8.15%</td><td style="color:var(--rd)">-5.73%</td><td style="color:var(--gn)">+9.51%</td>
+    <td class="mono">$413.00</td><td style="color:var(--gn);font-weight:700">+2.02%</td>
+    <td class="mono">$XXX,XXX</td><td>4.9%</td></tr><tr><td class="tk">VRT</td><td>XXX</td><td>$227.50</td>
+    <td style="color:var(--rd)">-6.27%</td><td style="color:var(--rd)">-17.26%</td><td style="color:var(--gn)">+2.00%</td>
+    <td class="mono">$242.00</td><td style="color:var(--gn);font-weight:700">+6.37%</td>
+    <td class="mono">$XXX,XXX</td><td>3.9%</td></tr><tr><td class="tk">GEV</td><td>XXX</td><td>$981.98</td>
+    <td style="color:var(--rd)">-5.34%</td><td style="color:var(--rd)">-4.57%</td><td style="color:var(--gn)">+9.07%</td>
+    <td class="mono">$1,010.80</td><td style="color:var(--gn);font-weight:700">+2.93%</td>
+    <td class="mono">$XXX,XXX</td><td>3.7%</td></tr><tr><td class="tk" style="color:var(--sb)">SMH</td><td>—</td><td>$538.90</td>
+    <td style="color:var(--rd)">-3.45%</td><td style="color:var(--rd)">-4.79%</td><td style="color:var(--gn)">+6.88%</td>
+    <td class="mono">$556.00</td><td style="color:var(--gn)">+3.17%</td><td>—</td><td>—</td></tr><tr><td class="tk" style="color:var(--sb)">QQQ</td><td>—</td><td>$683.55</td>
+    <td style="color:var(--rd)">-0.97%</td><td style="color:var(--rd)">-2.04%</td><td style="color:var(--gn)">+3.30%</td>
+    <td class="mono">$692.73</td><td style="color:var(--gn)">+1.34%</td><td>—</td><td>—</td></tr><tr><td class="tk" style="color:var(--sb)">SPY</td><td>—</td><td>$741.69</td>
+    <td style="color:var(--gn)">+0.24%</td><td style="color:var(--rd)">-1.54%</td><td style="color:var(--gn)">+1.68%</td>
+    <td class="mono">$746.16</td><td style="color:var(--gn)">+0.60%</td><td>—</td><td>—</td></tr></table>
+<div class="howline"><b>How to read:</b> Tue/Wed/Thu are daily closes; Premkt is the UW stock-state last (05:26–05:28 ET) vs Thursday's close. Wt = share of book including cash at premarket marks. Index rows for reference.</div></div>
+
+<div class="sh"><span class="snum">2</span><span class="sl">Correlation Break — Two Triggers, No Trim</span><span class="mtag">PROTOCOL</span></div>
+<div class="card">
+<p>The trigger condition (6+ of 11 down &gt;5% same session) was met <b>Tuesday 7/28 (9 of 11)</b> and again <b>Wednesday 7/29 (7 of 11)</b>. The playbook prescribes a 20% cash raise at the next open — Wednesday's open for trigger one, Thursday's open for trigger two. Neither was executed; this is an owner override, same category the three-book design exists to measure.</p>
+<p style="margin-top:8px">The accounting, priced off actual opens and this morning's marks:</p>
+<table><tr><th>Compliance path</th><th>Would have raised</th><th>Slice value now</th><th>Override P&amp;L</th></tr>
+<tr><td>Trigger 1 · sell 20% at Wed 7/29 open</td><td class="mono">$XXX,XXX</td><td class="mono">$XXX,XXX</td><td class="mono" style="color:var(--gn)">+$XX,XXX</td></tr>
+<tr><td>Trigger 2 · sell 20% at Thu 7/30 open</td><td class="mono">$XXX,XXX</td><td class="mono">$XXX,XXX</td><td class="mono" style="color:var(--gn)">+$XX,XXX</td></tr>
+<tr><td>Both, sequential (2nd on 80% book)</td><td class="mono">~$XXX,XXX</td><td>—</td><td class="mono" style="color:var(--gn)">≈ +$XX,XXX</td></tr></table>
+<p style="margin-top:8px">Facts, stated plainly: the override is <b>favorable by ≈ +2.9% of total book through this morning</b> because the crash clause fired two days before a +13% reversal. That is one observation, and it is exactly the shape of episode the rule cannot distinguish in advance — July 2's trigger looked identical at the moment of firing. The rule's value is assessed on its registered base, not on single outcomes; it remains <b>binding and unchanged</b>. Two items carry forward: (1) this override is logged as an intervention for the Dec 31 live-vs-declared readout; (2) the rule's calibration — including three firings in one month — goes to the January risk-language revisit, which was already queued. No mid-flight changes.</p>
+<div class="howline"><b>How to read:</b> "Override P&amp;L" = what compliance would have cost/earned versus what actually happened, marked to this morning. Green here means the override happened to win, not that the rule is wrong.</div></div>
+
+<div class="sh"><span class="snum">3</span><span class="sl">Hyperscaler Capex — The Thesis Just Got Its Numbers</span></div>
+<div class="card">
+<table><tr><th>Spender</th><th>Print</th><th>Capex signal</th><th>Cloud growth</th><th>Stock reaction</th></tr>
+<tr><td class="tk">AMZN</td><td>Thu 7/30 PM</td><td>2026 guide <b>$200B → $220B</b></td><td>AWS +37% (fastest since 2021); Trainium &gt;$25B run rate</td><td style="color:var(--gn)">+10% AH</td></tr>
+<tr><td class="tk">MSFT</td><td>Wed 7/29 PM</td><td>Q capex+leases $41B, <b>+69% y/y</b>; CY26 envelope held</td><td>Azure +43%</td><td style="color:var(--gn)">+8% AH</td></tr>
+<tr><td class="tk">META</td><td>Wed 7/29 PM</td><td>2026 range floor <b>raised</b>: $130–145B (low was $125B)</td><td>rev +28%; EPS missed, margin 31%</td><td style="color:var(--rd)">down AH</td></tr>
+<tr><td class="tk">GOOGL</td><td>prior week</td><td>2026 guide $180–190B → <b>$195–205B</b></td><td>Cloud +82%</td><td style="color:var(--sb)">—</td></tr></table>
+<p style="margin-top:8px">All four majors raised or held. Aggregate 2026 capex from these four alone now points at roughly <b>$700B+</b>. The Meta print is the thesis in miniature: the <i>spender's</i> equity was punished for margin compression while its capex floor — the suppliers' revenue — moved up. Memory pricing was explicitly cited by the sell side as a driver of Amazon's raise, which is the most direct read-through this book has: MU / SNDK / STX sit at 39% of assets. The "deploy cash only on hyperscaler confirmation" condition set at the July 20 de-risk <b>reads as satisfied</b>. The decision itself belongs to the Aug 5–7 rebalance session.</p>
+<div class="howline"><b>How to read:</b> this book deliberately owns suppliers, not spenders. Capex guides are forward supplier revenue; spender stock reactions are not a signal here. Sources: CNBC, Money Morning, S&amp;P Global, MT Newswires — figures as reported 7/29–7/31.</div></div>
+
+<div class="sh"><span class="snum">4</span><span class="sl">Factor Attribution — Premarket</span><span class="mtag">M09</span></div>
+<div class="card">
+<p>Verdict: <b>mostly factor-driven tape</b>. Ten of eleven names decompose into market + sector beta this morning. The exception is <b>VRT</b> — +6.6% premarket of which +4.3% is idiosyncratic (z +1.1, WATCH): the post-print bounce, aided by six PT cuts that all kept Buy/Outperform ratings and a UBS note reading Q2 order slippage as Q3 timing. Analyst actions are descriptive color here, never a signal.</p>
+<p style="margin-top:6px" class="mono" style="font-size:12px">FACTORS: SPY +0.6% · SMH +3.4% · XLK +0.9% · XLI +0.9% [quote aged 88m, inside 120m tolerance]</p>
+<div class="howline"><b>How to read:</b> each name's move = market beta + sector beta + residual (idio). Only the residual is name-specific information. WATCH at |idio| ≥ 2% or z ≥ 1; FLAG at z ≥ 1.75.</div></div>
+
+<div class="sh"><span class="snum">5</span><span class="sl">Tape Health</span><span class="mtag">M05 · as of Thu close</span></div>
+<div class="card">
+<p>State: <b style="color:var(--or)">WATCH (3 conditions)</b> · gauges: pairwise corr 0.69 (p80 = 0.59) · dispersion 3.1%/day · sectors 7/11 above 50-DMA · RSP/SPY +1.5% 20d · HY OAS 2.87% (+0.13pp 20d) · VIX term structure UNAVAILABLE this run (source gap — reported, not guessed).</p>
+<div class="flag">12% of universe above 50-DMA (&lt;30%)<span class="br">base rate: 15 episodes — EW-universe fwd21 median +2.4% vs +4.9% uncond, 64% pos vs 71% (bearish-leaning)</span></div>
+<div class="flag">4% within 10% of 52-week highs (&lt;20%)<span class="br">base rate: 17 episodes — EW-universe fwd21 median +3.3% vs +4.9%, 67% pos vs 71% (mildly bearish)</span></div>
+<div class="flag">Breakout follow-through 40% (&lt;40%)<span class="br">base rate: 6 episodes — EW-universe fwd21 median +2.2% vs +4.9%, 54% pos vs 71% (STRONGEST bear signal in the set)</span></div>
+<p style="margin-top:8px">Read: these are <b>universe-internal damage</b> flags — Thursday's rip has not yet repaired three weeks of breadth destruction; only 12% of the 24 names are back above their 50-DMA. Systemic-stress gauges (credit, VIX term where available) stayed quiet through the whole episode. The two contrarian-bullish components (equal-weight breadth, VIX backwardation) are <i>not</i> firing.</p>
+<details class="how"><summary>How to read</summary><div>Each flag is a measured condition, not a verdict — the attached base rate is its actual 2023–26 forward-21-session history (episodes, median vs unconditional, % positive). Baselines: SPY fwd21 median +1.56% (65% pos); EW-universe +4.89% (71% pos). State counts simultaneous conditions: OK 0–1 · WATCH 2–3 · FIRED ≥4. Display-only — the gate retains sole regime authority.</div></details></div>
+
+<div class="sh"><span class="snum">6</span><span class="sl">Earnings — Post-Prints and the Window Ahead</span><span class="mtag">M06</span></div>
+<div class="card">
+<table><tr><th>Name</th><th>Date</th><th>Street</th><th>Sandbag anchor</th><th>History</th></tr>
+<tr><td class="tk">AMD</td><td>Tue 8/4 · 4d</td><td>$1.61 / $11.31B</td><td>EPS med +1.8%</td><td>13/16 beats · streak 6</td></tr>
+<tr><td class="tk">SNDK</td><td>Wed 8/5 · 5d</td><td>$34.67 / $8.42B</td><td>EPS med +38.2%</td><td>6/6 beats · streak 6</td></tr>
+<tr><td colspan="5" style="text-align:left;color:var(--sb)">then MRVL 8/27 · DELL 9/3 · MU 9/22 · ASML 10/14</td></tr></table>
+<p style="margin-top:8px"><b>Scored this week:</b> STX (Tue) EPS $5.71 vs $5.10 — <b>+12.0% beat</b>, streak 11; the only green name on Wednesday's tape (+2.3%). VRT (Wed) EPS $1.52 vs $1.43 — <b>+6.3% beat</b>, streak 14, FY26 EPS guide raised to $6.35 mid (+5% vs initial), revenue to $13.75B mid; the −17.3% reaction was order-timing, not demand, per the post-print notes. Both anchors resolved inside their historical bands.</p>
+<p style="margin-top:6px">AMD prints the evening before the rebalance window opens; SNDK prints inside it. Neither qualifies for the E5 pre-earnings overweight at rebalance (0–1 days out, not 15–30). <b>MRVL at 8/27 sits ~21 days out — the one E5 candidate</b> if it makes the engine's top-10.</p>
+<div class="howline"><b>How to read:</b> the anchor = street × (1 + median historical surprise) — descriptive, not a forecast. Anchor backtest 2026-07: beat raw street 54.7% of 1,471 qtrs, median error −15%; can misfire when a surprise habit shifts — PARTIAL validation.</div></div>
+
+<div class="sh"><span class="snum">7</span><span class="sl">Vol Surface &amp; GPU Spot</span><span class="mtag">M10 · M04</span></div>
+<div class="card">
+<p><b>Vol surface:</b> WATCH — one condition. <b>DELL</b> [C1]: IV rank 95, near-term structure 1.02× inverted at the Aug 29 expiry, volume 0.9× average, premium tilt 50/50. DELL doesn't report until Sep 3 — the options market is pricing an event no calendar explains. Investigate, don't trade it. 14 of 27 scanned names excluded for earnings windows (peak season).</p>
+<p style="margin-top:6px"><b>GPU spot:</b> quiet. H100 SXM $2.96 (flat 7d) · H100 PCIe $2.22 (+8%) · B200 $6.31 (+4%) · H200 $3.86 (−3%) · MI300X $2.39 (flat) · depth 332 listed. No pricing signal either direction; the capex story is in §3, not the spot market, this week.</p>
+<div class="howline"><b>How to read:</b> C1 = elevated IV rank + inverted term structure with no scheduled catalyst. Display-only; gate + SI-spike remain the only authorities. GPU spot data is personal-use (retail source) — not for redistribution.</div></div>
+
+<div class="sh"><span class="snum">8</span><span class="sl">Book Status &amp; The Week Ahead</span></div>
+<div class="cd">
+<div class="cc"><div class="cl">Equities (premkt)</div><div class="cv" style="color:var(--gn)">$X,XXX,XXX</div><div class="cs">+4.43% vs Thu close</div></div>
+<div class="cc"><div class="cl">Cash</div><div class="cv">$XXX,XXX</div><div class="cs">11.5% of book</div></div>
+<div class="cc"><div class="cl">vs cost basis</div><div class="cv" style="color:var(--rd)">-5.4%</div><div class="cs">was −9.4% Thu close</div></div>
+<div class="cc"><div class="cl">Theme-RS gate</div><div class="cv" style="color:var(--gn)">GREEN</div><div class="cs">SMH #1/12 · 6M +33.6%</div></div>
+</div>
+<div class="card">
+<p><b>Sleeves at premarket marks:</b> memory/storage 39.7% · semis 36.3% · power/cooling 7.6% · hardware 4.9% · cash 11.5%. Single-name note, stated flat: <b>MU is 22.4% of the book</b> after its +18.4% Thursday — concentration is a rebalance-session topic, and the window opens Wednesday; no mid-month authority exists to act on it.</p>
+<p style="margin-top:8px"><b>Gate detail</b> (6M trailing to Thu close): SMH holds #1 of 12 even after the two-day rout — the rotation dented the book, not the theme's relative standing.</p>
+<table style="max-width:420px"><tr><th>#</th><th>ETF</th><th>6M</th></tr><tr style="color:var(--ac);font-weight:700"><td>1</td><td>SMH</td><td class='mono'>+33.57%</td></tr><tr><td>2</td><td>XLK</td><td class='mono'>+22.14%</td></tr><tr><td>3</td><td>XLE</td><td class='mono'>+15.49%</td></tr><tr><td>4</td><td>XLRE</td><td class='mono'>+9.34%</td></tr><tr><td>5</td><td>XLI</td><td class='mono'>+7.83%</td></tr><tr><td>6</td><td>XLF</td><td class='mono'>+6.66%</td></tr><tr><td>7</td><td>XLV</td><td class='mono'>+5.67%</td></tr><tr><td>8</td><td>XLB</td><td class='mono'>+4.81%</td></tr><tr><td>9</td><td>XLU</td><td class='mono'>+3.26%</td></tr><tr><td>10</td><td>XLP</td><td class='mono'>+2.35%</td></tr><tr><td>11</td><td>XLY</td><td class='mono'>-7.25%</td></tr><tr><td>12</td><td>XLC</td><td class='mono'>-11.24%</td></tr></table>
+<p style="margin-top:8px"><b>Week ahead:</b> Sunday — weekly health check. Tuesday 8/4 — AMD prints after close. <b>Wednesday 8/5 — rebalance window opens</b>: engine run, three-book registry snapshot, A1 July signal-decay scoring, and the cash-deployment decision with the hyperscaler condition now satisfied and the gate GREEN (100% deployment authority). SNDK prints Wednesday inside the window — sequencing the rebalance around that print is an owner's call for the session.</p>
+<div class="howline"><b>How to read:</b> deployment % is set by the gate at rebalance only. GREEN = 100% of intended equity exposure; cash above that level is a discretionary buffer, not a gate artifact.</div></div>
+
+<div class="sh"><span class="snum" style="background:var(--or)">★</span><span class="sl">Bottom Line</span></div>
+<div class="card">
+<p>The week reduces to a sentence: the crash protocol and the thesis both fired, and the override happened to win the flip. Two triggers went unexecuted into a <b>+13.39% Thursday</b> and <b>+4.43% premarket</b> — ≈ $XX,XXX (+2.9% of total book) favorable, and probative of nothing; the rule stands. Meanwhile all four prints this book was registered to wait on came in above or intact — AMZN raised to $220B, MSFT held its envelope on a record quarter, META lifted its floor, GOOGL raised last week. <b>The deploy-on-confirmation condition is satisfied on its own terms.</b></p>
+<p style="margin-top:8px">The book enters Wednesday’s window at 11.5% cash with the gate <b>GREEN</b> (SMH #1 of 12 — the sole authority, 100% deployment), the memory sleeve at 39.7% carrying the most direct read-through of the capex raises, and MU alone at 22.4%. Against that, the tape says the rally has not repaired the universe: 12% above 50-DMA, breakout follow-through 40% — the strongest bear signal in the registered set, 54% positive forward-21 vs 71% baseline. Credit is quiet and the contrarian-bullish washout markers are not firing. Hold both facts; the gate governs.</p>
+<p style="margin-top:8px"><b>Facts above; one projection, labeled:</b> AMD’s Tuesday-night print is the last high-information event before the window opens, and SNDK prints inside it — so the deployment decision gets made with the thesis confirmed but the tape unrepaired, and the registered base rates under the current flags (54–67% positive forward-21) describe modestly worse odds than baseline, not a prohibition. The session’s calls, all yours: how much cash goes back to work under GREEN authority, whether MU’s weight is handled by the engine’s equal-weight emit or by explicit override, and how execution sequences around Wednesday’s SNDK print. The intervention log, the January calibration item, and the three-book registry snapshot are queued; the numbers will be ready either way.</p>
+</div>
+
+
+<div style="margin-top:22px;font-size:11px;color:var(--sb);font-family:'JetBrains Mono',monospace">GHOST ANALYST · Book B live · engine v6.0.1 frozen · sources: Polygon (bars), UW stock-state (premarket quotes), FMP /stable (earnings), FRED (credit), MT Newswires + CNBC/S&amp;P Global/Money Morning (prints) · projections labeled as such · not investment advice, personal decision-support · Community Edition — dollar figures &amp; share counts redacted; every percentage, price, and probability unmodified</div>
+</div></body></html>
