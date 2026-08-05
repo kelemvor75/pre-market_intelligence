@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ghost Analyst — August 2026 Rebalance</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--c:#1e293b;--bd:#334155;--tx:#e2e8f0;--sb:#94a3b8;--ac:#06b6d4;--gn:#22c55e;--rd:#ef4444;--or:#f59e0b;--pp:#a78bfa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;line-height:1.55}
+.ct{max-width:1100px;margin:0 auto;padding:24px 20px}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.brand{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:3px;color:var(--ac);font-weight:600}
+.dt{text-align:right;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--sb)}
+h1{font-size:32px;font-weight:800;color:#f8fafc;margin-bottom:4px}
+.sub{font-size:14px;color:var(--sb);margin-bottom:20px}.pv{font-family:'JetBrains Mono',monospace;color:var(--ac)}
+.ob{background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:18px 22px;margin-bottom:18px}
+.ob-t{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--ac);margin-bottom:10px}
+.ob ul{list-style:none;padding:0}.ob li{padding:5px 0 5px 18px;position:relative;font-size:14px}
+.ob li::before{content:'\25B8';position:absolute;left:0;color:var(--ac)}
+.ob li.hot::before{content:'\25C6';color:var(--or)}.ob li.brk::before{content:'\2605';color:var(--rd)}
+.wx{background:var(--c);border-radius:8px;padding:12px 18px;margin-bottom:18px;display:flex;align-items:center;gap:10px;font-size:13px}
+.wx-t{font-size:20px;font-weight:700}.wx-d{color:var(--sb)}
+.sh{display:flex;align-items:center;gap:10px;margin:20px 0 10px}
+.snum{background:var(--ac);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px}
+.sl{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--ac);text-transform:uppercase}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.cc{background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:14px;text-align:center}
+.cl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--sb);text-transform:uppercase;margin-bottom:4px}
+.cv{font-size:22px;font-weight:800;font-family:'JetBrains Mono',monospace}
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:8px}
+.mc{background:var(--c);border:1px solid var(--bd);border-radius:8px;padding:14px}
+.ml{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--sb);letter-spacing:1px;text-transform:uppercase}
+.mv{font-size:22px;font-weight:800;color:#f8fafc;margin:3px 0;font-family:'JetBrains Mono',monospace}
+.mg{font-size:12px;font-weight:600}
+.sr{display:flex;align-items:center;gap:8px;padding:4px 0}.sd{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.sn{font-size:13px;color:var(--sb);width:170px;flex-shrink:0}
+.sb-bg{flex:1;height:18px;background:var(--c);border-radius:4px;overflow:hidden}.sb{height:100%;border-radius:4px}
+.sp{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;width:55px;text-align:right;flex-shrink:0}
+.s1d{font-family:'JetBrains Mono',monospace;font-size:11px;width:60px;text-align:right;flex-shrink:0}
+.cs{margin-bottom:14px}.cs p{font-size:14px;margin-bottom:6px;line-height:1.6}.cs ul{list-style:none;padding:0}
+.cs li{padding:4px 0 4px 18px;position:relative;font-size:14px}.cs li::before{content:'\25B8';position:absolute;left:0;color:var(--ac)}
+.hl{color:var(--ac);font-weight:600}.bu{color:var(--gn);font-weight:600}.be{color:var(--rd);font-weight:600}.wa{color:var(--or);font-weight:600}
+.co{background:#0c4a6e22;border-left:3px solid var(--ac);padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0;font-size:14px}
+.co-r{background:#7f1d1d22;border-left-color:var(--rd)}
+.ec{background:var(--c);border:1px solid var(--or);border-radius:8px;padding:14px 18px;margin:12px 0}
+.ec-t{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--or);margin-bottom:8px}
+.pt{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
+.pt th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--sb);text-transform:uppercase;padding:7px 6px;text-align:left;border-bottom:2px solid var(--bd)}
+.pt th.n{text-align:right}.pt td{padding:6px;border-bottom:1px solid #1e293b88;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pt tr:hover{background:#1e293b66}.n{font-family:'JetBrains Mono',monospace;text-align:right}
+.tk{font-weight:700;font-size:13px}.tm{display:block;font-size:10px;color:var(--sb)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
+.ins{background:var(--c);border-left:3px solid var(--or);border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0;font-size:13px}
+.ins-t{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--or);margin-bottom:6px}
+.bl{background:linear-gradient(135deg,#0c4a6e33,#0f172a);border:1px solid var(--ac);border-radius:8px;padding:18px;margin-top:18px}.bl p{font-size:14px;margin-bottom:6px}
+.ft{text-align:center;padding:16px;font-size:11px;color:#475569;margin-top:20px}
+@media(max-width:768px){.cg,.cd{grid-template-columns:repeat(2,1fr)}.ct{padding:14px 10px}h1{font-size:24px}.pt{font-size:11px}}
+/* ---- v8.2: three-layer architecture ---- */
+.sys{background:#78350f22;border:1px solid #f59e0b66;border-radius:8px;padding:8px 14px;margin:0 0 14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#fbbf24;letter-spacing:.3px;line-height:1.6}
+.sys b{color:#fde68a}
+.sys.ok{background:#052e1633;border-color:#22c55e55;color:#4ade80}
+.sys.ok b{color:#86efac}
+.mid{font-size:10px;color:#475569;border:1px solid #33415588;border-radius:4px;padding:1px 6px;margin-left:8px;letter-spacing:1px;font-family:'JetBrains Mono',monospace;vertical-align:middle}
+.howl{font-size:11.5px;color:#64748b;margin:6px 0 16px;line-height:1.55}
+.howl b{color:#94a3b8}
+details.how{background:transparent;border:none;border-left:2px solid #33415588;border-radius:0;margin:6px 0 16px;padding:0}
+details.how summary{color:#64748b;font-size:11px;padding:4px 10px;letter-spacing:1px}
+details.how .hb{padding:2px 12px 10px;font-size:12px;color:#94a3b8;line-height:1.6}
+details.ops{background:#020617;border:1px solid #334155;margin:20px 0 8px}
+details.ops>summary{color:#94a3b8;letter-spacing:2px}
+details.ops .opsb{padding:6px 16px 16px}
+details.ops .opsb .clock{margin:10px 0}
+details.ops .opsb .banner{margin:10px 0}
+@media print{details>*{display:block!important}details summary{list-style:none}}
+.redact{filter:blur(5px);-webkit-filter:blur(5px);user-select:none;pointer-events:none;display:inline-block}
+.redact::selection{background:transparent;color:transparent}
+.redact{background:#1a1d24;color:#8b93a7;padding:0 .35em;border-radius:3px;letter-spacing:.08em;filter:blur(.6px);font-family:ui-monospace,monospace;font-size:.92em}</style>
+
+</head><body><div class="ct">
+<div class="hd"><div class="brand">GHOST ANALYST &middot; REBALANCE SESSION</div><div class="dt">Wednesday, August 5, 2026<br>Engine v6.0.1 &middot; as-of 2026-08-04 close</div></div>
+<h1>August 2026 Rebalance</h1>
+<div class="sub">11-Position AI Infrastructure Portfolio · <span style="color:#c9a34e">COMMUNITY EDITION — position sizes masked</span> &middot; <span class="redact">$X,XXX,XXX</span> &middot; Theme-RS <span class="bu">GREEN 1/12</span> &middot; 100% deployment authority</div>
+
+<div class="ds">DATA &nbsp;Polygon [✓] &nbsp;|&nbsp; Tiingo [✓] &nbsp;|&nbsp; FMP [✓] &nbsp;|&nbsp; FRED [—] &nbsp;|&nbsp; UW [—] &nbsp;·&nbsp; engine as-of 2026-08-04 (last completed close)</div>
+<details><summary>data status — full counts</summary><pre>Polygon [✓] 37 calls · 0 retries · 0 fails (prices: universe 24 + gate ETFs 12 + as-of probe)
+Tiingo  [✓] 16 calls · 0 fails (THREE_BOOK standings, adjClose; zero price fallbacks needed on engine side)
+FMP     [✓] 24 calls · 0 fails (/stable/earnings per-symbol)
+FRED    [—] not used this session (T+1 by design; no macro gating — rejected instrument)
+UW      [—] not used this session
+MT News [✓] 3 per-symbol calls (WDC/AMD/SNDK earnings-context headlines)</pre></details>
+
+<div class="sys"><b>SYSTEM ⚠</b>&nbsp; AUG REBALANCE RUN COMPLETE (as-of 08-04) · declared-book registry row <b>PENDING your call</b> · 5 uploads pending · WDC / SNDK / TTMI print <b>tonight</b>, VST Friday — inside your execution window &nbsp;—&nbsp; commands &amp; files in the <b>Ops Appendix</b>.</div>
+
+<details class="how"><summary>HOW TO READ THIS REPORT (first-time primer)</summary><div class="hb">
+<strong style="color:#e2e8f0">The authority hierarchy:</strong> exactly <strong>three</strong> mechanisms in this system are allowed to move money. (1) The <strong>Theme-RS gate</strong> sets the deployment fraction (100/85/65%) at the monthly rebalance. (2) The <strong>SI spike rule</strong> (&gt;+5pp/30d and &gt;12%) is a mid-month exit. (3) The <strong>correlation break</strong> (6+ holdings down &gt;5% in one session) is a mid-month 20% cash raise. The monthly engine ranking below is the system's selection output; whether the live book follows it is the owner's declared-book decision, tracked honestly in the three-book horse race. Everything else is display-only context. Facts are stated as facts with sources; projections are labeled.
+</div></details>
+
+<div class="sh"><div class="snum">1</div><div class="sl">Theme-RS v2 Gate</div></div>
+<div class="cd">
+<div class="cc"><div class="cl">Tier</div><div class="cv" style="color:var(--gn)">GREEN</div></div>
+<div class="cc"><div class="cl">SMH 6M Rank</div><div class="cv">1 / 12</div></div>
+<div class="cc"><div class="cl">Weak Streak</div><div class="cv">0</div></div>
+<div class="cc"><div class="cl">Deployment</div><div class="cv" style="color:var(--gn)">100%</div></div>
+</div>
+<div class="ob"><div class="sr"><div class="sn">SMH</div><div class="sb-bg"><div class="sb" style="width:100%;background:#06b6d4"></div></div><div class="sp">+44.8%</div></div><div class="sr"><div class="sn">XLK</div><div class="sb-bg"><div class="sb" style="width:70%;background:#22c55e"></div></div><div class="sp">+31.6%</div></div><div class="sr"><div class="sn">XLE</div><div class="sb-bg"><div class="sb" style="width:30%;background:#22c55e"></div></div><div class="sp">+13.3%</div></div><div class="sr"><div class="sn">XLRE</div><div class="sb-bg"><div class="sb" style="width:24%;background:#22c55e"></div></div><div class="sp">+10.7%</div></div><div class="sr"><div class="sn">XLI</div><div class="sb-bg"><div class="sb" style="width:23%;background:#22c55e"></div></div><div class="sp">+10.3%</div></div><div class="sr"><div class="sn">XLF</div><div class="sb-bg"><div class="sb" style="width:18%;background:#22c55e"></div></div><div class="sp">+8.1%</div></div><div class="sr"><div class="sn">XLV</div><div class="sb-bg"><div class="sb" style="width:12%;background:#22c55e"></div></div><div class="sp">+5.2%</div></div><div class="sr"><div class="sn">XLB</div><div class="sb-bg"><div class="sb" style="width:6%;background:#22c55e"></div></div><div class="sp">+2.6%</div></div><div class="sr"><div class="sn">XLU</div><div class="sb-bg"><div class="sb" style="width:4%;background:#22c55e"></div></div><div class="sp">+2.0%</div></div><div class="sr"><div class="sn">XLP</div><div class="sb-bg"><div class="sb" style="width:2%;background:#ef4444"></div></div><div class="sp">-0.6%</div></div><div class="sr"><div class="sn">XLY</div><div class="sb-bg"><div class="sb" style="width:2%;background:#ef4444"></div></div><div class="sp">-2.2%</div></div><div class="sr"><div class="sn">XLC</div><div class="sb-bg"><div class="sb" style="width:2%;background:#ef4444"></div></div><div class="sp">-4.8%</div></div></div>
+<p class="howl" style="font-size:12px;color:#94a3b8"><b>How to read:</b> SMH's trailing 6-month return ranked against 11 SPDR sectors. Rank 1–3 = GREEN = full deployment authority, instantly. Downgrades need two consecutive weak months — one bad reading never moves money. Source: Polygon adjusted closes, 2026-02-04 → 2026-08-04.</p>
+
+<div class="sh"><div class="snum">2</div><div class="sl">Guard Corrections</div></div>
+<div class="co" style="font-family:'JetBrains Mono',monospace;font-size:12px;white-space:pre-wrap">>>> GUARD CORRECTIONS (k=3.0 spike-and-revert, neighbor-mean, interior only, never most-recent):
+>>>   CCJ 2025-02-20: raw 0.26 -> 0.05
+>>>   CCJ 2025-07-31: raw 0.51 -> 0.08
+>>>   VST 2024-11-07: raw 5.4 -> 1.02
+>>>   July's GEV/SNDK corrections: not re-flagged — GEV's two elevated quarters (2026-01/2026-04)
+>>>   are now adjacent (pattern, not isolated spike; guard leaves by design); SNDK's flagged
+>>>   quarter rolled out of the interior window. CCJ x2 + VST x1 corrected this run.
+</div>
+
+<div class="sh"><div class="snum">3</div><div class="sl">Engine v6.0.1 Ranked Output — Pool 21 · Backfill 0</div></div>
+<table class="pt"><colgroup><col style="width:5%"><col style="width:10%"><col style="width:9%"><col style="width:10%"><col style="width:8%"><col style="width:10%"><col style="width:5%"><col style="width:13%"><col style="width:5%"><col style="width:9%"></colgroup>
+<tr><th>#</th><th>Ticker</th><th class="n">z</th><th class="n">21d Mom</th><th class="n">PEG</th><th class="n">TTM Gr</th><th class="n">Q</th><th>Next Rpt</th><th>E5</th><th class="n">Weight</th></tr>
+<tr><td class="bu">1</td><td class="bu">LITE </td><td style="text-align:right">+1.775</td><td style="text-align:right" class="bu">+16.17%</td><td style="text-align:right">0.362</td><td style="text-align:right">+389.4%</td><td style="text-align:right">8</td><td>2026-08-11</td><td style="text-align:center">·</td><td style="text-align:right">8.7%</td></tr><tr><td class="bu">2</td><td class="bu">DELL ●</td><td style="text-align:right">+1.528</td><td style="text-align:right" class="bu">+13.47%</td><td style="text-align:right">0.525</td><td style="text-align:right">+65.2%</td><td style="text-align:right">8</td><td>2026-09-03</td><td style="text-align:center">Y</td><td style="text-align:right">13.0%</td></tr><tr><td class="bu">3</td><td class="bu">AVGO </td><td style="text-align:right">+1.378</td><td style="text-align:right" class="bu">+11.84%</td><td style="text-align:right">1.312</td><td style="text-align:right">+39.2%</td><td style="text-align:right">8</td><td>2026-09-03</td><td style="text-align:center">Y</td><td style="text-align:right">13.0%</td></tr><tr><td class="bu">4</td><td class="bu">ANET </td><td style="text-align:right">+1.204</td><td style="text-align:right" class="bu">+9.94%</td><td style="text-align:right">1.745</td><td style="text-align:right">+31.6%</td><td style="text-align:right">8</td><td>2026-11-03</td><td style="text-align:center">·</td><td style="text-align:right">8.7%</td></tr><tr><td class="bu">5</td><td class="bu">NVDA </td><td style="text-align:right">+1.061</td><td style="text-align:right" class="bu">+8.38%</td><td style="text-align:right">0.437</td><td style="text-align:right">+83.1%</td><td style="text-align:right">8</td><td>2026-08-26</td><td style="text-align:center">Y</td><td style="text-align:right">13.0%</td></tr><tr><td class="bu">6</td><td class="bu">FN </td><td style="text-align:right">+0.848</td><td style="text-align:right" class="bu">+6.05%</td><td style="text-align:right">1.533</td><td style="text-align:right">+27.4%</td><td style="text-align:right">8</td><td>2026-08-17</td><td style="text-align:center">·</td><td style="text-align:right">8.7%</td></tr><tr><td class="bu">7</td><td class="bu">CLS ●</td><td style="text-align:right">+0.842</td><td style="text-align:right" class="bu">+5.98%</td><td style="text-align:right">0.628</td><td style="text-align:right">+72.4%</td><td style="text-align:right">8</td><td>2026-10-26</td><td style="text-align:center">·</td><td style="text-align:right">8.7%</td></tr><tr><td class="bu">8</td><td class="bu">FIX </td><td style="text-align:right">+0.206</td><td style="text-align:right" class="be">-0.96%</td><td style="text-align:right">0.401</td><td style="text-align:right">+108.9%</td><td style="text-align:right">8</td><td>2026-10-22</td><td style="text-align:center">·</td><td style="text-align:right">8.7%</td></tr><tr><td class="bu">9</td><td class="bu">COHR </td><td style="text-align:right">-0.033</td><td style="text-align:right" class="be">-3.57%</td><td style="text-align:right">1.296</td><td style="text-align:right">+51.4%</td><td style="text-align:right">8</td><td>2026-08-12</td><td style="text-align:center">·</td><td style="text-align:right">8.7%</td></tr><tr><td class="bu">10</td><td class="bu">CCJ </td><td style="text-align:right">-0.121</td><td style="text-align:right" class="be">-4.52%</td><td style="text-align:right">0.374</td><td style="text-align:right">+282.6%</td><td style="text-align:right">8</td><td>2026-10-30</td><td style="text-align:center">·</td><td style="text-align:right">8.7%</td></tr><tr><td class="">11</td><td class="">CIEN </td><td style="text-align:right">-0.186</td><td style="text-align:right" class="be">-5.23%</td><td style="text-align:right">0.67</td><td style="text-align:right">+134.4%</td><td style="text-align:right">8</td><td>2026-09-03</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">12</td><td class="">AMD ●</td><td style="text-align:right">-0.262</td><td style="text-align:right" class="be">-6.06%</td><td style="text-align:right">1.345</td><td style="text-align:right">+67.0%</td><td style="text-align:right">8</td><td>2026-11-03</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">13</td><td class="">TSM ●</td><td style="text-align:right">-0.408</td><td style="text-align:right" class="be">-7.66%</td><td style="text-align:right">0.527</td><td style="text-align:right">+57.3%</td><td style="text-align:right">8</td><td>2026-10-15</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">14</td><td class="">VST </td><td style="text-align:right">-0.521</td><td style="text-align:right" class="be">-8.90%</td><td style="text-align:right">0.133</td><td style="text-align:right">+180.4%</td><td style="text-align:right">8</td><td>2026-08-07</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">15</td><td class="">MU ●</td><td style="text-align:right">-0.563</td><td style="text-align:right" class="be">-9.35%</td><td style="text-align:right">0.033</td><td style="text-align:right">+600.6%</td><td style="text-align:right">8</td><td>2026-09-22</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">16</td><td class="">TTMI </td><td style="text-align:right">-0.724</td><td style="text-align:right" class="be">-11.11%</td><td style="text-align:right">1.168</td><td style="text-align:right">+42.1%</td><td style="text-align:right">8</td><td>2026-08-05</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">17</td><td class="">GEV </td><td style="text-align:right">-0.768</td><td style="text-align:right" class="be">-11.59%</td><td style="text-align:right">0.047</td><td style="text-align:right">+620.4%</td><td style="text-align:right">8</td><td>2026-10-28</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">18</td><td class="">MRVL ●</td><td style="text-align:right">-0.834</td><td style="text-align:right" class="be">-12.31%</td><td style="text-align:right">1.303</td><td style="text-align:right">+55.4%</td><td style="text-align:right">8</td><td>2026-08-27</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">19</td><td class="">VRT ●</td><td style="text-align:right">-1.103</td><td style="text-align:right" class="be">-15.24%</td><td style="text-align:right">0.695</td><td style="text-align:right">+68.9%</td><td style="text-align:right">8</td><td>2026-10-28</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">20</td><td class="">SNDK ●</td><td style="text-align:right">-1.370</td><td style="text-align:right" class="be">-18.16%</td><td style="text-align:right">0.039</td><td style="text-align:right">+1175.4%</td><td style="text-align:right">6</td><td>2026-08-05</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr><tr><td class="">21</td><td class="">STRL </td><td style="text-align:right">-1.948</td><td style="text-align:right" class="be">-24.47%</td><td style="text-align:right">0.321</td><td style="text-align:right">+105.8%</td><td style="text-align:right">8</td><td>2026-11-02</td><td style="text-align:center">·</td><td style="text-align:right">—</td></tr></table>
+<p style="font-size:12px;color:#94a3b8;margin-top:8px">● = current live holding &nbsp;·&nbsp; <span class="bu">green rank</span> = selected top-10 &nbsp;·&nbsp; Screen-excluded (PEG outside 0–2): BWXT 2.52 · CEG 2.43 · WDC 2.17 &nbsp;·&nbsp; SNDK short history: 6 standalone quarters, TTM/prevTTM overlap 2q (July precedent, flagged not hidden).</p>
+<p class="howl" style="font-size:12px;color:#94a3b8"><b>How to read:</b> PEG from raw actual quarterly EPS (FMP /stable/earnings, spike-guarded), screened 0&lt;PEG&lt;2; survivors ranked purely on 21-trading-day momentum z-scored within the pool; top 10 selected; names reporting in 15–30 days carry 1.5× weight (DELL, AVGO, NVDA), renormalized. Registered learning applies: a single severe month can flip z-scores on fundamentally intact names — MU (PEG 0.033) and SNDK (PEG 0.039) rank 15 and 20 on momentum alone. That is the engine working as specified, not a data error.</p>
+
+<div class="sh"><div class="snum">4</div><div class="sl">Deltas &amp; Decision Material</div></div>
+<div class="ob"><div class="ob-t">ENGINE-10 vs LIVE 11 (your decision set)</div><ul>
+<li class="hot"><span class="bu">ENTER (8):</span> LITE, AVGO, ANET, NVDA, FN, FIX, COHR, CCJ</li>
+<li class="hot"><span class="be">EXIT (9):</span> AMD, ASML, INTC, MRVL, MU, SNDK, STX, TSM, VRT &nbsp;— only <b>DELL</b> and <b>CLS</b> of the live book survive the ranking</li>
+<li>Book A paper rotation — ENTER: LITE, DELL, AVGO, ANET, NVDA, FN, CLS, CCJ · EXIT: MRVL, GEV, SNDK, TTMI, TSM, MU, VST, VRT</li>
+<li class="brk">Earnings timing on ENTER names: <b>LITE reports Aug 11</b> (7d), <b>COHR Aug 12</b> (8d), <b>FN Aug 17</b> (13d) — all inside two weeks, none E5-protected (window is 15–30d). NVDA Aug 26, DELL/AVGO Sep 3 carry the E5 overweight.</li>
+</ul></div>
+<div class="co"><b class="wa">WDC sequencing card.</b> Pre-print PEG <b>2.166</b> — 0.17 above the line — excluded on the as-of 2026-08-04 run. WDC reports <b>tonight</b> (FMP: 2026-08-05, ±11.2% implied move per the pre-earnings analysis). A local run on the 6th–7th, after FMP posts the actual, re-opens the eligible-pool question. The frozen convention is as-of last close at run time; which as-of is the official August row is a sequencing decision, not a parameter decision. AMD and ANET already carry their fresh 2026-08-04 prints in this run (FMP posted overnight).</div>
+<div class="co"><b class="wa">ANET revision card.</b> July run: excluded, nonpositive growth. A prior August pull flagged the vendor restating ANET fundamentals on an unchanged quarter window (+31% TTM) — point-in-time audit recommended before trading it. Today ANET additionally includes its fresh 2026-08-04 print and ranks <b>#4 in the top-10</b> (PEG 1.745). Sensitivity: with ANET removed, CIEN (rank 11) is next in. The registered flag stands until the warehouse audit clears it.</div>
+
+<div class="sh"><div class="snum">5</div><div class="sl">Live Book — Reconciled 2026-08-05</div></div>
+<div class="cg">
+<div class="mc"><div class="ml">Memory/Storage</div><div class="mv">44.1%</div><div class="mg">MU · SNDK · STX</div></div>
+<div class="mc"><div class="ml">Semis</div><div class="mv">41.8%</div><div class="mg">AMD · ASML · INTC · MRVL · TSM</div></div>
+<div class="mc"><div class="ml">Hardware</div><div class="mv">8.7%</div><div class="mg">DELL · CLS</div></div>
+<div class="mc"><div class="ml">Power/Infra + Cash</div><div class="mv">4.2 + 1.2%</div><div class="mg">VRT · cash <span class="redact">$XX,XXX</span></div></div>
+</div>
+<div class="cs"><p>Reconciled against the brokerage screenshot (shares authoritative; broker flags displayed prices as potentially non-current): end-of-July reinvestment executed — <span class="hl">AMD <span class="redact">XXX→XXX</span> (+<span class="redact">XXX</span>)</span>, <span class="hl">SNDK <span class="redact">XXX→XXX</span> (+<span class="redact">XXX</span>)</span>, <span class="hl">CLS new <span class="redact">XXX</span></span> (universe name, hardware sleeve), <span class="be">GEV full exit (<span class="redact">XXX</span>)</span>; cash <span class="redact">$XXX,XXX</span> → <span class="redact">$XX,XXX</span>. All other quantities match the prior state snapshot exactly. Facts for the decision: <b>MU 21.5%</b> and <b>SNDK 16.9%</b> are the top single-name weights (38.4% combined), both in the complex the engine's momentum leg just rotated away from, and SNDK reports tonight.</p></div>
+
+<div class="sh"><div class="snum">6</div><div class="sl">Three-Book Horse Race — Standings at Rebalance</div></div>
+<table class="pt"><tr><th>Book</th><th class="n">TR since 7/02</th><th class="n">MaxDD</th><th>Basis</th></tr>
+<tr><td>Engine-10 (Book A, paper)</td><td style="text-align:right" class="be">−8.11%</td><td style="text-align:right">−25.88%</td><td>Tiingo adjClose · equal-weight · no intramonth changes</td></tr>
+<tr><td>Declared-15 (paper)</td><td style="text-align:right" class="be">−6.40%</td><td style="text-align:right">−24.81%</td><td>same</td></tr>
+<tr><td>Live (Book B)</td><td style="text-align:right">pending</td><td style="text-align:right">—</td><td>requires fills reconciliation — see Ops Appendix</td></tr></table>
+<p class="howl" style="font-size:12px;color:#94a3b8"><b>How to read:</b> Registered THREE_BOOK_SPEC v1.0 standings, only computed at rebalance sessions and the Dec 31 readout — no conclusion is pre-written and a null result is binding. Open-print inception sensitivity (July 2 was the correlation-break day): engine-10 −14.16%, declared-15 −12.78%. Biggest paper-book detractors since inception: STRL −22.7%, SNDK −18.2%, INTC −16.2%, TTMI −14.9%; DELL +18.7% the standout. Intra-period MaxDD of −25/−26% sits inside the A3-measured envelope (−30/−35% language queued for the January risk revisit) — flagged as calibration context, not system failure. rank_snapshot_2026-08.json is the input for the A1 signal-decay monitor open/score at your local run.</p>
+
+<div class="sh"><div class="snum">7</div><div class="sl">Bottom Line</div></div>
+<div class="cs">
+<p><b>Facts:</b> Gate GREEN (SMH #1/12, +44.8% 6M), 100% deployment authority. Pool 21 of 24, zero backfill, guard corrected CCJ ×2 and VST ×1. The momentum leg rotated hard inside the theme: optics/networking/EMS and megacap semis (LITE +16.2%, DELL +13.5%, AVGO +11.8%, ANET +9.9%, NVDA +8.4% over 21 sessions) displaced the memory complex (SNDK −18.2%, VRT −15.2%, MRVL −12.3%, GEV −11.6%, MU −9.4%). Engine-10 and the live book now overlap on only DELL and CLS. Wire context: Rosenblatt raised AMD to $700 post-print (MT Newswires, 08-05); WDC/SNDK tape quiet into tonight's prints.</p>
+<p><b>Projection (labeled):</b> none issued. Per-name probability estimates are prohibited outside registered base rates, and beat probability ≠ post-print direction. The engine output above is the system's selection; the declared book is your call, scored matched-N against it in December either way.</p>
+</div>
+
+
+</div></body></html>
